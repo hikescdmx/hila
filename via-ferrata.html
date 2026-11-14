@@ -7,7 +7,7 @@
 <meta name="description" content="2 días con camping, saliendo de CDMX. Sin experiencia previa. 16–17 de enero 2027.">
 <meta property="og:title" content="Hike + vía ferrata en Mineral del Chico · Hila">
 <meta property="og:description" content="2 días con camping, saliendo de CDMX. Sin experiencia previa. 16–17 de enero 2027.">
-<meta property="og:image" content="hero.jpg">
+<meta property="og:image" content="vf1.jpg">
 <link rel="icon" href="hila-logo-sin-slogan-color.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@ a{color:#222222}a:hover{color:#000000}
   .m-incl{grid-template-columns:1fr!important}
   .m-aside{position:static!important;max-width:none!important}
   .m-bar{display:flex!important}
+  .m-gallery2{grid-template-columns:1fr!important;height:auto!important;grid-auto-rows:240px}
 }
 </style>
 </head>
@@ -43,14 +44,37 @@ a{color:#222222}a:hover{color:#000000}
 
 <div style="font-family: Figtree, sans-serif; color: #222222; background: #FFFFFF; width: 100%">
 
+<div id="mmenu" hidden>
+  <style>
+    #mmenu{position:fixed;inset:0;z-index:60;background:#FFFFFF;font-family:Figtree,sans-serif;display:flex;flex-direction:column;padding:16px 22px 28px}
+    #mmenu[hidden]{display:none}
+    #mmenu .mm-top{display:flex;justify-content:space-between;align-items:center}
+    #mmenu .mm-links{display:flex;flex-direction:column;margin-top:28px}
+    #mmenu .mm-links a{font-size:26px;font-weight:700;color:#222222;text-decoration:none;padding:14px 0;border-bottom:1px solid #EBEBEB}
+    #mmenu .mm-cta{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+    #mmenu .mm-cta a{text-align:center;text-decoration:none;font-weight:700;font-size:17px;border-radius:12px;padding:16px}
+  </style>
+  <div class="mm-top"><img src="hila-logo-color.svg" alt="Hila" style="height:52px"><button type="button" id="mm-close" aria-label="Cerrar menú" style="width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+  <nav class="mm-links" aria-label="Menú"><a href="index.html#experiencias">Experiencias</a><a href="index.html#arma">Arma tu plan</a><a href="index.html#como">Cómo funciona</a><a href="index.html#contacto">Contacto</a></nav>
+  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('mmenu'),b=document.querySelector('.m-burger');if(!m||!b)return;
+function o(v){m.hidden=!v;document.body.style.overflow=v?'hidden':'';b.setAttribute('aria-expanded',v);}
+b.addEventListener('click',function(){o(true);});document.getElementById('mm-close').addEventListener('click',function(){o(false);});
+m.querySelectorAll('.mm-links a').forEach(function(a){a.addEventListener('click',function(){o(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});});
+</script>
   <header style="border-bottom: 1px solid #EBEBEB">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
       <a href="index.html"><img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height: 58px; width: auto; display: block"></a>
       <nav class="m-nav" aria-label="Principal" style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; font-size: 15px; font-weight: 600">
-        <a href="index.html" style="text-decoration: none">Experiencias</a>
-        <a href="index.html" style="text-decoration: none">Arma tu plan</a>
-        <a href="index.html" style="text-decoration: none">Contacto</a>
-      </nav>
+        <a href="index.html#experiencias" style="text-decoration: none">Experiencias</a>
+        <a href="index.html#arma" style="text-decoration: none">Arma tu plan</a>
+        <a href="index.html#como" style="text-decoration: none">Cómo funciona</a>
+        <a href="index.html#contacto" style="text-decoration: none">Contacto</a>
+        <a href="reservar.html?exp=vf" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 12px 22px; border-radius: 999px">Reservar</a>
+      </nav><button type="button" class="m-burger" aria-label="Abrir menú" aria-expanded="false" style="display:none;width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button>
     </div>
   </header>
 
@@ -58,8 +82,7 @@ a{color:#222222}a:hover{color:#000000}
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
       <h1 style="margin: 0; font-weight: 700; font-size: 30px; letter-spacing: -0.3px">Hike + vía ferrata en Mineral del Chico</h1>
       <div style="display: flex; gap: 18px; font-size: 15px; font-weight: 600">
-        <a href="#" style="display: inline-flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 14v6h14v-6"></path></svg>Compartir</a>
-        <a href="#" style="display: inline-flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>Guardar</a>
+        <a href="#" id="share" style="display: inline-flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 14v6h14v-6"></path></svg>Compartir</a>
       </div>
     </div>
 
@@ -67,14 +90,8 @@ a{color:#222222}a:hover{color:#000000}
       <img src="vf1.jpg" alt="Grupo con casco avanzando por una vía ferrata" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; display: block">
       <img src="vf2.jpg" alt="Persona con casco sujetándose del cable" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block">
       <img src="vf3.jpg" alt="Escalera metálica en pared de roca" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block">
-      <img src="vf5.jpg" alt="Dos personas subiendo escalones de vía ferrata" style="width: 100%; height: 100%; object-fit: cover; display: block">
-      <div style="position: relative">
-        <img src="vf6.jpg" alt="Fogata y casas de campaña al anochecer" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; display: block">
-        <a href="#" style="position: absolute; right: 14px; bottom: 14px; background: #FFFFFF; border: 1px solid #222222; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#222222"><circle cx="5" cy="5" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="12" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle></svg>
-          Mostrar todas las fotos
-        </a>
-      </div>
+      <img src="vf5.jpg" alt="Dos personas subiendo escalones de vía ferrata" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block">
+      <img src="vf6.jpg" alt="Fogata y casas de campaña al anochecer" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; display: block">
     </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 72px; margin-top: 36px; align-items: flex-start">
@@ -96,11 +113,11 @@ a{color:#222222}a:hover{color:#000000}
 
         <div style="display: flex; flex-direction: column; gap: 22px; padding: 30px 0; border-bottom: 1px solid #EBEBEB">
           <div style="display: flex; gap: 20px; align-items: flex-start">
-            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M7 3v18"></path><path d="M17 3v18"></path><path d="M7 7h10"></path><path d="M7 12h10"></path><path d="M7 17h10"></path></svg>
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M12 2v20"></path><path d="M8 6c2 1 6 1 8 0M8 11c2 1 6 1 8 0M8 16c2 1 6 1 8 0"></path></svg>
             <div><div style="font-weight: 600; font-size: 16px">Cables, peldaños y línea de vida</div><div style="font-size: 15px; color: #6A6A6A; margin-top: 2px; line-height: 1.5">Subes por la roca como en una escalera equipada. Antes hay plática de seguridad y práctica en el piso.</div></div>
           </div>
           <div style="display: flex; gap: 20px; align-items: flex-start">
-            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M4 21V9l5-6 5 6v12"></path><path d="M14 21V13l3-4 3 4v8"></path></svg>
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M3 20l7-12 3 5 2-3 6 10z"></path></svg>
             <div><div style="font-weight: 600; font-size: 16px">Hike a Las Monjas</div><div style="font-size: 15px; color: #6A6A6A; margin-top: 2px; line-height: 1.5">Caminas por bosque hasta las formaciones de roca más famosas de Mineral del Chico.</div></div>
           </div>
           <div style="display: flex; gap: 20px; align-items: flex-start">
@@ -125,10 +142,9 @@ a{color:#222222}a:hover{color:#000000}
             <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"></circle><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path></svg>Guía principal + 3 guías auxiliares</div>
             <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="14" rx="2"></rect><path d="M12 10v6"></path><path d="M9 13h6"></path><path d="M9 6V4h6v2"></path></svg>Paramédico con certificación WFR</div>
             <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"></path></svg>Seguro de gastos médicos y de vida</div>
-            <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l9-15 9 15z"></path><path d="M12 13v7"></path></svg>Tienda de campaña (1 por cada 2)</div>
+            <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"></path><path d="M6 10v10h12V10"></path><path d="M10 20v-5h4v5"></path></svg>Tienda de campaña (1 por cada 2)</div>
             <div style="display: flex; gap: 14px; align-items: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8"></path><path d="M5 3v4a2 2 0 0 0 4 0V3"></path><path d="M7 11v10"></path><path d="M17 3c-2 2-2 6 0 8v10"></path></svg>4 comidas + snacks e hidratación</div>
           </div>
-          <a href="#" style="display: inline-block; margin-top: 22px; border: 1px solid #222222; border-radius: 8px; padding: 12px 20px; font-weight: 600; text-decoration: none">Ver todo lo que incluye</a>
         </section>
 
         <section style="padding: 30px 0; border-bottom: 1px solid #EBEBEB">
@@ -152,7 +168,7 @@ a{color:#222222}a:hover{color:#000000}
                 <div><strong>12:00</strong> · Regreso a CDMX (aprox.)</div>
               </div>
             </div>
-          </div>
+          </div><div style="font-size:13px;color:#6A6A6A;margin-top:12px">Los horarios finales te los confirmamos en el grupo de WhatsApp.</div>
         </section>
 
         <section style="padding: 30px 0; border-bottom: 1px solid #EBEBEB">
@@ -193,25 +209,20 @@ a{color:#222222}a:hover{color:#000000}
         <div style="border: 1px solid #DDDDDD; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); padding: 24px">
           <div><span style="font-weight: 700; font-size: 24px">$5,800 MXN</span> <span style="font-size: 16px">por persona</span></div>
           <div style="margin-top: 20px; border: 1px solid #B0B0B0; border-radius: 10px">
-            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid #B0B0B0">
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
               <div style="padding: 10px 12px"><div style="font-size: 11px; font-weight: 800">Salida</div><div style="font-size: 15px; margin-top: 2px">Sáb 16 ene</div></div>
               <div style="padding: 10px 12px; border-left: 1px solid #B0B0B0"><div style="font-size: 11px; font-weight: 800">Regreso</div><div style="font-size: 15px; margin-top: 2px">Dom 17 ene</div></div>
             </div>
-            <label style="display: block; padding: 10px 12px; font-size: 11px; font-weight: 800">Personas
-              <select style="display: block; width: 100%; font: inherit; font-size: 15px; font-weight: 400; border: 0; padding: 2px 0 0; background: transparent"><option>1 persona</option><option>2 personas</option></select>
-            </label>
           </div>
           <a href="reservar.html?exp=vf" style="display: block; text-align: center; text-decoration: none; margin-top: 16px; width: 100%; font-weight: 700; font-size: 17px; background: #2E7D4F; color: #FFFFFF; border-radius: 10px; padding: 15px">Reservar</a>
           <div style="font-size: 14px; text-align: center; margin-top: 12px">Antes de pagar te hacemos unas preguntas rápidas</div>
-          <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #EBEBEB; font-size: 15px; display: flex; justify-content: space-between"><span>Quedan</span><strong>[N] lugares</strong></div>
+          <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #EBEBEB; font-size: 15px; display: flex; justify-content: space-between"><span>Grupo de</span><strong>20 personas</strong></div>
         </div>
 
         <div style="border: 1px solid #DDDDDD; border-radius: 16px; padding: 20px 22px">
           <div style="font-weight: 700; font-size: 16px">Combínala y ahorra</div>
           <div style="font-size: 14px; color: #6A6A6A; margin-top: 2px">Agrega otra salida y el descuento se aplica en tu total.</div>
-          <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px">
-            <div id="c-list" style="display:flex;flex-direction:column;gap:12px"></div>
-          </div>
+          <div id="c-list" style="display:flex;flex-direction:column;gap:12px;margin-top:14px"></div>
           <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid #EBEBEB">
             <div id="c-sum"></div>
           </div>
@@ -219,14 +230,42 @@ a{color:#222222}a:hover{color:#000000}
       </aside>
     </div>
   </main>
-<footer style="border-top:1px solid #EBEBEB;margin-top:40px"><div style="max-width:1240px;margin:0 auto;padding:28px 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;font-size:14px;color:#6A6A6A"><span>© 2027 Hila · Tu próxima historia empieza afuera.</span><span style="display:flex;flex-wrap:wrap;gap:18px"><a href="aviso-de-privacidad.html" style="color:#222">Aviso de privacidad</a><a href="politicas-de-cancelacion.html" style="color:#222">Políticas de cancelación</a><a href="terminos-y-condiciones.html" style="color:#222">Términos y condiciones</a></span></div></footer>
+<footer class="hf">
+  <style>
+    .hf{background:#153F2C;color:#FAF7F1;font-family:Figtree,sans-serif}
+    .hf-in{max-width:1240px;margin:0 auto;padding:64px 24px 28px}
+    .hf-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+    .hf h3{font-size:14px;font-weight:700;margin:0 0 14px;color:#F4BE95}
+    .hf-col{display:flex;flex-direction:column;gap:10px;font-size:15px}
+    .hf a{color:rgba(250,247,241,.82);text-decoration:none}.hf a:hover{color:#FFFFFF;text-decoration:underline}
+    .hf-tag{font-size:17px;line-height:1.5;color:rgba(250,247,241,.85);margin:16px 0 0;max-width:300px}
+    .hf-soc{display:flex;gap:10px;margin-top:20px}
+    .hf-soc a{width:44px;height:44px;border-radius:999px;border:1px solid rgba(250,247,241,.3);display:flex;align-items:center;justify-content:center;color:#FAF7F1}
+    .hf-soc a:hover{background:rgba(250,247,241,.1);text-decoration:none}
+    .hf-bot{border-top:1px solid rgba(250,247,241,.18);margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:rgba(250,247,241,.65)}
+    @media (max-width:760px){.hf-grid{grid-template-columns:1fr 1fr;gap:32px 20px}.hf-brand{grid-column:1/-1}.hf-in{padding:48px 22px 24px}}
+  </style>
+  <div class="hf-in">
+    <div class="hf-grid">
+      <div class="hf-brand">
+        <img src="hila-logo-crema.svg" alt="Hila · Sal a vivirlo." style="height:76px;width:auto;display:block">
+        <p class="hf-tag">Experiencias al aire libre saliendo de la Ciudad de México. Tu próxima historia empieza afuera.</p>
+        <div class="hf-soc"><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
+      </div>
+      <div><h3>Experiencias</h3><div class="hf-col"><a href="via-ferrata.html">Vía ferrata</a><a href="nevado-de-colima.html">Nevado de Colima</a><a href="rapel-corral-de-piedra.html">Rapel en Corral de Piedra</a><a href="kayak-xochimilco.html">Kayak al amanecer</a></div></div>
+      <div><h3>Hila</h3><div class="hf-col"><a href="index.html#como">Cómo funciona</a><a href="index.html#arma">Arma tu plan</a><a href="reservar.html">Reservar</a><a href="index.html#contacto">Contacto</a></div></div>
+      <div><h3>Lo legal</h3><div class="hf-col"><a href="aviso-de-privacidad.html">Aviso de privacidad</a><a href="terminos-y-condiciones.html">Términos y condiciones</a><a href="politicas-de-cancelacion.html">Políticas de cancelación</a></div></div>
+    </div>
+    <div class="hf-bot"><span>© 2027 Hila · Hecho en CDMX</span><span>Sal a vivirlo.</span></div>
+  </div>
+</footer>
   <div class="m-bar" style="display:none;position:sticky;bottom:0;background:#FFFFFF;border-top:1px solid #EBEBEB;padding:14px 18px;justify-content:space-between;align-items:center;gap:12px"><div><div style="font-weight:700;font-size:18px">$5,800 MXN</div><div style="font-size:13px">16–17 ene · sale de CDMX</div></div><a href="reservar.html?exp=vf" style="background:#2E7D4F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:16px">Reservar</a></div>
 </div>
 
 <script>
 (function(){
-var base=5800,D={2:5,3:8,4:10},sel={};
-var O=[{id:'col',n:'Nevado de Colima',d:'23–24 ene',p:5100,img:'col1.jpg'},{id:'rap',n:'Rapel en Corral de Piedra',d:'6–7 feb',p:4300,img:'rap1.jpg'},{id:'kay',n:'Kayak al amanecer',d:'20 feb',p:1000,img:'kay1.jpg'}];
+var ME="vf",base=5800,sel={};
+var O=[{"id": "col", "n": "Nevado de Colima", "d": "23–24 ene", "p": 5100, "img": "col1.jpg"}, {"id": "rap", "n": "Rapel en Corral de Piedra", "d": "6–7 feb", "p": 4300, "img": "rap1.jpg"}, {"id": "kay", "n": "Kayak al amanecer", "d": "20 feb", "p": 1000, "img": "kay1.jpg"}];
 var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-MX');};
 var list=document.getElementById('c-list'),sum=document.getElementById('c-sum');
 list.innerHTML=O.map(function(o){return '<label style="display:flex;gap:12px;align-items:center;font-size:15px;cursor:pointer"><input type="checkbox" data-id="'+o.id+'" style="width:18px;height:18px;accent-color:#2E7D4F"><img src="'+o.img+'" alt="" style="width:48px;height:48px;border-radius:8px;object-fit:cover"><span style="flex:1">'+o.n+'<span style="display:block;font-size:13px;color:#6A6A6A">'+o.d+' · '+fmt(o.p)+'</span></span></label>';}).join('');
@@ -238,10 +277,11 @@ function render(){
   '<div style="display:flex;justify-content:space-between;font-size:15px;margin-top:10px;color:#6A6A6A"><span>'+n+' experiencias</span><span style="text-decoration:line-through">'+fmt(st)+'</span></div>'+
   '<div style="display:flex;justify-content:space-between;font-size:15px;margin-top:4px;color:#1F6B45;font-weight:600"><span>Ahorras</span><span>−'+fmt(sv)+'</span></div>'+
   '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:6px"><span style="font-weight:700">Total por persona</span><span style="font-weight:800;font-size:22px">'+fmt(st-sv)+' MXN</span></div>'+
-  '<a href="reservar.html?exp=vf'+ch.map(function(o){return ','+o.id;}).join('')+'" style="display:block;text-align:center;margin-top:12px;background:#2E7D4F;color:#FFFFFF;text-decoration:none;border-radius:10px;padding:13px;font-weight:700">Reservar las '+n+'</a>';
+  '<a href="reservar.html?exp='+[ME].concat(ch.map(function(o){return o.id;})).join(',')+'" style="display:block;text-align:center;margin-top:12px;background:#2E7D4F;color:#FFFFFF;text-decoration:none;border-radius:10px;padding:13px;font-weight:700">Reservar las '+n+'</a>';
 }
 list.querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){sel[i.dataset.id]=i.checked;render();});});
 render();
+var sh=document.getElementById('share');if(sh)sh.addEventListener('click',function(e){e.preventDefault();if(navigator.share){navigator.share({title:document.title,url:location.href}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(location.href);sh.lastChild.textContent='Link copiado';}});
 })();
 </script>
 </body>

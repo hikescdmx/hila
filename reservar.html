@@ -16,8 +16,27 @@ a{color:#222222}
 header{border-bottom:1px solid #EBEBEB}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
 .stage{position:relative;padding:48px 0 80px}
-.photo{margin-left:auto;width:62%;height:760px;border-radius:28px;overflow:hidden;position:sticky;top:24px}
-.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s}
+.photo{position:relative;width:100%;height:760px;border-radius:28px;overflow:hidden}
+.photo{display:grid;gap:6px;background:#FFFFFF;grid-template-columns:1fr;grid-auto-rows:1fr}
+.photo.n2{grid-template-rows:1fr 1fr}
+.photo.n3{grid-template-columns:1fr 1fr;grid-template-rows:1.25fr 1fr}.photo.n3 .ph:nth-child(2){grid-column:1/3}
+.photo.n4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.ph{position:relative;overflow:hidden;min-height:0;animation:phin .5s ease}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .lab{position:absolute;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;line-height:1.2;max-width:calc(100% - 28px)}
+.ph .lab span{font-weight:500;color:#6A6A6A}
+.plan-tag{position:absolute;top:16px;right:16px;z-index:2;background:#153F2C;color:#FFFFFF;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700}
+.photo-wrap{position:sticky;top:24px;margin-left:auto;width:62%}
+@keyframes phin{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.f.bad{background:#FFF5F3}.f.bad{color:#B3261E}
+.fe{display:block;font-size:13px;font-weight:500;color:#B3261E;margin-top:4px}
+.fe:before,.err:before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B3261E' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v6M12 16.5v.5'/%3E%3C/svg%3E") no-repeat center/contain}
+.fe.out{margin:8px 0 0 2px}
+.chips.bad .chip{border-color:#E3A59C}
+.check.bad{color:#B3261E}
+.check a{font-weight:600}
+.check small{display:block;color:#6A6A6A;font-size:13px;margin-top:2px}
+.opt{font-size:13px;color:#6A6A6A;font-weight:500}
 .card{position:absolute;left:24px;top:48px;width:520px;background:#FFFFFF;border-radius:28px;box-shadow:0 10px 40px rgba(0,0,0,.14);padding:36px 34px}
 .steps{display:flex;gap:6px}.steps span{flex:1;height:4px;border-radius:4px;background:#EBEBEB}.steps span.on{background:#2E7D4F}
 .kicker{font-size:14px;font-weight:600;color:#2E7D4F;margin-top:18px}
@@ -67,13 +86,22 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 .tk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
 .actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px}
 .actions .btn{margin-top:0;font-size:15px;padding:14px 10px;display:flex;align-items:center;justify-content:center;gap:8px}
-.chat{margin-top:32px;background:#EFE7DE;border-radius:20px;padding:18px;text-align:left;display:flex;flex-direction:column;gap:10px}
-.bub{max-width:88%;background:#FFFFFF;padding:10px 14px;border-radius:12px 12px 12px 2px;font-size:15px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.08)}
-.bub b.n{display:block;font-size:13px;color:#1F7A4D}
+.next{margin-top:40px;text-align:left;border:1px solid #EBEBEB;border-radius:24px;padding:30px 30px 10px}
+.next h2{font-size:24px;font-weight:700;margin:0;letter-spacing:-.2px}
+.next .sub{color:#6A6A6A;font-size:15px;margin:4px 0 18px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:48px 1fr;gap:16px;position:relative;padding-bottom:24px}
+.tl li:not(:last-child):after{content:"";position:absolute;left:23px;top:52px;bottom:4px;border-left:2px dashed #CFE3D6}
+.tl .ic{width:48px;height:48px;border-radius:50%;background:#E6F2EA;display:flex;align-items:center;justify-content:center;color:#2E7D4F}
+.tl li.now .ic{background:#2E7D4F;color:#FFFFFF;box-shadow:0 0 0 6px #E6F2EA}
+.tl .when{display:inline-block;font-size:13px;font-weight:700;color:#1F6B45;background:#F4FAF6;border-radius:999px;padding:4px 10px}
+.tl li.now .when{background:#2E7D4F;color:#FFFFFF}
+.tl h3{font-size:17px;font-weight:700;margin:8px 0 2px}
+.tl p{font-size:15px;line-height:1.5;color:#6A6A6A;margin:0}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#222222;color:#FFFFFF;padding:12px 18px;border-radius:12px;font-size:14px;display:none;z-index:50;max-width:90vw;text-align:center}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:40}
 @media (max-width:860px){
-  .photo{width:100%;height:240px;position:relative;top:0;border-radius:22px}
+  .photo-wrap{width:100%;position:relative;top:0}.photo{height:260px;border-radius:22px;gap:4px}.ph .lab{font-size:12px;padding:6px 10px;right:auto;left:8px;bottom:auto;top:8px}.photo{height:300px}.ph .lab span{display:none}.plan-tag{top:10px;right:10px;font-size:12px}
   .card{position:relative;left:auto;top:auto;width:auto;margin:-50px 8px 0;padding:26px 20px}
   .stage{padding:20px 0 60px}
   h1{font-size:26px}
@@ -84,8 +112,9 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
   .tk-grid{grid-template-columns:1fr 1fr}
   .actions{grid-template-columns:1fr}
   .done h1{font-size:30px}
+  .next{padding:24px 18px 4px}
 }
-@media print{header,.actions,.chat,.done > p,.toast,#confetti{display:none!important}.ticket{box-shadow:none;border:1px solid #DDDDDD;break-inside:avoid}}
+@media print{header,.actions,.next,.done > p,.toast,#confetti{display:none!important}.ticket{box-shadow:none;border:1px solid #DDDDDD;break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -95,7 +124,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 </div></header>
 
 <main id="flow" class="wrap stage">
-  <div class="photo"><img id="photo" src="band.jpg" alt=""></div>
+  <div class="photo-wrap"><div class="photo" id="photo"></div></div>
   <form class="card" id="card" novalidate>
     <div class="steps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
@@ -114,7 +143,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
         <label class="f">Celular<input id="cel" type="tel" autocomplete="tel" placeholder="55 1234 5678"></label>
         <label class="f">Correo<input id="correo" type="email" autocomplete="email" placeholder="tu@correo.com"></label>
       </div>
-      <label class="check"><input type="checkbox" id="mayor">Confirmo que soy mayor de edad</label>
+      <label class="check" id="w-mayor"><input type="checkbox" id="mayor"><span>Confirmo que soy mayor de edad</span></label>
       <div class="err" id="err1"></div>
       <button type="button" class="btn" data-next>Sigamos</button>
       <div class="note">Aún no te cobramos nada. Tus respuestas se guardan mientras avanzas.</div>
@@ -127,7 +156,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
       <p class="lead">Elige una o varias. Si marcas más de una, el descuento se aplica solito.</p>
       <div id="exps"></div>
       <div class="group" style="margin-top:14px">
-        <label class="f">¿Cuántas personas van?<select id="personas"><option value="1">1 persona (solo yo)</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option></select></label>
+        <label class="f">¿Cuántas personas van?<select id="personas"><option value="1">1 persona (solo yo)</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option></select></label>
       </div>
       <div class="sum" id="sum2"></div>
       <div class="err" id="err2"></div>
@@ -150,17 +179,18 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
         <label class="f">Padecimientos o cirugías recientes<textarea id="salud" placeholder="Si no tienes, escribe “ninguno”"></textarea></label>
         <label class="f">Alergias<input id="alergias" placeholder="Medicamentos, alimentos…"></label>
       </div>
-      <div class="q" style="font-size:15px;font-weight:600;color:#6A6A6A">Para tu equipo (arnés y cuerdas tienen rangos de uso)</div>
+      <div class="q" style="font-size:15px;font-weight:600;color:#6A6A6A">Para ajustar tu equipo (arnés y cuerdas)</div>
       <div class="group" style="margin-top:8px">
         <div class="row">
-          <label class="f">Estatura (cm)<input id="altura" inputmode="numeric" placeholder="165"></label>
-          <label class="f">Peso (kg)<input id="peso" inputmode="numeric" placeholder="60"></label>
+          <label class="f">Estatura (cm)<input id="altura" inputmode="numeric" maxlength="3" placeholder="165"></label>
+          <label class="f">Peso (kg)<input id="peso" inputmode="numeric" maxlength="3" placeholder="60"></label>
         </div>
         <div class="row">
           <label class="f">Tipo de sangre<select id="sangre"><option value="">Elige</option><option>O+</option><option>O−</option><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>AB+</option><option>AB−</option><option>No sé</option></select></label>
           <label class="f">Talla de playera<select id="talla"><option value="">Elige</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></label>
         </div>
       </div>
+      <label class="check" id="w-saludOk"><input type="checkbox" id="saludOk"><span>Autorizo que Hila use mis datos de salud solo para cuidarme durante la experiencia.<small>Son datos sensibles, por eso te pedimos tu permiso aparte. Más detalle en el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</small></span></label>
       <div class="err" id="err3"></div>
       <button type="button" class="btn" data-next>Sigamos</button>
       <button type="button" class="back" data-prev>Regresar</button>
@@ -177,8 +207,10 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
         </div>
       </div>
       <div class="sum" id="sum4"></div>
-      <label class="check"><input type="checkbox" id="priv"><span>Leí y acepto el <a href="#" onclick="return false">aviso de privacidad</a></span></label>
-      <label class="check"><input type="checkbox" id="tyc"><span>Acepto los <a href="#" onclick="return false">términos y condiciones</a> y las <a href="#" onclick="return false">políticas de cancelación</a></span></label>
+      <label class="check" id="w-priv"><input type="checkbox" id="priv"><span>Leí y acepto el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a></span></label>
+      <label class="check" id="w-tyc"><input type="checkbox" id="tyc"><span>Acepto los <a href="terminos-y-condiciones.html" target="_blank" rel="noopener">términos y condiciones</a> y las <a href="politicas-de-cancelacion.html" target="_blank" rel="noopener">políticas de cancelación</a></span></label>
+      <label class="check"><input type="checkbox" id="news"><span>Quiero que me avisen de próximas salidas y promos <span class="opt">(opcional)</span></span></label>
+      <label class="check"><input type="checkbox" id="fotos"><span>Pueden compartir fotos donde salgo en las redes de Hila <span class="opt">(opcional)</span></span></label>
       <div class="err" id="err4"></div>
       <button type="button" class="btn" id="pay">Pagar con Mercado Pago</button>
       <div class="note">Pago seguro con Mercado Pago. Tarjeta, OXXO o transferencia.</div>
@@ -198,11 +230,11 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
     <button type="button" class="btn ghost" id="wallet"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18"></path><circle cx="16" cy="15" r="1.5"></circle></svg>Añadir a Wallet</button>
     <button type="button" class="btn ghost" id="pdf"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Guardar mi boleto</button>
   </div>
-  <div class="chat">
-    <div class="bub"><b class="n">Hila</b>Te mandamos tu confirmación por correo en unos minutos.</div>
-    <div class="bub"><b class="n">Hila</b>Una semana antes te sumamos al grupo de WhatsApp de tu salida y te invitamos al meet &amp; greet.</div>
-    <div class="bub"><b class="n">Hila</b>Ahí te pasamos el punto de encuentro, la hora exacta y qué llevar. Tú solo prepárate para salir a vivirlo.</div>
-  </div>
+  <section class="next" aria-labelledby="nextT">
+    <h2 id="nextT">¿Qué sigue?</h2>
+    <p class="sub" id="nextSub">Tú solo prepárate. Del resto nos encargamos.</p>
+    <ol class="tl" id="tl"></ol>
+  </section>
   <p style="margin-top:28px"><a href="index.html" style="font-weight:600">Volver al inicio</a></p>
 </section>
 
@@ -218,28 +250,28 @@ var EXPS={
   kay:{n:'Kayak al amanecer',p:'Xochimilco, CDMX',d:'20 feb 2027',s:'20270220',e:'20270221',price:1000,img:'kay1.jpg'}
 };
 var ORDER=['vf','col','rap','kay'], DISC={2:5,3:8,4:10};
-var PHOTOS={1:'band.jpg',2:'vf1.jpg',3:'rap1.jpg',4:'kay1.jpg'};
 var KEY='hila-reserva';
-var st={step:1,sel:{},chips:{}};
+var st={step:1,sel:{},chips:{}};var tried={};
 try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)st=Object.assign(st,saved);}catch(e){}
 var qs=new URLSearchParams(location.search);
 if(qs.get('exp')){st.sel={};qs.get('exp').split(',').forEach(function(k){if(EXPS[k])st.sel[k]=true;});}
+if(qs.get('p'))st.personas=String(Math.max(1,Math.min(6,+qs.get('p')||1)));
 if(qs.get('paso'))st.step=Math.max(1,Math.min(4,+qs.get('paso')||1));
 var $=function(id){return document.getElementById(id);};
 var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-MX');};
-var FIELDS=['nombre','apellido','cel','correo','mayor','personas','salud','alergias','altura','peso','sangre','talla','emNombre','emCel','priv','tyc'];
+var FIELDS=['nombre','apellido','cel','correo','mayor','personas','salud','alergias','altura','peso','sangre','talla','emNombre','emCel','priv','tyc','saludOk','news','fotos'];
 FIELDS.forEach(function(f){var el=$(f);if(!el)return;if(st[f]!==undefined){if(el.type==='checkbox')el.checked=!!st[f];else el.value=st[f];}
-  el.addEventListener('input',function(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}});
-  el.addEventListener('change',function(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}});});
+  function up(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}if(tried[st.step])recheck(f);}
+  el.addEventListener('input',up);el.addEventListener('change',up);});
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
 // chips
 document.querySelectorAll('[data-chips]').forEach(function(g){var k=g.dataset.chips;g.querySelectorAll('.chip').forEach(function(c){
   c.setAttribute('aria-pressed',st.chips[k]===c.dataset.v?'true':'false');
-  c.addEventListener('click',function(){st.chips[k]=c.dataset.v;g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});save();});});});
+  c.addEventListener('click',function(){st.chips[k]=c.dataset.v;g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});save();if(tried[3])recheck('chip-'+k);});});});
 // experiencias
 function drawExps(){$('exps').innerHTML=ORDER.map(function(k){var x=EXPS[k],on=!!st.sel[k];
   return '<label class="exp'+(on?' on':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><img src="'+x.img+'" alt=""><span style="flex:1"><span style="display:block;font-weight:700">'+x.n+'</span><span style="font-size:14px;color:#6A6A6A">'+x.d+' · '+fmt(x.price)+' por persona</span></span></label>';}).join('');
-  $('exps').querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){st.sel[i.dataset.k]=i.checked;save();drawExps();summary();});});}
+  $('exps').querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){st.sel[i.dataset.k]=i.checked;save();drawExps();summary();photo();if(tried[2])valid(2);});});}
 function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=n>=4?DISC[4]:DISC[n]||0,pp=+(st.personas||1);
   return {ks:ks,n:n,per:per,pct:pct,pp:pp,sub:per*pp,save:per*pp*pct/100,total:per*pp*(1-pct/100)};}
 function summary(){var c=calc(),h;
@@ -253,22 +285,52 @@ function summary(){var c=calc(),h;
 function show(n){st.step=n;save();
   document.querySelectorAll('[data-step]').forEach(function(s){s.classList.toggle('hide',+s.dataset.step!==n);});
   document.querySelectorAll('.steps span').forEach(function(s,i){s.classList.toggle('on',i<n);});
-  $('photo').src=PHOTOS[n];
+  photo();
   if(n===2)$('h2name').textContent=st.nombre?('Buenísimo, '+st.nombre.trim().split(' ')[0]+'. ¿A dónde vamos?'):'Buenísimo. ¿A dónde vamos?';
   window.scrollTo({top:0,behavior:'smooth'});}
+function photo(){var ks=st.step>1?ORDER.filter(function(k){return st.sel[k];}):[],box=$('photo');
+  var key=ks.join(',')||'none';if(box.dataset.k===key)return;box.dataset.k=key;
+  box.className='photo n'+Math.max(1,ks.length);
+  if(!ks.length){box.innerHTML='<div class="ph"><img src="band.jpg" alt=""></div>';return;}
+  box.innerHTML=(ks.length>1?'<div class="plan-tag">Tu plan · '+ks.length+' experiencias</div>':'')+ks.map(function(k){var x=EXPS[k];
+    return '<div class="ph"><img src="'+x.img+'" alt="'+x.n+'"><div class="lab">'+x.n+' <span>· '+x.d+'</span></div></div>';}).join('');}
+function digits(v){return (v||'').replace(/\D/g,'');}
+// reglas por campo: devuelven el mensaje de error o ''
+var RULES={
+  nombre:function(){return (st.nombre||'').trim()?'':'Nos falta tu nombre.';},
+  apellido:function(){return (st.apellido||'').trim()?'':'Nos falta tu apellido.';},
+  cel:function(){var d=digits(st.cel);if(!d)return 'Nos falta tu celular, por ahí te contactamos.';return d.length===10?'':'Tu celular debe tener 10 dígitos (llevas '+d.length+').';},
+  correo:function(){var v=(st.correo||'').trim();if(!v)return 'Nos falta tu correo, ahí te mandamos tu confirmación.';return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v)?'':'Revisa tu correo, parece que le falta algo (ej. tu@correo.com).';},
+  mayor:function(){return st.mayor?'':'Por ahora las experiencias son solo para mayores de edad.';},
+  'chip-seguro':function(){return st.chips.seguro?'':'Elige una opción, porfa.';},
+  'chip-exp':function(){return st.chips.exp?'':'Elige una opción, porfa.';},
+  'chip-cond':function(){return st.chips.cond?'':'Elige una opción, porfa.';},
+  salud:function(){return (st.salud||'').trim()?'':'Cuéntanos si tienes algo (o escribe “ninguno”).';},
+  altura:function(){var v=+digits(st.altura);if(!v)return 'Nos falta tu estatura.';return v>=120&&v<=220?'':'Escríbela en centímetros, por ejemplo 165.';},
+  peso:function(){var v=+digits(st.peso);if(!v)return 'Nos falta tu peso.';return v>=35&&v<=200?'':'Escríbelo en kilos, por ejemplo 60.';},
+  saludOk:function(){return st.saludOk?'':'Necesitamos tu permiso para usar estos datos y cuidarte en la salida.';},
+  emNombre:function(){return (st.emNombre||'').trim()?'':'¿A quién le avisamos? Nos falta su nombre.';},
+  emCel:function(){var d=digits(st.emCel);if(!d)return 'Nos falta su celular.';if(d.length!==10)return 'Su celular debe tener 10 dígitos (llevas '+d.length+').';return d===digits(st.cel)?'Es tu mismo número. Pon el de alguien que no vaya contigo.':'';},
+  priv:function(){return st.priv?'':'Para continuar necesitamos que aceptes el aviso de privacidad.';},
+  tyc:function(){return st.tyc?'':'Acepta los términos y las políticas de cancelación para continuar.';}
+};
+var BYSTEP={1:['nombre','apellido','cel','correo','mayor'],3:['chip-seguro','chip-exp','chip-cond','salud','altura','peso','saludOk'],4:['emNombre','emCel','priv','tyc']};
+function holder(f){if(f.indexOf('chip-')===0)return document.querySelector('[data-chips="'+f.slice(5)+'"]');var w=$('w-'+f);if(w)return w;var el=$(f);return el&&el.closest('.f');}
+function mark(f,msg){var h=holder(f),el=f.indexOf('chip-')===0?null:$(f);if(!h)return;
+  h.classList.toggle('bad',!!msg);if(el)el.setAttribute('aria-invalid',msg?'true':'false');
+  var id='fe-'+f,m=$(id);
+  if(!msg){if(m)m.remove();return;}
+  if(!m){m=document.createElement('span');m.id=id;m.className='fe';m.setAttribute('role','alert');
+    if(h.classList.contains('f'))h.appendChild(m);else{m.classList.add('out');h.insertAdjacentElement('afterend',m);}}
+  m.textContent=msg;if(el)el.setAttribute('aria-describedby',id);}
+function recheck(f){if(RULES[f])mark(f,RULES[f]());var n=st.step,bad=(BYSTEP[n]||[]).filter(function(k){return RULES[k]();}).length;if(!bad)err(n,'');}
 function err(n,msg){var e=$('err'+n);e.textContent=msg;e.style.display=msg?'block':'none';return !msg;}
-function valid(n){
-  if(n===1){if(!(st.nombre||'').trim()||!(st.apellido||'').trim())return err(1,'Nos falta tu nombre y apellido.');
-    if(((st.cel||'').replace(/\D/g,'')).length<10)return err(1,'Revisa tu celular: son 10 dígitos.');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(st.correo||''))return err(1,'Revisa tu correo, ahí te mandamos la confirmación.');
-    if(!st.mayor)return err(1,'Por ahora las experiencias son solo para mayores de edad.');return err(1,'');}
-  if(n===2){return calc().n?err(2,''):err(2,'Elige al menos una experiencia.');}
-  if(n===3){if(!st.chips.seguro||!st.chips.exp||!st.chips.cond)return err(3,'Contesta las tres preguntas de arriba, porfa.');
-    if(!(st.salud||'').trim())return err(3,'Cuéntanos si tienes algún padecimiento (o escribe “ninguno”).');
-    if(!st.altura||!st.peso)return err(3,'Nos falta tu estatura y peso para el equipo.');return err(3,'');}
-  if(n===4){if(!(st.emNombre||'').trim()||((st.emCel||'').replace(/\D/g,'')).length<10)return err(4,'Nos falta tu contacto de emergencia.');
-    if(!st.priv||!st.tyc)return err(4,'Para continuar acepta el aviso de privacidad y los términos.');return err(4,'');}
-  return true;}
+function valid(n){tried[n]=true;
+  if(n===2){return calc().n?err(2,''):err(2,'Elige al menos una experiencia para seguir.');}
+  var bad=(BYSTEP[n]||[]).filter(function(f){var m=RULES[f]();mark(f,m);return m;});
+  if(!bad.length)return err(n,'');
+  var h=holder(bad[0]);if(h){h.scrollIntoView({behavior:'smooth',block:'center'});var el=$(bad[0]);if(el&&el.focus)setTimeout(function(){el.focus({preventScroll:true});},300);}
+  return err(n,bad.length===1?'Te falta una cosita, la marcamos en rojo.':'Te faltan '+bad.length+' cositas, las marcamos en rojo.');}
 document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){if(valid(st.step))show(st.step+1);});});
 document.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){show(Math.max(1,st.step-1));});});
 $('pay').addEventListener('click',function(){if(!valid(4))return;
@@ -285,8 +347,24 @@ function confirmar(){var c=calc();booking={code:code(),ks:c.ks,pp:c.pp,total:c.t
     '<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start"><div><div class="tk-k">Tu boleto</div><div style="font-weight:800;font-size:22px;line-height:1.15;margin-top:2px">'+x.n+'</div></div><img src="hila-logo-sin-slogan-color.svg" alt="Hila" style="height:30px"></div>'+
     '<div class="tk-grid"><div><div class="tk-k">Fecha</div><div class="tk-v">'+x.d+'</div></div><div><div class="tk-k">Salida</div><div class="tk-v">CDMX</div></div><div><div class="tk-k">Personas</div><div class="tk-v">'+c.pp+'</div></div>'+
     '<div><div class="tk-k">Lugar</div><div class="tk-v">'+x.p+'</div></div><div><div class="tk-k">A nombre de</div><div class="tk-v">'+booking.full+'</div></div><div><div class="tk-k">Código</div><div class="tk-v">'+booking.code+'</div></div></div></div></article>';}).join('');
+  timeline(c.ks);
   try{localStorage.removeItem(KEY);}catch(e){}
   window.scrollTo({top:0});confetti();}
+var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function dt(s){return new Date(+s.slice(0,4),+s.slice(4,6)-1,+s.slice(6,8));}
+function fd(d){return d.getDate()+' '+MES[d.getMonth()];}
+var IC={mail:'<path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/>',chat:'<path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/>',people:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.2c2.9-.4 6 1.6 6 5.3"/>',mtn:'<path d="M3 20l6.5-11 3.5 6 2.5-4L21 20z"/><circle cx="17" cy="6" r="2"/>'};
+function ico(k){return '<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+IC[k]+'</svg>';}
+function timeline(ks){var first=EXPS[ks[0]],d0=dt(first.s),wa=new Date(d0),today=new Date();wa.setDate(wa.getDate()-7);
+  var waTxt=wa<=today?'En estos días':'Desde el '+fd(wa);
+  var dates=ks.map(function(k){return fd(dt(EXPS[k].s));});
+  var items=[
+    ['now','mail','Hoy','Te llega tu confirmación','En unos minutos la tienes en tu correo. Si no la ves, échale un ojo a spam.'],
+    ['','chat',waTxt,'Te sumamos al grupo de WhatsApp','Ahí conoces a quienes van contigo y te pasamos punto de encuentro, hora exacta y qué llevar.'],
+    ['','people','La semana antes','Meet & greet','Una cita relajada para conocerse antes de salir. Si vas solo, aquí rompes el hielo.'],
+    ['','mtn',dates.join(' · '),ks.length>1?'Salimos juntos desde CDMX, '+ks.length+' veces':'Salimos juntos desde CDMX','Tú solo prepárate para salir a vivirlo.']];
+  $('tl').innerHTML=items.map(function(x){return '<li class="'+x[0]+'"><div class="ic">'+ico(x[1])+'</div><div><span class="when">'+x[2]+'</span><h3>'+x[3]+'</h3><p>'+x[4]+'</p></div></li>';}).join('');
+  $('nextSub').textContent=ks.length>1?'Así va tu primera salida, y lo mismo pasa con cada una.':'Tú solo prepárate. Del resto nos encargamos.';}
 function toast(t){var el=$('toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(function(){el.style.display='none';},4200);}
 $('cal').addEventListener('click',function(){if(!booking)return;
   var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Hila//Reservas//ES','CALSCALE:GREGORIAN'];
@@ -301,6 +379,7 @@ function confetti(){var cv=$('confetti'),ctx=cv.getContext('2d');if(window.match
   for(var i=0;i<140;i++)P.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.5,w:6+Math.random()*6,h:8+Math.random()*8,c:cols[i%5],vy:2+Math.random()*3,vx:-1+Math.random()*2,r:Math.random()*6,vr:-.1+Math.random()*.2});
   var t0=performance.now();(function f(t){ctx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});
   if(t-t0<3500)requestAnimationFrame(f);else ctx.clearRect(0,0,cv.width,cv.height);})(t0);}
+['cel','emCel','altura','peso'].forEach(function(f){$(f).addEventListener('input',function(){var el=$(f),v=el.value.replace(/[^\d ]/g,'');if(v!==el.value){el.value=v;st[f]=v;save();}});});
 drawExps();summary();show(st.step);
 })();
 </script>

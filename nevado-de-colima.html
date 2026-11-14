@@ -7,7 +7,7 @@
 <meta name="description" content="2 días con cabaña, saliendo de CDMX. Cumbre a 4,260 m. 23–24 de enero 2027.">
 <meta property="og:title" content="Ascenso al Nevado de Colima · Hila">
 <meta property="og:description" content="2 días con cabaña, saliendo de CDMX. Cumbre a 4,260 m. 23–24 de enero 2027.">
-<meta property="og:image" content="col1.jpg">
+<meta property="og:image" content="vf1.jpg">
 <link rel="icon" href="hila-logo-sin-slogan-color.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,14 +44,37 @@ a{color:#222222}a:hover{color:#000000}
 
 <div style="font-family: Figtree, sans-serif; color: #222222; background: #FFFFFF; width: 100%">
 
+<div id="mmenu" hidden>
+  <style>
+    #mmenu{position:fixed;inset:0;z-index:60;background:#FFFFFF;font-family:Figtree,sans-serif;display:flex;flex-direction:column;padding:16px 22px 28px}
+    #mmenu[hidden]{display:none}
+    #mmenu .mm-top{display:flex;justify-content:space-between;align-items:center}
+    #mmenu .mm-links{display:flex;flex-direction:column;margin-top:28px}
+    #mmenu .mm-links a{font-size:26px;font-weight:700;color:#222222;text-decoration:none;padding:14px 0;border-bottom:1px solid #EBEBEB}
+    #mmenu .mm-cta{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+    #mmenu .mm-cta a{text-align:center;text-decoration:none;font-weight:700;font-size:17px;border-radius:12px;padding:16px}
+  </style>
+  <div class="mm-top"><img src="hila-logo-color.svg" alt="Hila" style="height:52px"><button type="button" id="mm-close" aria-label="Cerrar menú" style="width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+  <nav class="mm-links" aria-label="Menú"><a href="index.html#experiencias">Experiencias</a><a href="index.html#arma">Arma tu plan</a><a href="index.html#como">Cómo funciona</a><a href="index.html#contacto">Contacto</a></nav>
+  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('mmenu'),b=document.querySelector('.m-burger');if(!m||!b)return;
+function o(v){m.hidden=!v;document.body.style.overflow=v?'hidden':'';b.setAttribute('aria-expanded',v);}
+b.addEventListener('click',function(){o(true);});document.getElementById('mm-close').addEventListener('click',function(){o(false);});
+m.querySelectorAll('.mm-links a').forEach(function(a){a.addEventListener('click',function(){o(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});});
+</script>
   <header style="border-bottom: 1px solid #EBEBEB">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
       <a href="index.html"><img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height: 58px; width: auto; display: block"></a>
       <nav class="m-nav" aria-label="Principal" style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; font-size: 15px; font-weight: 600">
-        <a href="index.html" style="text-decoration: none">Experiencias</a>
-        <a href="index.html" style="text-decoration: none">Arma tu plan</a>
-        <a href="index.html" style="text-decoration: none">Contacto</a>
-      </nav>
+        <a href="index.html#experiencias" style="text-decoration: none">Experiencias</a>
+        <a href="index.html#arma" style="text-decoration: none">Arma tu plan</a>
+        <a href="index.html#como" style="text-decoration: none">Cómo funciona</a>
+        <a href="index.html#contacto" style="text-decoration: none">Contacto</a>
+        <a href="reservar.html?exp=col" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 12px 22px; border-radius: 999px">Reservar</a>
+      </nav><button type="button" class="m-burger" aria-label="Abrir menú" aria-expanded="false" style="display:none;width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button>
     </div>
   </header>
 
@@ -216,7 +239,35 @@ a{color:#222222}a:hover{color:#000000}
       </aside>
     </div>
   </main>
-<footer style="border-top:1px solid #EBEBEB;margin-top:40px"><div style="max-width:1240px;margin:0 auto;padding:28px 24px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;font-size:14px;color:#6A6A6A"><span>© 2027 Hila · Tu próxima historia empieza afuera.</span><span style="display:flex;flex-wrap:wrap;gap:18px"><a href="aviso-de-privacidad.html" style="color:#222">Aviso de privacidad</a><a href="politicas-de-cancelacion.html" style="color:#222">Políticas de cancelación</a><a href="terminos-y-condiciones.html" style="color:#222">Términos y condiciones</a></span></div></footer>
+<footer class="hf">
+  <style>
+    .hf{background:#153F2C;color:#FAF7F1;font-family:Figtree,sans-serif}
+    .hf-in{max-width:1240px;margin:0 auto;padding:64px 24px 28px}
+    .hf-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+    .hf h3{font-size:14px;font-weight:700;margin:0 0 14px;color:#F4BE95}
+    .hf-col{display:flex;flex-direction:column;gap:10px;font-size:15px}
+    .hf a{color:rgba(250,247,241,.82);text-decoration:none}.hf a:hover{color:#FFFFFF;text-decoration:underline}
+    .hf-tag{font-size:17px;line-height:1.5;color:rgba(250,247,241,.85);margin:16px 0 0;max-width:300px}
+    .hf-soc{display:flex;gap:10px;margin-top:20px}
+    .hf-soc a{width:44px;height:44px;border-radius:999px;border:1px solid rgba(250,247,241,.3);display:flex;align-items:center;justify-content:center;color:#FAF7F1}
+    .hf-soc a:hover{background:rgba(250,247,241,.1);text-decoration:none}
+    .hf-bot{border-top:1px solid rgba(250,247,241,.18);margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:rgba(250,247,241,.65)}
+    @media (max-width:760px){.hf-grid{grid-template-columns:1fr 1fr;gap:32px 20px}.hf-brand{grid-column:1/-1}.hf-in{padding:48px 22px 24px}}
+  </style>
+  <div class="hf-in">
+    <div class="hf-grid">
+      <div class="hf-brand">
+        <img src="hila-logo-crema.svg" alt="Hila · Sal a vivirlo." style="height:76px;width:auto;display:block">
+        <p class="hf-tag">Experiencias al aire libre saliendo de la Ciudad de México. Tu próxima historia empieza afuera.</p>
+        <div class="hf-soc"><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
+      </div>
+      <div><h3>Experiencias</h3><div class="hf-col"><a href="via-ferrata.html">Vía ferrata</a><a href="nevado-de-colima.html">Nevado de Colima</a><a href="rapel-corral-de-piedra.html">Rapel en Corral de Piedra</a><a href="kayak-xochimilco.html">Kayak al amanecer</a></div></div>
+      <div><h3>Hila</h3><div class="hf-col"><a href="index.html#como">Cómo funciona</a><a href="index.html#arma">Arma tu plan</a><a href="reservar.html">Reservar</a><a href="index.html#contacto">Contacto</a></div></div>
+      <div><h3>Lo legal</h3><div class="hf-col"><a href="aviso-de-privacidad.html">Aviso de privacidad</a><a href="terminos-y-condiciones.html">Términos y condiciones</a><a href="politicas-de-cancelacion.html">Políticas de cancelación</a></div></div>
+    </div>
+    <div class="hf-bot"><span>© 2027 Hila · Hecho en CDMX</span><span>Sal a vivirlo.</span></div>
+  </div>
+</footer>
   <div class="m-bar" style="display:none;position:sticky;bottom:0;background:#FFFFFF;border-top:1px solid #EBEBEB;padding:14px 18px;justify-content:space-between;align-items:center;gap:12px"><div><div style="font-weight:700;font-size:18px">$5,100 MXN</div><div style="font-size:13px">23–24 ene · sale de CDMX</div></div><a href="reservar.html?exp=col" style="background:#2E7D4F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:16px">Reservar</a></div>
 </div>
 
