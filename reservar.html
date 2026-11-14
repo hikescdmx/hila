@@ -2,6 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4 · Hila (con consentimiento) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3S0FPCSXH"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('hila-cookies');}catch(e){}
+gtag('consent','default',{analytics_storage:c==='si'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});})();
+gtag('js',new Date());
+gtag('config','G-D3S0FPCSXH',{anonymize_ip:true});
+window.hilaTrack=function(n,p){gtag('event',n,p||{});};
+</script>
+<script defer src="hila-analytics.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reserva tu experiencia · Hila</title>
 <meta name="description" content="Reserva tu experiencia con Hila. Salidas desde CDMX.">
@@ -60,6 +71,17 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 .exp img{width:56px;height:56px;border-radius:10px;object-fit:cover}
 
 .exp.on{border-color:#2E7D4F;background:#F4FAF6}
+.exp .ver{font-size:13px;font-weight:600;color:#222222;text-decoration:underline;text-underline-offset:3px;padding:6px 4px}
+.pk{font-size:13px;color:#6A6A6A;margin-top:10px;padding-left:2px}
+.mp-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:60}
+.mp-bg.on{display:flex}
+.mp-box{background:#FFFFFF;width:100%;max-width:440px;border-radius:20px 20px 0 0;padding:26px 22px 22px}
+@media (min-width:600px){.mp-bg{align-items:center}.mp-box{border-radius:20px}}
+.mp-box h2{font-size:21px;margin:0 0 8px}
+.mp-box p{font-size:15px;color:#484848;line-height:1.5;margin:0 0 6px}
+.mp-box ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:#484848;line-height:1.6}
+.mp-box .btn{margin-top:20px}
+.mp-box .back{margin-top:6px}
 .check{display:flex;gap:12px;align-items:flex-start;margin-top:14px;font-size:15px;line-height:1.45}
 .check input,.exp input{-webkit-appearance:none;appearance:none;width:22px;height:22px;margin:0;flex-shrink:0;border:1.5px solid #8A8A8A;border-radius:6px;background:#FFFFFF;display:grid;place-content:center;cursor:pointer}
 .check input{margin-top:0}
@@ -220,11 +242,21 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
       <label class="check"><input type="checkbox" id="fotos"><span>Pueden compartir fotos donde salgo en las redes de Hila <span class="opt">(opcional)</span></span></label>
       <div class="err" id="err4"></div>
       <button type="button" class="btn" id="pay">Pagar con Mercado Pago</button>
-      <div class="note">Pago seguro con Mercado Pago. Tarjeta, OXXO o transferencia.</div>
+      <div class="note">Te llevaremos a Mercado Pago para pagar de forma segura. Tarjeta, OXXO o transferencia.</div>
       <button type="button" class="back" data-prev>Regresar</button>
     </section>
   </form>
 </main>
+
+<div class="mp-bg" id="mp" role="dialog" aria-modal="true" aria-labelledby="mp-h">
+  <div class="mp-box">
+    <h2 id="mp-h">Te llevamos a Mercado Pago</h2>
+    <p>Para pagar <b id="mp-tot"></b> vas a salir un momento de Hila a la página segura de Mercado Pago.</p>
+    <ul><li>Ahí eliges tarjeta, OXXO o transferencia.</li><li>Hila nunca ve los datos de tu tarjeta.</li><li>Al terminar, vuelves aquí para ver tu confirmación.</li></ul>
+    <button type="button" class="btn" id="mp-go">Ir a Mercado Pago</button>
+    <button type="button" class="back" id="mp-no">Regresar</button>
+  </div>
+</div>
 
 <!-- Confirmación -->
 <section id="done" class="done hide" aria-live="polite">
@@ -256,7 +288,7 @@ var EXPS={
   rap:{n:'Rapel en Corral de Piedra',p:'Amanalco, Edomex',d:'6–7 feb 2027',s:'20270206',e:'20270208',price:4300,img:'rap1.jpg'},
   kay:{n:'Kayak al amanecer',p:'Xochimilco, CDMX',d:'20 feb 2027',s:'20270220',e:'20270221',price:1000,img:'kay1.jpg'}
 };
-var ORDER=['vf','col','rap','kay'], DISC={};
+var ORDER=['vf','col','rap','kay'], DISC={2:5,3:8,4:10},PAGE={vf:'via-ferrata.html',col:'nevado-de-colima.html',rap:'rapel-corral-de-piedra.html',kay:'kayak-xochimilco.html'};
 var KEY='hila-reserva';
 var st={step:1,sel:{},chips:{}};var tried={};
 try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)st=Object.assign(st,saved);}catch(e){}
@@ -277,19 +309,21 @@ document.querySelectorAll('[data-chips]').forEach(function(g){var k=g.dataset.ch
   c.addEventListener('click',function(){st.chips[k]=c.dataset.v;g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});save();if(tried[3])recheck('chip-'+k);});});});
 // experiencias
 function drawExps(){$('exps').innerHTML=ORDER.map(function(k){var x=EXPS[k],on=!!st.sel[k];
-  return '<label class="exp'+(on?' on':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><img src="'+x.img+'" alt=""><span style="flex:1"><span style="display:block;font-weight:700">'+x.n+'</span><span style="font-size:14px;color:#6A6A6A">'+x.d+' · '+fmt(x.price)+' por persona</span></span></label>';}).join('');
+  return '<label class="exp'+(on?' on':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><img src="'+x.img+'" alt=""><span style="flex:1"><span style="display:block;font-weight:700">'+x.n+'</span><span style="font-size:14px;color:#6A6A6A">'+x.d+' · '+fmt(x.price)+' por persona</span></span><a class="ver" href="'+PAGE[k]+'" target="_blank" rel="noopener" data-exp="'+k+'">Ver</a></label>';}).join('')+'<div class="pk">Si sumas más de una salida, te toca un descuentito: 5% con 2, 8% con 3 y 10% con 4.</div>';
   $('exps').querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){st.sel[i.dataset.k]=i.checked;save();drawExps();summary();photo();if(tried[2])valid(2);});});}
-function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=0,pp=+(st.personas||1);
+function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=DISC[n]||0,pp=+(st.personas||1);
   return {ks:ks,n:n,per:per,pct:pct,pp:pp,sub:per*pp,save:per*pp*pct/100,total:per*pp*(1-pct/100)};}
 function summary(){var c=calc(),h;
   if(!c.n){h='<div style="font-size:15px;color:#6A6A6A">Todavía no eliges ninguna experiencia.</div>';}
   else{h=
     c.ks.map(function(k){return '<div class="l"><span>'+EXPS[k].n+'</span><span>'+fmt(EXPS[k].price)+'</span></div>';}).join('')+
     (c.pp>1?'<div class="l" style="color:#6A6A6A"><span>× '+c.pp+' personas</span><span>'+fmt(c.sub)+'</span></div>':'')+
-    (c.pct?'<div class="l" style="color:#1F6B45;font-weight:600"><span>Descuento del plan</span><span>−'+fmt(c.save)+'</span></div>':'')+
+    (c.pct?'<div class="l" style="color:#1F6B45;font-weight:600"><span>Descuento por '+c.n+' salidas ('+c.pct+'%)</span><span>−'+fmt(c.save)+'</span></div>':'')+
     '<div class="l" style="border-top:1px solid #EBEBEB;margin-top:6px;padding-top:10px"><span style="font-weight:700">Total</span><span class="tot">'+fmt(c.total)+' MXN</span></div>';}
   $('sum2').innerHTML=h;$('sum4').innerHTML=h;}
-function show(n){st.step=n;save();
+var STEPN={1:'datos',2:'experiencias',3:'seguridad',4:'contacto_y_pago'};
+function T(e,p){if(window.hilaTrack)hilaTrack(e,p);}
+function show(n){st.step=n;save();T('paso_cuestionario',{paso:n,nombre_paso:STEPN[n]});if(n===2&&!show.b){show.b=1;T('begin_checkout',{currency:'MXN'});}
   document.querySelectorAll('[data-step]').forEach(function(s){s.classList.toggle('hide',+s.dataset.step!==n);});
   document.querySelectorAll('.steps span').forEach(function(s,i){s.classList.toggle('on',i<n);});
   photo();
@@ -332,7 +366,8 @@ function mark(f,msg){var h=holder(f),el=f.indexOf('chip-')===0?null:$(f);if(!h)r
   m.textContent=msg;if(el)el.setAttribute('aria-describedby',id);}
 function recheck(f){if(RULES[f])mark(f,RULES[f]());var n=st.step,bad=(BYSTEP[n]||[]).filter(function(k){return RULES[k]();}).length;if(!bad)err(n,'');}
 function err(n,msg){var e=$('err'+n);e.textContent=msg;e.style.display=msg?'block':'none';return !msg;}
-function valid(n){tried[n]=true;
+function valid(n){tried[n]=true;var _r=valid2(n);if(!_r)T('error_formulario',{paso:n});return _r;}
+function valid2(n){
   if(n===2){return calc().n?err(2,''):err(2,'Elige al menos una experiencia para seguir.');}
   var bad=(BYSTEP[n]||[]).filter(function(f){var m=RULES[f]();mark(f,m);return m;});
   if(!bad.length)return err(n,'');
@@ -340,8 +375,14 @@ function valid(n){tried[n]=true;
   return err(n,bad.length===1?'Te falta una cosita, abajo te decimos qué.':'Te faltan '+bad.length+' cositas, abajo de cada una te decimos qué.');}
 document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){if(valid(st.step))show(st.step+1);});});
 document.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){show(Math.max(1,st.step-1));});});
-$('pay').addEventListener('click',function(){if(!valid(4))return;
-  // Aquí el programador conecta Mercado Pago. Por ahora simulamos un pago exitoso.
+$('pay').addEventListener('click',function(){if(!valid(4)){T('error_formulario',{paso:4});return;}
+  (function(){var c=calc(),E=window.hilaExp||{};T('add_payment_info',{currency:'MXN',value:c.total,payment_type:'mercado_pago',items:c.ks.map(function(k){var x=E[k]||{item_id:k};return Object.assign({},x,{quantity:c.pp});})});})();
+  $('mp-tot').textContent=fmt(calc().total)+' MXN';$('mp').classList.add('on');T('aviso_redireccion_pago',{});setTimeout(function(){$('mp-go').focus();},50);});
+$('mp-no').addEventListener('click',function(){$('mp').classList.remove('on');});
+$('mp').addEventListener('click',function(e){if(e.target===$('mp'))$('mp').classList.remove('on');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$('mp').classList.remove('on');});
+$('mp-go').addEventListener('click',function(){$('mp').classList.remove('on');
+  // Aquí el programador conecta Mercado Pago (Checkout Pro con back_urls + auto_return). Por ahora simulamos un pago exitoso.
   var b=$('pay');b.disabled=true;b.textContent='Conectando con Mercado Pago…';
   setTimeout(function(){confirmar();},1200);});
 function code(){var c='HILA-';for(var i=0;i<5;i++)c+='ABCDEFGHJKMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*31)];return c;}
@@ -355,6 +396,7 @@ function confirmar(){var c=calc();booking={code:code(),ks:c.ks,pp:c.pp,total:c.t
     '<div class="tk-grid"><div><div class="tk-k">Fecha</div><div class="tk-v">'+x.d+'</div></div><div><div class="tk-k">Salida</div><div class="tk-v">CDMX</div></div><div><div class="tk-k">Personas</div><div class="tk-v">'+c.pp+'</div></div>'+
     '<div><div class="tk-k">Lugar</div><div class="tk-v">'+x.p+'</div></div><div><div class="tk-k">A nombre de</div><div class="tk-v">'+booking.full+'</div></div><div><div class="tk-k">Código</div><div class="tk-v">'+booking.code+'</div></div></div></div></article>';}).join('');
   timeline(c.ks);
+  var E=window.hilaExp||{vf:{item_id:'vf',item_name:'Hike + vía ferrata',price:5800},col:{item_id:'col',item_name:'Nevado de Colima',price:5100},rap:{item_id:'rap',item_name:'Rapel en Corral de Piedra',price:4300},kay:{item_id:'kay',item_name:'Kayak al amanecer',price:1000}};T('purchase',{transaction_id:booking.code,currency:'MXN',value:c.total,items:c.ks.map(function(k){var x=E[k]||{item_id:k};return Object.assign({},x,{quantity:c.pp});})});
   try{localStorage.removeItem(KEY);}catch(e){}
   window.scrollTo({top:0});confetti();}
 var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
@@ -373,14 +415,14 @@ function timeline(ks){var first=EXPS[ks[0]],d0=dt(first.s),wa=new Date(d0),today
   $('tl').innerHTML=items.map(function(x){return '<li class="'+x[0]+'"><div class="ic">'+ico(x[1])+'</div><div><span class="when">'+x[2]+'</span><h3>'+x[3]+'</h3><p>'+x[4]+'</p></div></li>';}).join('');
   $('nextSub').textContent=ks.length>1?'Así va tu primera salida, y lo mismo pasa con cada una.':'Tú solo prepárate. Del resto nos encargamos.';}
 function toast(t){var el=$('toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(function(){el.style.display='none';},4200);}
-$('cal').addEventListener('click',function(){if(!booking)return;
+$('cal').addEventListener('click',function(){if(!booking)return;T('guardar_boleto',{metodo:'calendario'});
   var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Hila//Reservas//ES','CALSCALE:GREGORIAN'];
   booking.ks.forEach(function(k){var x=EXPS[k];L.push('BEGIN:VEVENT','UID:'+booking.code+'-'+k+'@hila','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z','DTSTART;VALUE=DATE:'+x.s,'DTEND;VALUE=DATE:'+x.e,'SUMMARY:Hila · '+x.n,'LOCATION:Salida desde CDMX · '+x.p,'DESCRIPTION:Código '+booking.code+'. Te mandamos hora y punto de encuentro por WhatsApp una semana antes.','END:VEVENT');});
   L.push('END:VCALENDAR');
   var blob=new Blob([L.join('\r\n')],{type:'text/calendar'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hila-'+booking.code+'.ics';document.body.appendChild(a);a.click();a.remove();
   toast('Se descargó tu evento. Ábrelo para agregarlo a tu calendario.');});
 $('wallet').addEventListener('click',function(){toast('Wallet estará disponible cuando conectemos los pagos. Mientras, guarda tu boleto o agrégalo al calendario.');});
-$('pdf').addEventListener('click',function(){window.print();});
+$('pdf').addEventListener('click',function(){T('guardar_boleto',{metodo:'pdf'});window.print();});
 function confetti(){var cv=$('confetti'),ctx=cv.getContext('2d');if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   cv.width=innerWidth;cv.height=innerHeight;var cols=['#2E7D4F','#AF4323','#F4BE95','#153F2C','#E8C547'],P=[];
   for(var i=0;i<140;i++)P.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.5,w:6+Math.random()*6,h:8+Math.random()*8,c:cols[i%5],vy:2+Math.random()*3,vx:-1+Math.random()*2,r:Math.random()*6,vr:-.1+Math.random()*.2});

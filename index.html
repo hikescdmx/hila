@@ -2,6 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4 · Hila (con consentimiento) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3S0FPCSXH"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('hila-cookies');}catch(e){}
+gtag('consent','default',{analytics_storage:c==='si'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});})();
+gtag('js',new Date());
+gtag('config','G-D3S0FPCSXH',{anonymize_ip:true});
+window.hilaTrack=function(n,p){gtag('event',n,p||{});};
+</script>
+<script defer src="hila-analytics.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hila · Experiencias al aire libre desde CDMX</title>
 <meta name="description" content="Vía ferrata, Nevado de Colima, rapel y kayak al amanecer. Salidas desde CDMX con guías certificados. Sal a vivirlo.">
@@ -93,7 +104,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
         <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 540px; color: rgba(250,247,241,0.92)">Experiencias al aire libre con guías certificados, saliendo desde la Ciudad de México. Eliges la fecha, llegas y compartes el camino con gente que también quiere salir a vivirlo.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px">
           <a href="#arma" style="color: #FAF7F1; text-decoration: none; padding: 16px 24px; border-radius: 999px; font-weight: 600; font-size: 17px; border: 1px solid rgba(250,247,241,0.55)">Arma tu plan</a>
-          <a href="#experiencias" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 17px">Sal a vivirlo</a>
+          <a href="#experiencias" class="glow" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 17px">Sal a vivirlo</a>
         </div>
       </div>
     </div>
@@ -129,6 +140,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
 .cat.on{color:#222222;border-bottom-color:#222222}
 .h-card{transition:opacity .3s,transform .3s}
 .h-card.off{display:none}
+.glow-w{transition:box-shadow .25s,background .25s;box-shadow:0 0 10px rgba(255,255,255,.18)}.glow-w:hover{background:rgba(255,255,255,.18)!important;box-shadow:0 0 18px rgba(255,255,255,.45)}
 </style><div class="cat-tabs" role="tablist" aria-label="Categorías"><button type="button" role="tab" class="cat on" data-cat="todo" aria-selected="true"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Todo</span></button><button type="button" role="tab" class="cat" data-cat="montana" aria-selected="false"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 3 5 2-3 6 10z"/></svg><span>Montaña</span></button><button type="button" role="tab" class="cat" data-cat="adrenalina" aria-selected="false"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span>Adrenalina</span></button><button type="button" role="tab" class="cat" data-cat="agua" aria-selected="false"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3 0 3-2 6-2s3 2 6 2 3-2 6-2M3 20c3 0 3-2 6-2s3 2 6 2 3-2 6-2M12 3c3 3.5 4 5.5 4 7a4 4 0 0 1-8 0c0-1.5 1-3.5 4-7z"/></svg><span>Agua</span></button><button type="button" role="tab" class="cat" data-cat="primera" aria-selected="false"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg><span>Primera vez</span></button></div>
       <div id="cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-top: 28px">
         
@@ -147,7 +159,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px"><span style="font-weight: 800; font-size: 22px">$5,800</span><span style="font-size: 14px">MXN por persona</span></div>
                 <div style="display: flex; gap: 8px; margin-top: 14px">
                   <a href="via-ferrata.html" style="flex: 1; text-align: center; background: #FFFFFF; color: #222222; text-decoration: none; padding: 12px 10px; border-radius: 12px; font-weight: 700; font-size: 15px">Ver experiencia</a>
-                  <a href="reservar.html?exp=vf" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
+                  <a href="reservar.html?exp=vf" class="glow-w" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
                 </div>
               </div>
             </div>
@@ -168,7 +180,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px"><span style="font-weight: 800; font-size: 22px">$5,100</span><span style="font-size: 14px">MXN por persona</span></div>
                 <div style="display: flex; gap: 8px; margin-top: 14px">
                   <a href="nevado-de-colima.html" style="flex: 1; text-align: center; background: #FFFFFF; color: #222222; text-decoration: none; padding: 12px 10px; border-radius: 12px; font-weight: 700; font-size: 15px">Ver experiencia</a>
-                  <a href="reservar.html?exp=col" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
+                  <a href="reservar.html?exp=col" class="glow-w" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
                 </div>
               </div>
             </div>
@@ -189,7 +201,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px"><span style="font-weight: 800; font-size: 22px">$4,300</span><span style="font-size: 14px">MXN por persona</span></div>
                 <div style="display: flex; gap: 8px; margin-top: 14px">
                   <a href="rapel-corral-de-piedra.html" style="flex: 1; text-align: center; background: #FFFFFF; color: #222222; text-decoration: none; padding: 12px 10px; border-radius: 12px; font-weight: 700; font-size: 15px">Ver experiencia</a>
-                  <a href="reservar.html?exp=rap" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
+                  <a href="reservar.html?exp=rap" class="glow-w" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
                 </div>
               </div>
             </div>
@@ -210,7 +222,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px"><span style="font-weight: 800; font-size: 22px">$1,000</span><span style="font-size: 14px">MXN por persona</span></div>
                 <div style="display: flex; gap: 8px; margin-top: 14px">
                   <a href="kayak-xochimilco.html" style="flex: 1; text-align: center; background: #FFFFFF; color: #222222; text-decoration: none; padding: 12px 10px; border-radius: 12px; font-weight: 700; font-size: 15px">Ver experiencia</a>
-                  <a href="reservar.html?exp=kay" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
+                  <a href="reservar.html?exp=kay" class="glow-w" style="font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.08)">Reservar</a>
                 </div>
               </div>
             </div>
@@ -225,36 +237,46 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       .mp-card{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center;background:#F6F8F5;border-radius:28px;padding:36px}
       .mp h2{font-size:34px;letter-spacing:-.4px;margin:0;line-height:1.1}
       .mp p.l{color:#6A6A6A;font-size:17px;margin:8px 0 0}
-      .mp svg.map{width:100%;height:auto;display:block}
+      .mp .map-w{position:relative}
+      .mp svg.map{width:100%;height:auto;display:block;overflow:visible}
+      .st{fill:#E3ECE4;stroke:#FFFFFF;stroke-width:1;transition:fill .25s,transform .25s,filter .25s;transform-box:fill-box;transform-origin:center;cursor:pointer}
+      .st:hover{fill:#CFE0D3;transform:scale(1.05) translateY(-3px);filter:drop-shadow(0 6px 10px rgba(21,63,44,.3))}
+      .st.has{fill:#CFE2D4}
+      .st.has:hover{fill:#B4D0BB}
+      svg.map.ready .st{animation:stIn .6s ease both}
+      @keyframes stIn{from{opacity:0}to{opacity:1}}
+      .mx-tip{position:absolute;pointer-events:none;transform:translate(-50%,-125%);background:#222222;color:#FFFFFF;border-radius:10px;padding:6px 10px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .15s;z-index:3}
+      .mx-tip b{display:block}.mx-tip span{display:block;font-size:12px;color:#F4BE95}
       .mp .land{fill:#E3ECE4;stroke:#9DBBA3;stroke-width:1.5;stroke-linejoin:round}
       .pin{cursor:pointer;outline:none}
-      .pin .dot{fill:#AF4323;stroke:#FFFFFF;stroke-width:3;transition:r .2s}
-      .pin .halo{fill:rgba(175,67,35,.18);transform-box:fill-box;transform-origin:center;animation:halo 2.4s ease-out infinite}
+      .pin .dot{fill:var(--c);stroke:#FFFFFF;stroke-width:3;transition:r .2s}
+      .pin .halo{fill:var(--c);opacity:.25;transform-box:fill-box;transform-origin:center;animation:halo 2.4s ease-out infinite}
       .pin.off{opacity:.15}.pin.off .halo{animation:none;opacity:0}
       .pin.hi .dot{r:10}
-      @keyframes halo{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.6);opacity:0}}
+      @keyframes halo{0%{transform:scale(.4);opacity:.45}100%{transform:scale(1.7);opacity:0}}
       .cdmx{fill:#153F2C}.cdmx-t{font-size:12px;font-weight:700;fill:#153F2C}
       .pl-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
       .pl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;background:#FFFFFF;border:1px solid #E4E9E3;border-radius:14px;padding:12px 16px;text-decoration:none;color:#222222;transition:border-color .2s,opacity .3s}
       .pl:hover,.pl.hi{border-color:#AF4323}
       .pl.off{opacity:.35}
-      .pl-n{font-weight:700}.pl-p{grid-column:1;font-size:14px;color:#6A6A6A}.pl-c{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:600;color:#1F6B45;background:#E6F2EA;border-radius:999px;padding:4px 10px}
+      .pl-n{font-weight:700}.pl-p{grid-column:1;font-size:14px;color:#6A6A6A}.pl-c{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:700;color:#FFFFFF;background:var(--c);border-radius:999px;padding:4px 10px}
+      .pl{border-left:4px solid var(--c,#E4E9E3)}
       .zoom{font-size:12px;fill:#6A6A6A}
       @media (max-width:860px){.mp-card{grid-template-columns:1fr;padding:22px 16px}.mp h2{font-size:28px}}
     </style>
     <div class="mp"><div class="mp-card">
       <div>
-        <svg class="map" viewBox="20 0 750 500" role="img" aria-label="Mapa de México con las experiencias de Hila">
-          <path class="land" d="M21.3,17.4 L72.5,12.5 L79.3,12.5 L167.6,48.6 L236.7,48.6 L236.7,36.9 L277.6,36.9 L314.3,65.5 L327.6,94.4 L355.4,109.7 L370.4,89.7 L401.4,89.2 L412.0,100.1 L427.5,128.2 L446.8,148.2 L457.0,176.0 L478.8,185.6 L504.2,188.5 L497.4,223.6 L489.6,283.4 L503.4,318.8 L521.1,352.3 L529.5,366.6 L556.1,379.1 L570.6,391.3 L602.1,384.3 L633.0,379.6 L652.9,365.3 L663.7,347.1 L667.4,319.8 L685.5,309.4 L725.4,301.6 L748.4,302.9 L753.9,314.6 L738.7,338.0 L736.3,361.4 L718.1,382.2 L704.8,398.3 L697.6,399.9 L653.3,399.9 L653.3,414.7 L642.5,414.7 L666.2,445.4 L635.2,445.4 L623.6,466.4 L623.8,484.9 L594.8,457.6 L568.2,442.0 L551.3,453.7 L518.7,456.3 L481.2,440.7 L437.7,425.1 L399.0,405.6 L382.0,396.5 L351.8,387.4 L330.1,366.6 L307.1,344.5 L298.6,331.5 L308.3,306.8 L297.4,275.6 L280.0,260.0 L256.3,227.5 L220.0,198.9 L206.7,176.8 L183.8,146.9 L170.5,137.8 L140.2,109.2 L125.7,78.0 L117.3,53.3 L77.4,42.9 L76.2,36.4 L81.0,57.2 L89.5,79.3 L116.1,114.4 L136.6,156.0 L154.8,180.7 L176.5,230.1 L207.5,260.5 L192.2,267.3 L186.2,249.6 L153.5,223.6 L141.5,195.0 L122.1,165.1 L94.3,143.0 L90.7,118.3 L56.8,88.4 L32.6,55.9 L21.3,17.4Z"/>
-          <circle cx="456.3" cy="358" r="4" class="cdmx"/><text x="474" y="390" class="cdmx-t">CDMX</text>
-          <g class="pin" data-id="vf" data-cats="montana adrenalina primera" tabindex="0" role="button" aria-label="Vía ferrata, Mineral del Chico, Hgo."><circle cx="465.9" cy="337.7" r="16" class="halo"/><circle cx="465.9" cy="337.7" r="7" class="dot"/></g><g class="pin" data-id="col" data-cats="montana" tabindex="0" role="button" aria-label="Nevado de Colima, Jalisco"><circle cx="348.0" cy="354.6" r="16" class="halo"/><circle cx="348.0" cy="354.6" r="7" class="dot"/></g><g class="pin" data-id="rap" data-cats="adrenalina montana primera" tabindex="0" role="button" aria-label="Rapel, Amanalco, Edomex"><circle cx="435.2" cy="362.7" r="16" class="halo"/><circle cx="435.2" cy="362.7" r="7" class="dot"/></g><g class="pin" data-id="kay" data-cats="agua primera" tabindex="0" role="button" aria-label="Kayak al amanecer, Xochimilco, CDMX"><circle cx="457.0" cy="362.4" r="16" class="halo"/><circle cx="457.0" cy="362.4" r="7" class="dot"/></g>
+        <div class="map-w"><div class="mx-tip" id="mx-tip"></div><svg class="map" viewBox="20 0 750 500" role="img" aria-label="Mapa de México con las experiencias de Hila">
+          <path id="mx-land" class="land" d="M21.3,17.4 L72.5,12.5 L79.3,12.5 L167.6,48.6 L236.7,48.6 L236.7,36.9 L277.6,36.9 L314.3,65.5 L327.6,94.4 L355.4,109.7 L370.4,89.7 L401.4,89.2 L412.0,100.1 L427.5,128.2 L446.8,148.2 L457.0,176.0 L478.8,185.6 L504.2,188.5 L497.4,223.6 L489.6,283.4 L503.4,318.8 L521.1,352.3 L529.5,366.6 L556.1,379.1 L570.6,391.3 L602.1,384.3 L633.0,379.6 L652.9,365.3 L663.7,347.1 L667.4,319.8 L685.5,309.4 L725.4,301.6 L748.4,302.9 L753.9,314.6 L738.7,338.0 L736.3,361.4 L718.1,382.2 L704.8,398.3 L697.6,399.9 L653.3,399.9 L653.3,414.7 L642.5,414.7 L666.2,445.4 L635.2,445.4 L623.6,466.4 L623.8,484.9 L594.8,457.6 L568.2,442.0 L551.3,453.7 L518.7,456.3 L481.2,440.7 L437.7,425.1 L399.0,405.6 L382.0,396.5 L351.8,387.4 L330.1,366.6 L307.1,344.5 L298.6,331.5 L308.3,306.8 L297.4,275.6 L280.0,260.0 L256.3,227.5 L220.0,198.9 L206.7,176.8 L183.8,146.9 L170.5,137.8 L140.2,109.2 L125.7,78.0 L117.3,53.3 L77.4,42.9 L76.2,36.4 L81.0,57.2 L89.5,79.3 L116.1,114.4 L136.6,156.0 L154.8,180.7 L176.5,230.1 L207.5,260.5 L192.2,267.3 L186.2,249.6 L153.5,223.6 L141.5,195.0 L122.1,165.1 L94.3,143.0 L90.7,118.3 L56.8,88.4 L32.6,55.9 L21.3,17.4Z"/>
+          <g id="mx-states"></g><circle cx="456.3" cy="358" r="4" class="cdmx"/><text x="474" y="390" class="cdmx-t">CDMX</text>
+          <g class="pin" style="--c:#AF4323" data-id="vf" data-cats="montana adrenalina primera" tabindex="0" role="button" aria-label="Vía ferrata, Mineral del Chico, Hgo."><circle cx="465.9" cy="337.7" r="16" class="halo"/><circle cx="465.9" cy="337.7" r="7" class="dot"/></g><g class="pin" style="--c:#C7891F" data-id="col" data-cats="montana" tabindex="0" role="button" aria-label="Nevado de Colima, Jalisco"><circle cx="348.0" cy="354.6" r="16" class="halo"/><circle cx="348.0" cy="354.6" r="7" class="dot"/></g><g class="pin" style="--c:#3E8A5A" data-id="rap" data-cats="adrenalina montana primera" tabindex="0" role="button" aria-label="Rapel, Amanalco, Edomex"><circle cx="435.2" cy="362.7" r="16" class="halo"/><circle cx="435.2" cy="362.7" r="7" class="dot"/></g><g class="pin" style="--c:#2F7E86" data-id="kay" data-cats="agua primera" tabindex="0" role="button" aria-label="Kayak al amanecer, Xochimilco, CDMX"><circle cx="457.0" cy="362.4" r="16" class="halo"/><circle cx="457.0" cy="362.4" r="7" class="dot"/></g>
           <text x="40" y="480" class="zoom">Todas las salidas parten de la Ciudad de México</text>
-        </svg>
+        </svg></div>
       </div>
       <div>
         <h2 id="mapa-t">¿A dónde salimos a vivirlo?</h2>
         <p class="l">Montaña, volcán, bosque y agua, a pocas horas de la ciudad.</p>
-        <div class="pl-list"><a class="pl" href="via-ferrata.html" data-id="vf" data-cats="montana adrenalina primera"><span class="pl-n">Vía ferrata</span><span class="pl-p">Mineral del Chico, Hgo.</span><span class="pl-c">Montaña · Adrenalina</span></a><a class="pl" href="nevado-de-colima.html" data-id="col" data-cats="montana"><span class="pl-n">Nevado de Colima</span><span class="pl-p">Jalisco</span><span class="pl-c">Montaña · Volcán</span></a><a class="pl" href="rapel-corral-de-piedra.html" data-id="rap" data-cats="adrenalina montana primera"><span class="pl-n">Rapel</span><span class="pl-p">Amanalco, Edomex</span><span class="pl-c">Bosque · Adrenalina</span></a><a class="pl" href="kayak-xochimilco.html" data-id="kay" data-cats="agua primera"><span class="pl-n">Kayak al amanecer</span><span class="pl-p">Xochimilco, CDMX</span><span class="pl-c">Agua</span></a></div>
+        <div class="pl-list"><a class="pl" style="--c:#AF4323" href="via-ferrata.html" data-id="vf" data-cats="montana adrenalina primera"><span class="pl-n">Vía ferrata</span><span class="pl-p">Mineral del Chico, Hgo.</span><span class="pl-c">Montaña · Adrenalina</span></a><a class="pl" style="--c:#C7891F" href="nevado-de-colima.html" data-id="col" data-cats="montana"><span class="pl-n">Nevado de Colima</span><span class="pl-p">Jalisco</span><span class="pl-c">Montaña · Volcán</span></a><a class="pl" style="--c:#3E8A5A" href="rapel-corral-de-piedra.html" data-id="rap" data-cats="adrenalina montana primera"><span class="pl-n">Rapel</span><span class="pl-p">Amanalco, Edomex</span><span class="pl-c">Bosque · Adrenalina</span></a><a class="pl" style="--c:#2F7E86" href="kayak-xochimilco.html" data-id="kay" data-cats="agua primera"><span class="pl-n">Kayak al amanecer</span><span class="pl-p">Xochimilco, CDMX</span><span class="pl-c">Agua</span></a></div>
       </div>
     </div></div>
   </section>
@@ -305,6 +327,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       .q-chk input{width:18px;height:18px;accent-color:#2E7D4F;margin:1px 0 0}
       .q-send{font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%}
       .q-send:hover{background:#256842}
+      .q-send,.glow{animation:glow 3.2s ease-in-out infinite}
+      .q-send:hover,.glow:hover{box-shadow:0 0 0 4px rgba(46,125,79,.14),0 6px 24px rgba(46,125,79,.4)}
+      @keyframes glow{0%,100%{box-shadow:0 4px 12px rgba(46,125,79,.18)}50%{box-shadow:0 4px 22px rgba(46,125,79,.4)}}
+      @media (prefers-reduced-motion:reduce){.q-send,.glow{animation:none}}
       .q-err{font-size:14px;color:#B3261E;display:none}
       .q-ok{display:none;text-align:center;padding:30px 10px}
       .q-ok h3{font-size:26px;margin:12px 0 6px}.q-ok p{color:#6A6A6A;margin:0}
@@ -332,7 +358,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
             </div>
             <div class="q-side">
               <p class="q-step" style="margin:0">3 · ¿Quiénes van?</p>
-              <div class="q-box q-ppl"><div><b>Personas</b><div style="font-size:13px;color:#6A6A6A">Mínimo 4</div></div><div class="st"><button type="button" id="q-m" aria-label="Quitar una persona">−</button><output id="q-n">6</output><button type="button" id="q-p" aria-label="Agregar una persona">+</button></div></div>
+              <div class="q-box q-ppl"><div><b>Personas</b><div style="font-size:13px;color:#6A6A6A">Mínimo 10</div></div><div class="st"><button type="button" id="q-m" aria-label="Quitar una persona">−</button><output id="q-n">10</output><button type="button" id="q-p" aria-label="Agregar una persona">+</button></div></div>
               <div class="q-box"><label for="q-nom">Tu nombre</label><input id="q-nom" autocomplete="name" placeholder="Nombre y apellido"></div>
               <div class="q-box"><label for="q-mail">Correo</label><input id="q-mail" type="email" autocomplete="email" placeholder="tu@correo.com"></div>
               <div class="q-box"><label for="q-msg">¿Algo más? <span style="font-weight:400;color:#6A6A6A">(opcional)</span></label><textarea id="q-msg" rows="2" placeholder="Es un cumpleaños, vamos con niños de 16, etc."></textarea></div>
@@ -395,7 +421,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
           <div>
             <div class="cr-k">¿Por qué Hila?</div>
             <h2>Tú pones las ganas. Lo demás ya está pensado.</h2>
-            <div class="whys"><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><b>Seguridad primero</b><span>Guías certificados, paramédico en montaña, seguro y equipo revisado.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg><b>Todo resuelto</b><span>Transporte desde CDMX, comidas y logística. Tú solo llegas.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c2.8 0 5 2 5 5"/></svg><b>Nadie llega solo</b><span>Grupo de WhatsApp y meet &amp; greet para conocerse antes de salir.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 3 5 2-3 6 10z"/></svg><b>Probado antes</b><span>Cada salida la diseñan y la viven Ilana y Laila antes de abrirla.</span></div></div>
+            <div class="whys"><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><b>Seguridad primero</b><span>Guías certificados, paramédico en montaña, seguro y equipo revisado.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg><b>Todo resuelto</b><span>Transporte desde CDMX, comidas y logística. Tú solo llegas.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c2.8 0 5 2 5 5"/></svg><b>¿Vas solo? Vas en grupo</b><span>Antes de salir ya conoces a tu grupo: chat de la salida y meet &amp; greet. Llegas saludando, no presentándote.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15.5a4.5 4.5 0 0 0-4.5-4.5 6 6 0 0 0-11.5 2A3.5 3.5 0 0 0 4.5 20H18a2.5 2.5 0 0 0 2-4.5z"/><path d="M9 15l2 2 4-4"/></svg><b>Si llueve, no pierdes</b><span>Si el clima no deja salir con seguridad, tú eliges: otra fecha o tu dinero de regreso.</span></div></div>
           </div>
         </div>
         <div class="sl story" aria-label="3 de 3">
@@ -441,43 +467,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
     </div>
   </section>
 
-  <section aria-labelledby="mx-t" class="mx">
-    <style>
-      .mx{background:#FFFFFF;font-family:Figtree,sans-serif}
-      .mx-in{max-width:1240px;margin:0 auto;padding:0 24px 88px}
-      .mx-scene{position:relative;border-radius:28px;overflow:hidden;height:520px;background:#1D3A2C}
-      .mx-scene>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-      .mx-scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,40,29,.78) 0%,rgba(14,40,29,.45) 40%,rgba(14,40,29,.05) 75%)}
-      .mx-txt{position:absolute;left:56px;top:50%;transform:translateY(-50%);z-index:3;max-width:400px;color:#FFFFFF}
-      .mx-k{font-size:15px;font-weight:700;color:#F4BE95}
-      .mx h2{font-weight:700;font-size:40px;line-height:1.1;margin:8px 0 0;letter-spacing:-.5px}
-      .mx p{font-size:17px;line-height:1.55;margin:14px 0 0;color:rgba(255,255,255,.88)}
-      .fl{position:absolute;z-index:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.35));animation:bob 6s ease-in-out infinite}
-      .fl.blur{filter:blur(2px) drop-shadow(0 10px 14px rgba(0,0,0,.3));opacity:.85}
-      @keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-14px) rotate(calc(var(--r) + 3deg))}}
-      .rnd{width:100%;aspect-ratio:1;border-radius:50%;border:7px solid #FFFFFF;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-      .rnd img{width:68%;position:relative;z-index:1;margin-top:-10px}
-      .rnd .wv{position:absolute;left:-4%;bottom:10%;width:108%;height:42%}
-      .tag{width:100%;aspect-ratio:92/128;background:#F3ECE0;border-radius:8px;outline:1.5px dashed #BBAE98;outline-offset:-7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-      .tag img{width:66%}
-      @media (prefers-reduced-motion:reduce){.fl{animation:none;transform:rotate(var(--r))}}
-      @media (max-width:860px){.mx-scene{height:600px}.mx-scene:after{background:linear-gradient(180deg,rgba(14,40,29,.8) 0%,rgba(14,40,29,.4) 45%,rgba(14,40,29,.1) 100%)}.mx-txt{left:22px;right:22px;top:32px;transform:none}.mx h2{font-size:30px}.f1{left:6%!important;top:auto!important;bottom:22%!important;width:120px!important}.f2{left:auto!important;right:6%!important;top:auto!important;bottom:30%!important;width:130px!important}.f3{left:38%!important;top:auto!important;bottom:4%!important;width:110px!important}.f4{left:auto!important;right:8%!important;top:auto!important;bottom:4%!important;width:70px!important}.f5{display:none}}
-    </style>
-    <div class="mx-in"><div class="mx-scene">
-      <img class="bg" src="mx_s25.jpg" alt="">
-      <div class="mx-txt">
-        <div class="mx-k">Pequeños momentos, pequeños recuerdos</div>
-        <h2 id="mx-t">Un pedacito de lo vivido, para llevártelo</h2>
-        <p>Cada salida trae su propio recuerdo: stickers para tu botella o tu compu y, en la vía ferrata, un llavero textil que te acompaña a donde vayas.</p>
-      </div>
-      <div class="fl f1" style="--r:-8deg;left:52%;top:12%;width:170px;animation-delay:-1s"><div class="rnd" style="background:#153F2C"><img src="hila-logo-crema.svg" alt=""><svg class="wv" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#5E8C73" stroke-width="1.3" stroke-linecap="round"><path d="M0 14 C20 6,38 22,60 12 S100 4,120 12"/><path d="M0 22 C22 14,40 30,62 20 S100 12,120 20"/><path d="M0 30 C24 22,44 38,64 28 S102 20,120 28"/></g></svg></div></div>
-      <div class="fl f2" style="--r:6deg;left:72%;top:8%;width:190px;animation-delay:-3s"><svg viewBox="0 0 220 210" aria-hidden="true" style="width:100%;height:auto;display:block"><g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"><circle cx="150" cy="38" r="26"/><path d="M12 140 L74 56 L98 88 L124 46 L208 140 Z"/><rect x="26" y="128" width="168" height="70" rx="16"/></g><circle cx="150" cy="38" r="26" fill="#C9542C"/><path d="M12 140 L74 56 L98 88 L124 46 L208 140 Z" fill="#AF4323"/><path d="M74 56 L82 92 L70 118 M124 46 L132 84 L120 112 M124 46 L112 78" fill="none" stroke="#7E2E16" stroke-width="3" stroke-linecap="round"/><rect x="26" y="128" width="168" height="70" rx="16" fill="#FAF7F1"/><image href="hila-logo-color.svg" x="40" y="132" width="140" height="62"/></svg></div>
-      <div class="fl f3" style="--r:5deg;left:63%;top:54%;width:150px;animation-delay:-2s"><div class="rnd" style="background:radial-gradient(circle at 30% 30%,#3FA3A8,#1F6F7A)"><img src="hila-logo-blanco.svg" alt=""><svg class="wv" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.3" stroke-linecap="round"><path d="M0 14 C20 6,38 22,60 12 S100 4,120 12"/><path d="M0 22 C22 14,40 30,62 20 S100 12,120 20"/><path d="M0 30 C24 22,44 38,64 28 S102 20,120 28"/></g></svg></div></div>
-      <div class="fl f4" style="--r:-10deg;left:84%;top:52%;width:96px;animation-delay:-4s"><svg width="100%" viewBox="0 0 92 40" style="display:block;margin-bottom:-6px" aria-hidden="true"><rect x="30" y="2" width="32" height="34" rx="16" fill="none" stroke="#2B2B2B" stroke-width="5"/><path d="M40 36 L40 40 M52 36 L52 40" stroke="#5E6B4E" stroke-width="6" stroke-linecap="round"/></svg><div class="tag"><img src="hila-logo-sin-slogan-color.svg" alt=""><svg width="60%" viewBox="0 0 62 34" aria-hidden="true"><path d="M2 32 L20 8 L30 20 L40 6 L60 32" fill="none" stroke="#153F2C" stroke-width="1.8" stroke-linejoin="round"/></svg></div></div>
-      <div class="fl f5 blur" style="--r:12deg;left:46%;top:66%;width:80px;animation-delay:-5s"><div class="rnd" style="background:#AF4323;border-width:5px"><img src="hila-logo-crema.svg" alt="" style="margin-top:0"></div></div>
-    </div></div>
-  </section>
-
   <section id="regala" aria-labelledby="rg-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
       .rg{max-width:1240px;margin:0 auto;padding:0 24px 88px}
@@ -517,6 +506,45 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       </div>
     </div></div>
   </section>
+
+  <section aria-labelledby="mx-t" class="mx">
+    <style>
+      .mx{background:#FFFFFF;font-family:Figtree,sans-serif}
+      .mx-in{max-width:1240px;margin:0 auto;padding:0 24px 88px}
+      .mx-scene{position:relative;border-radius:28px;overflow:hidden;height:520px;background:#1D3A2C}
+      .mx-scene>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+      .mx-scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,40,29,.78) 0%,rgba(14,40,29,.45) 40%,rgba(14,40,29,.05) 75%)}
+      .mx-txt{position:absolute;left:56px;top:50%;transform:translateY(-50%);z-index:3;max-width:400px;color:#FFFFFF}
+      .mx-k{font-size:15px;font-weight:700;color:#F4BE95}
+      .mx h2{font-weight:700;font-size:40px;line-height:1.1;margin:8px 0 0;letter-spacing:-.5px}
+      .mx p{font-size:17px;line-height:1.55;margin:14px 0 0;color:rgba(255,255,255,.88)}
+      .fl{position:absolute;z-index:2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.35));animation:bob 6s ease-in-out infinite}
+      .fl.blur{filter:blur(2px) drop-shadow(0 10px 14px rgba(0,0,0,.3));opacity:.85}
+      @keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-14px) rotate(calc(var(--r) + 3deg))}}
+      .rnd{width:100%;aspect-ratio:1;border-radius:50%;border:7px solid #FFFFFF;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+      .rnd img{width:68%;position:relative;z-index:1;margin-top:-10px}
+      .rnd .wv{position:absolute;left:-4%;bottom:10%;width:108%;height:42%}
+      .tag{width:100%;aspect-ratio:92/128;background:#F3ECE0;border-radius:8px;outline:1.5px dashed #BBAE98;outline-offset:-7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+      .tag img{width:66%}
+      @media (prefers-reduced-motion:reduce){.fl{animation:none;transform:rotate(var(--r))}}
+      @media (max-width:860px){.mx-scene{height:600px}.mx-scene:after{background:linear-gradient(180deg,rgba(14,40,29,.8) 0%,rgba(14,40,29,.4) 45%,rgba(14,40,29,.1) 100%)}.mx-txt{left:22px;right:22px;top:32px;transform:none}.mx h2{font-size:30px}.f1{left:6%!important;top:auto!important;bottom:22%!important;width:120px!important}.f2{left:auto!important;right:6%!important;top:auto!important;bottom:30%!important;width:130px!important}.f3{left:38%!important;top:auto!important;bottom:4%!important;width:110px!important}.f4{left:auto!important;right:8%!important;top:auto!important;bottom:4%!important;width:70px!important}.f5{display:none}}
+    </style>
+    <div class="mx-in"><div class="mx-scene">
+      <img class="bg" src="mx_s25.jpg" alt="">
+      <div class="mx-txt">
+        <div class="mx-k">Pequeños momentos, pequeños recuerdos</div>
+        <h2 id="mx-t">Un pedacito de lo vivido, para llevártelo</h2>
+        <p>Algo pequeño para que lo vivido se quede contigo. Un detalle que te recuerde la salida cada vez que lo veas.</p>
+      </div>
+      <div class="fl f1" style="--r:-8deg;left:52%;top:12%;width:170px;animation-delay:-1s"><div class="rnd" style="background:#153F2C"><img src="hila-logo-crema.svg" alt=""><svg class="wv" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#5E8C73" stroke-width="1.3" stroke-linecap="round"><path d="M0 14 C20 6,38 22,60 12 S100 4,120 12"/><path d="M0 22 C22 14,40 30,62 20 S100 12,120 20"/><path d="M0 30 C24 22,44 38,64 28 S102 20,120 28"/></g></svg></div></div>
+      <div class="fl f2" style="--r:6deg;left:72%;top:8%;width:190px;animation-delay:-3s"><svg viewBox="0 0 220 210" aria-hidden="true" style="width:100%;height:auto;display:block"><g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"><circle cx="150" cy="38" r="26"/><path d="M12 140 L74 56 L98 88 L124 46 L208 140 Z"/><rect x="26" y="128" width="168" height="70" rx="16"/></g><circle cx="150" cy="38" r="26" fill="#C9542C"/><path d="M12 140 L74 56 L98 88 L124 46 L208 140 Z" fill="#AF4323"/><path d="M74 56 L82 92 L70 118 M124 46 L132 84 L120 112 M124 46 L112 78" fill="none" stroke="#7E2E16" stroke-width="3" stroke-linecap="round"/><rect x="26" y="128" width="168" height="70" rx="16" fill="#FAF7F1"/><image href="hila-logo-color.svg" x="40" y="132" width="140" height="62"/></svg></div>
+      <div class="fl f3" style="--r:5deg;left:63%;top:54%;width:150px;animation-delay:-2s"><div class="rnd" style="background:radial-gradient(circle at 30% 30%,#3FA3A8,#1F6F7A)"><img src="hila-logo-blanco.svg" alt=""><svg class="wv" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.3" stroke-linecap="round"><path d="M0 14 C20 6,38 22,60 12 S100 4,120 12"/><path d="M0 22 C22 14,40 30,62 20 S100 12,120 20"/><path d="M0 30 C24 22,44 38,64 28 S102 20,120 28"/></g></svg></div></div>
+      <div class="fl f4" style="--r:-10deg;left:84%;top:52%;width:96px;animation-delay:-4s"><svg width="100%" viewBox="0 0 92 40" style="display:block;margin-bottom:-6px" aria-hidden="true"><rect x="30" y="2" width="32" height="34" rx="16" fill="none" stroke="#2B2B2B" stroke-width="5"/><path d="M40 36 L40 40 M52 36 L52 40" stroke="#5E6B4E" stroke-width="6" stroke-linecap="round"/></svg><div class="tag"><img src="hila-logo-sin-slogan-color.svg" alt=""><svg width="60%" viewBox="0 0 62 34" aria-hidden="true"><path d="M2 32 L20 8 L30 20 L40 6 L60 32" fill="none" stroke="#153F2C" stroke-width="1.8" stroke-linejoin="round"/></svg></div></div>
+      <div class="fl f5 blur" style="--r:12deg;left:46%;top:66%;width:80px;animation-delay:-5s"><div class="rnd" style="background:#AF4323;border-width:5px"><img src="hila-logo-crema.svg" alt="" style="margin-top:0"></div></div>
+    </div></div>
+  </section>
+
+
 
   <section id="faq" aria-labelledby="faq-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
@@ -598,7 +626,7 @@ if(cr){dots.forEach(function(d,i){d.addEventListener('click',function(){cr.scrol
 // cotizador
 var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 var today=new Date();today.setHours(0,0,0,0);var minD=new Date(today);minD.setDate(minD.getDate()+14);
-var view=new Date(minD.getFullYear(),minD.getMonth(),1),pick=null,ppl=6;
+var view=new Date(minD.getFullYear(),minD.getMonth(),1),pick=null,ppl=10;
 function drawCal(){var c=$('cal');if(!c)return;var y=view.getFullYear(),m=view.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();
   var prevOk=new Date(y,m,1)>new Date(minD.getFullYear(),minD.getMonth(),1);
   var h='<div class="cal-h"><button type="button" id="cal-p" aria-label="Mes anterior"'+(prevOk?'':' disabled')+'>‹</button><span>'+MES[m].charAt(0).toUpperCase()+MES[m].slice(1)+' '+y+'</span><button type="button" id="cal-n" aria-label="Mes siguiente">›</button></div><div class="cal-g">';
@@ -610,22 +638,22 @@ function drawCal(){var c=$('cal');if(!c)return;var y=view.getFullYear(),m=view.g
   $('cal-p').onclick=function(){view=new Date(y,m-1,1);drawCal();};$('cal-n').onclick=function(){view=new Date(y,m+1,1);drawCal();};
   c.querySelectorAll('.cal-g button').forEach(function(b){b.onclick=function(){pick=new Date(y,m,+b.dataset.d);drawCal();};});}
 drawCal();
-function pp(){$('q-n').textContent=ppl;$('q-m').disabled=ppl<=4;$('q-p').disabled=ppl>=40;}
-if($('q-m')){$('q-m').onclick=function(){if(ppl>4){ppl--;pp();}};$('q-p').onclick=function(){if(ppl<40){ppl++;pp();}};pp();}
+function pp(){$('q-n').textContent=ppl;$('q-m').disabled=ppl<=10;$('q-p').disabled=ppl>=60;}
+if($('q-m')){$('q-m').onclick=function(){if(ppl>10){ppl--;pp();}};$('q-p').onclick=function(){if(ppl<60){ppl++;pp();}};pp();}
 var qf=$('q-form');
 if(qf)qf.addEventListener('submit',function(e){e.preventDefault();var ex=qf.querySelector('input[name="q-exp"]:checked'),nom=$('q-nom').value.trim(),mail=$('q-mail').value.trim(),er=$('q-err'),msg='';
   if(!ex)msg='Elige una experiencia.';else if(!pick)msg='Elige una fecha en el calendario.';else if(!nom)msg='Nos falta tu nombre.';else if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail))msg='Revisa tu correo, ahí te mandamos la cotización.';else if(!$('q-priv').checked)msg='Para enviarla, acepta el aviso de privacidad.';
-  er.textContent=msg;er.style.display=msg?'block':'none';if(msg)return;
+  er.textContent=msg;er.style.display=msg?'block':'none';if(msg){if(window.hilaTrack)hilaTrack('error_formulario',{formulario:'cotizacion'});return;}
   var names={vf:'Vía ferrata',col:'Nevado de Colima',rap:'Rapel en Corral de Piedra',kay:'Kayak al amanecer'};
   var fecha=pick.getDate()+' de '+MES[pick.getMonth()]+' de '+pick.getFullYear();
   var data={_subject:'Cotización Hila: '+names[ex.value]+' · '+fecha,Experiencia:names[ex.value],Fecha:fecha,Personas:ppl,Nombre:nom,Correo:mail,Comentarios:$('q-msg').value,_template:'table'};
   var btn=qf.querySelector('.q-send');btn.disabled=true;btn.textContent='Enviando…';
-  function done(){$('q-fields').style.display='none';$('q-ok').style.display='block';$('q-ok-t').textContent='En menos de 48 horas te escribimos a '+mail+' con tu cotización para '+names[ex.value]+' el '+fecha+'.';}
+  function done(){if(window.hilaTrack)hilaTrack('generate_lead',{tipo:'cotizacion_grupo',experiencia:ex.value,personas:ppl});$('q-fields').style.display='none';$('q-ok').style.display='block';$('q-ok-t').textContent='En menos de 48 horas te escribimos a '+mail+' con tu cotización para '+names[ex.value]+' el '+fecha+'.';}
   fetch('https://formsubmit.co/ajax/hila.sal.a.vivirlo@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)}).then(function(r){if(!r.ok)throw 0;done();}).catch(function(){
     var body=Object.keys(data).filter(function(k){return k[0]!=='_';}).map(function(k){return k+': '+data[k];}).join('\n');
     location.href='mailto:hila.sal.a.vivirlo@gmail.com?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);done();});});
 // formulario de la landing
-var fg=$('f-go');if(fg)fg.addEventListener('click',function(){
+var fg=$('f-go');if(fg)fg.addEventListener('click',function(){if(window.hilaTrack)hilaTrack('inicio_formulario',{ubicacion:'landing'});
   var g=function(i){return document.getElementById(i);};
   var d={step:2,sel:{},chips:{},nombre:g('f-nombre').value,apellido:g('f-apellido').value,cel:g('f-cel').value,correo:g('f-correo').value,mayor:g('f-mayor').checked};
   if(!d.nombre.trim()||!d.correo.trim()){d.step=1;}
@@ -644,5 +672,6 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="#
   if(path&&path!==location.pathname.split('/').pop())return;var id=h.slice(i+1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();hilaScrollTo(el);history.replaceState(null,'','#'+id);});
 })();
 </script>
+<script src="hila-mapa.js" defer></script>
 </body>
 </html>
