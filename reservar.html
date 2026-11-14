@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reserva tu experiencia · Hila</title>
+<meta name="description" content="Reserva tu experiencia con Hila. Salidas desde CDMX.">
+<link rel="icon" href="hila-logo-sin-slogan-color.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;font-family:Figtree,sans-serif;color:#222222}
+a{color:#222222}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid #EBEBEB}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.stage{position:relative;padding:48px 0 80px}
+.photo{margin-left:auto;width:62%;height:760px;border-radius:28px;overflow:hidden;position:sticky;top:24px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s}
+.card{position:absolute;left:24px;top:48px;width:520px;background:#FFFFFF;border-radius:28px;box-shadow:0 10px 40px rgba(0,0,0,.14);padding:36px 34px}
+.steps{display:flex;gap:6px}.steps span{flex:1;height:4px;border-radius:4px;background:#EBEBEB}.steps span.on{background:#2E7D4F}
+.kicker{font-size:14px;font-weight:600;color:#2E7D4F;margin-top:18px}
+h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing:-.3px}
+.lead{font-size:16px;line-height:1.5;color:#6A6A6A;margin:10px 0 0}
+.group{margin-top:18px;border:1px solid #B0B0B0;border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1fr}
+.f{display:flex;flex-direction:column;gap:2px;padding:11px 16px;font-size:12px;font-weight:700;border-top:1px solid #B0B0B0}
+.group > .f:first-child,.group > .row:first-child .f{border-top:0}
+.row .f + .f{border-left:1px solid #B0B0B0}
+.f input,.f select,.f textarea{font:inherit;font-size:16px;font-weight:400;border:0;padding:4px 0;background:transparent;color:#222222;width:100%}
+.f textarea{resize:vertical;min-height:44px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid #2E7D4F;outline-offset:6px;border-radius:2px}
+.q{font-weight:700;font-size:17px;margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font:inherit;font-size:15px;border:1px solid #B0B0B0;background:#FFFFFF;border-radius:999px;padding:10px 16px;cursor:pointer;color:#222222}
+.chip[aria-pressed="true"]{border-color:#2E7D4F;background:#E6F2EA;color:#1F6B45;font-weight:700}
+.exp{display:flex;gap:12px;align-items:center;border:1px solid #DDDDDD;border-radius:14px;padding:10px;cursor:pointer;margin-top:10px}
+.exp img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.exp input{width:20px;height:20px;accent-color:#2E7D4F}
+.exp.on{border-color:#2E7D4F;background:#F4FAF6}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15px;line-height:1.4}
+.check input{width:20px;height:20px;accent-color:#2E7D4F;flex-shrink:0;margin-top:1px}
+.btn{display:block;width:100%;margin-top:22px;font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;text-align:center;text-decoration:none}
+.btn:hover{background:#256842}
+.btn.ghost{background:#FFFFFF;color:#222222;border:1px solid #222222}
+.back{font:inherit;background:none;border:0;color:#222222;text-decoration:underline;font-weight:600;cursor:pointer;padding:0;margin-top:14px}
+.note{font-size:13px;color:#6A6A6A;text-align:center;margin-top:12px}
+.err{color:#B3261E;font-size:14px;margin-top:10px;display:none}
+.sum{margin-top:18px;border:1px solid #DDDDDD;border-radius:14px;padding:16px}
+.sum .l{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:4px 0}
+.sum .tot{font-weight:800;font-size:22px}
+.badge{display:inline-block;background:#E6F2EA;color:#1F6B45;font-weight:700;font-size:13px;padding:5px 10px;border-radius:8px}
+.hide{display:none!important}
+/* confirmación */
+.done{max-width:760px;margin:0 auto;padding:48px 24px 96px;text-align:center}
+.done h1{font-size:40px}
+.tickets{display:flex;flex-direction:column;gap:18px;margin-top:32px;text-align:left}
+.ticket{display:flex;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#FFFFFF}
+.ticket .pic{width:34%;min-height:220px;position:relative}
+.ticket .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ticket .body{flex:1;padding:22px 24px;position:relative;border-left:2px dashed #DDDDDD}
+.ticket .body:before,.ticket .body:after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:#F7F7F7}
+.ticket .body:before{top:-12px}.ticket .body:after{bottom:-12px}
+.tk-k{font-size:12px;font-weight:700;color:#6A6A6A}
+.tk-v{font-size:16px;font-weight:600;margin-top:2px}
+.tk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px}
+.actions .btn{margin-top:0;font-size:15px;padding:14px 10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.chat{margin-top:32px;background:#EFE7DE;border-radius:20px;padding:18px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.bub{max-width:88%;background:#FFFFFF;padding:10px 14px;border-radius:12px 12px 12px 2px;font-size:15px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.bub b.n{display:block;font-size:13px;color:#1F7A4D}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#222222;color:#FFFFFF;padding:12px 18px;border-radius:12px;font-size:14px;display:none;z-index:50;max-width:90vw;text-align:center}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:40}
+@media (max-width:860px){
+  .photo{width:100%;height:240px;position:relative;top:0;border-radius:22px}
+  .card{position:relative;left:auto;top:auto;width:auto;margin:-50px 8px 0;padding:26px 20px}
+  .stage{padding:20px 0 60px}
+  h1{font-size:26px}
+  .row{grid-template-columns:1fr}.row .f + .f{border-left:0;border-top:1px solid #B0B0B0}
+  .ticket{flex-direction:column}.ticket .pic{width:100%;min-height:160px}
+  .ticket .body{border-left:0;border-top:2px dashed #DDDDDD}
+  .ticket .body:before,.ticket .body:after{display:none}
+  .tk-grid{grid-template-columns:1fr 1fr}
+  .actions{grid-template-columns:1fr}
+  .done h1{font-size:30px}
+}
+@media print{header,.actions,.chat,.done > p,.toast,#confetti{display:none!important}.ticket{box-shadow:none;border:1px solid #DDDDDD;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="index.html"><img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height:52px;width:auto;display:block"></a>
+  <a href="index.html" style="font-weight:600;text-decoration:none">Volver a experiencias</a>
+</div></header>
+
+<main id="flow" class="wrap stage">
+  <div class="photo"><img id="photo" src="band.jpg" alt=""></div>
+  <form class="card" id="card" novalidate>
+    <div class="steps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <!-- Paso 1 -->
+    <section data-step="1">
+      <div class="kicker">Paso 1 de 4 · Tú</div>
+      <h1>¡Hola! Antes de salir, cuéntanos de ti</h1>
+      <p class="lead">Son unas preguntas rápidas para cuidar tu experiencia. Empecemos por lo fácil: ¿cómo te llamas?</p>
+      <div class="group">
+        <div class="row">
+          <label class="f">Nombre<input id="nombre" autocomplete="given-name" placeholder="Tu nombre"></label>
+          <label class="f">Apellido<input id="apellido" autocomplete="family-name" placeholder="Tu apellido"></label>
+        </div>
+      </div>
+      <div class="group">
+        <label class="f">Celular<input id="cel" type="tel" autocomplete="tel" placeholder="55 1234 5678"></label>
+        <label class="f">Correo<input id="correo" type="email" autocomplete="email" placeholder="tu@correo.com"></label>
+      </div>
+      <label class="check"><input type="checkbox" id="mayor">Confirmo que soy mayor de edad</label>
+      <div class="err" id="err1"></div>
+      <button type="button" class="btn" data-next>Sigamos</button>
+      <div class="note">Aún no te cobramos nada. Tus respuestas se guardan mientras avanzas.</div>
+    </section>
+
+    <!-- Paso 2 -->
+    <section data-step="2" class="hide">
+      <div class="kicker">Paso 2 de 4 · Tu plan</div>
+      <h1 id="h2name">Buenísimo. ¿A dónde vamos?</h1>
+      <p class="lead">Elige una o varias. Si marcas más de una, el descuento se aplica solito.</p>
+      <div id="exps"></div>
+      <div class="group" style="margin-top:14px">
+        <label class="f">¿Cuántas personas van?<select id="personas"><option value="1">1 persona (solo yo)</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option></select></label>
+      </div>
+      <div class="sum" id="sum2"></div>
+      <div class="err" id="err2"></div>
+      <button type="button" class="btn" data-next>Se ve bien, sigamos</button>
+      <button type="button" class="back" data-prev>Regresar</button>
+    </section>
+
+    <!-- Paso 3 -->
+    <section data-step="3" class="hide">
+      <div class="kicker">Paso 3 de 4 · Tu seguridad</div>
+      <h1>Ahora lo importante: que regreses feliz y completo</h1>
+      <p class="lead">Esto solo lo ven las guías y el paramédico. Si algo necesita revisarse, te escribimos antes de cobrarte.</p>
+      <div class="q">¿Tienes seguro de gastos médicos?</div>
+      <div class="chips" data-chips="seguro"><button type="button" class="chip" data-v="Sí">Sí</button><button type="button" class="chip" data-v="No">No</button></div>
+      <div class="q">¿Has hecho algo parecido antes?</div>
+      <div class="chips" data-chips="exp"><button type="button" class="chip" data-v="Nunca">Nunca, es mi primera vez</button><button type="button" class="chip" data-v="Alguna vez">Alguna vez</button><button type="button" class="chip" data-v="Seguido">Seguido</button></div>
+      <div class="q">¿Cómo describirías tu condición física?</div>
+      <div class="chips" data-chips="cond"><button type="button" class="chip" data-v="Básica">Básica</button><button type="button" class="chip" data-v="Regular">Regular</button><button type="button" class="chip" data-v="Buena">Buena</button><button type="button" class="chip" data-v="Muy buena">Muy buena</button></div>
+      <div class="group" style="margin-top:20px">
+        <label class="f">Padecimientos o cirugías recientes<textarea id="salud" placeholder="Si no tienes, escribe “ninguno”"></textarea></label>
+        <label class="f">Alergias<input id="alergias" placeholder="Medicamentos, alimentos…"></label>
+      </div>
+      <div class="q" style="font-size:15px;font-weight:600;color:#6A6A6A">Para tu equipo (arnés y cuerdas tienen rangos de uso)</div>
+      <div class="group" style="margin-top:8px">
+        <div class="row">
+          <label class="f">Estatura (cm)<input id="altura" inputmode="numeric" placeholder="165"></label>
+          <label class="f">Peso (kg)<input id="peso" inputmode="numeric" placeholder="60"></label>
+        </div>
+        <div class="row">
+          <label class="f">Tipo de sangre<select id="sangre"><option value="">Elige</option><option>O+</option><option>O−</option><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>AB+</option><option>AB−</option><option>No sé</option></select></label>
+          <label class="f">Talla de playera<select id="talla"><option value="">Elige</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></label>
+        </div>
+      </div>
+      <div class="err" id="err3"></div>
+      <button type="button" class="btn" data-next>Sigamos</button>
+      <button type="button" class="back" data-prev>Regresar</button>
+    </section>
+
+    <!-- Paso 4 -->
+    <section data-step="4" class="hide">
+      <div class="kicker">Paso 4 de 4 · Último paso</div>
+      <h1>Casi listo. ¿A quién le avisamos si algo pasa?</h1>
+      <div class="group">
+        <div class="row">
+          <label class="f">Contacto de emergencia<input id="emNombre" placeholder="Nombre"></label>
+          <label class="f">Su celular<input id="emCel" type="tel" placeholder="55 1234 5678"></label>
+        </div>
+      </div>
+      <div class="sum" id="sum4"></div>
+      <label class="check"><input type="checkbox" id="priv"><span>Leí y acepto el <a href="#" onclick="return false">aviso de privacidad</a></span></label>
+      <label class="check"><input type="checkbox" id="tyc"><span>Acepto los <a href="#" onclick="return false">términos y condiciones</a> y las <a href="#" onclick="return false">políticas de cancelación</a></span></label>
+      <div class="err" id="err4"></div>
+      <button type="button" class="btn" id="pay">Pagar con Mercado Pago</button>
+      <div class="note">Pago seguro con Mercado Pago. Tarjeta, OXXO o transferencia.</div>
+      <button type="button" class="back" data-prev>Regresar</button>
+    </section>
+  </form>
+</main>
+
+<!-- Confirmación -->
+<section id="done" class="done hide" aria-live="polite">
+  <div style="width:64px;height:64px;border-radius:50%;background:#E6F2EA;display:flex;align-items:center;justify-content:center;margin:0 auto"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></div>
+  <h1 id="doneTitle" style="margin-top:18px">¡Listo! Ya vas a salir a vivirlo</h1>
+  <p class="lead" id="doneLead" style="text-align:center"></p>
+  <div class="tickets" id="tickets"></div>
+  <div class="actions">
+    <button type="button" class="btn" id="cal"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Añadir al calendario</button>
+    <button type="button" class="btn ghost" id="wallet"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18"></path><circle cx="16" cy="15" r="1.5"></circle></svg>Añadir a Wallet</button>
+    <button type="button" class="btn ghost" id="pdf"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Guardar mi boleto</button>
+  </div>
+  <div class="chat">
+    <div class="bub"><b class="n">Hila</b>Te mandamos tu confirmación por correo en unos minutos.</div>
+    <div class="bub"><b class="n">Hila</b>Una semana antes te sumamos al grupo de WhatsApp de tu salida y te invitamos al meet &amp; greet.</div>
+    <div class="bub"><b class="n">Hila</b>Ahí te pasamos el punto de encuentro, la hora exacta y qué llevar. Tú solo prepárate para salir a vivirlo.</div>
+  </div>
+  <p style="margin-top:28px"><a href="index.html" style="font-weight:600">Volver al inicio</a></p>
+</section>
+
+<div class="toast" id="toast" role="status"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script>
+(function(){
+var EXPS={
+  vf:{n:'Hike + vía ferrata',p:'Mineral del Chico, Hidalgo',d:'16–17 ene 2027',s:'20270116',e:'20270118',price:5800,img:'vf1.jpg'},
+  col:{n:'Nevado de Colima',p:'Jalisco',d:'23–24 ene 2027',s:'20270123',e:'20270125',price:5100,img:'col1.jpg'},
+  rap:{n:'Rapel en Corral de Piedra',p:'Amanalco, Edomex',d:'6–7 feb 2027',s:'20270206',e:'20270208',price:4300,img:'rap1.jpg'},
+  kay:{n:'Kayak al amanecer',p:'Xochimilco, CDMX',d:'20 feb 2027',s:'20270220',e:'20270221',price:1000,img:'kay1.jpg'}
+};
+var ORDER=['vf','col','rap','kay'], DISC={2:5,3:8,4:10};
+var PHOTOS={1:'band.jpg',2:'vf1.jpg',3:'rap1.jpg',4:'kay1.jpg'};
+var KEY='hila-reserva';
+var st={step:1,sel:{},chips:{}};
+try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)st=Object.assign(st,saved);}catch(e){}
+var qs=new URLSearchParams(location.search);
+if(qs.get('exp')){st.sel={};qs.get('exp').split(',').forEach(function(k){if(EXPS[k])st.sel[k]=true;});}
+if(qs.get('paso'))st.step=Math.max(1,Math.min(4,+qs.get('paso')||1));
+var $=function(id){return document.getElementById(id);};
+var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-MX');};
+var FIELDS=['nombre','apellido','cel','correo','mayor','personas','salud','alergias','altura','peso','sangre','talla','emNombre','emCel','priv','tyc'];
+FIELDS.forEach(function(f){var el=$(f);if(!el)return;if(st[f]!==undefined){if(el.type==='checkbox')el.checked=!!st[f];else el.value=st[f];}
+  el.addEventListener('input',function(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}});
+  el.addEventListener('change',function(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}});});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+// chips
+document.querySelectorAll('[data-chips]').forEach(function(g){var k=g.dataset.chips;g.querySelectorAll('.chip').forEach(function(c){
+  c.setAttribute('aria-pressed',st.chips[k]===c.dataset.v?'true':'false');
+  c.addEventListener('click',function(){st.chips[k]=c.dataset.v;g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});save();});});});
+// experiencias
+function drawExps(){$('exps').innerHTML=ORDER.map(function(k){var x=EXPS[k],on=!!st.sel[k];
+  return '<label class="exp'+(on?' on':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><img src="'+x.img+'" alt=""><span style="flex:1"><span style="display:block;font-weight:700">'+x.n+'</span><span style="font-size:14px;color:#6A6A6A">'+x.d+' · '+fmt(x.price)+' por persona</span></span></label>';}).join('');
+  $('exps').querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){st.sel[i.dataset.k]=i.checked;save();drawExps();summary();});});}
+function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=n>=4?DISC[4]:DISC[n]||0,pp=+(st.personas||1);
+  return {ks:ks,n:n,per:per,pct:pct,pp:pp,sub:per*pp,save:per*pp*pct/100,total:per*pp*(1-pct/100)};}
+function summary(){var c=calc(),h;
+  if(!c.n){h='<div style="font-size:15px;color:#6A6A6A">Todavía no eliges ninguna. Con 2 te llevas 5% menos, con 3 un 8% y con las 4, 10%.</div>';}
+  else{h=(c.pct?'<span class="badge">¡'+c.pct+'% menos en tu plan!</span>':'<div style="font-size:14px;color:#6A6A6A">Agrega otra y te llevas 5% menos.</div>')+
+    c.ks.map(function(k){return '<div class="l"><span>'+EXPS[k].n+'</span><span>'+fmt(EXPS[k].price)+'</span></div>';}).join('')+
+    (c.pp>1?'<div class="l" style="color:#6A6A6A"><span>× '+c.pp+' personas</span><span>'+fmt(c.sub)+'</span></div>':'')+
+    (c.pct?'<div class="l" style="color:#1F6B45;font-weight:600"><span>Descuento del plan</span><span>−'+fmt(c.save)+'</span></div>':'')+
+    '<div class="l" style="border-top:1px solid #EBEBEB;margin-top:6px;padding-top:10px"><span style="font-weight:700">Total</span><span class="tot">'+fmt(c.total)+' MXN</span></div>';}
+  $('sum2').innerHTML=h;$('sum4').innerHTML=h;}
+function show(n){st.step=n;save();
+  document.querySelectorAll('[data-step]').forEach(function(s){s.classList.toggle('hide',+s.dataset.step!==n);});
+  document.querySelectorAll('.steps span').forEach(function(s,i){s.classList.toggle('on',i<n);});
+  $('photo').src=PHOTOS[n];
+  if(n===2)$('h2name').textContent=st.nombre?('Buenísimo, '+st.nombre.trim().split(' ')[0]+'. ¿A dónde vamos?'):'Buenísimo. ¿A dónde vamos?';
+  window.scrollTo({top:0,behavior:'smooth'});}
+function err(n,msg){var e=$('err'+n);e.textContent=msg;e.style.display=msg?'block':'none';return !msg;}
+function valid(n){
+  if(n===1){if(!(st.nombre||'').trim()||!(st.apellido||'').trim())return err(1,'Nos falta tu nombre y apellido.');
+    if(((st.cel||'').replace(/\D/g,'')).length<10)return err(1,'Revisa tu celular: son 10 dígitos.');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(st.correo||''))return err(1,'Revisa tu correo, ahí te mandamos la confirmación.');
+    if(!st.mayor)return err(1,'Por ahora las experiencias son solo para mayores de edad.');return err(1,'');}
+  if(n===2){return calc().n?err(2,''):err(2,'Elige al menos una experiencia.');}
+  if(n===3){if(!st.chips.seguro||!st.chips.exp||!st.chips.cond)return err(3,'Contesta las tres preguntas de arriba, porfa.');
+    if(!(st.salud||'').trim())return err(3,'Cuéntanos si tienes algún padecimiento (o escribe “ninguno”).');
+    if(!st.altura||!st.peso)return err(3,'Nos falta tu estatura y peso para el equipo.');return err(3,'');}
+  if(n===4){if(!(st.emNombre||'').trim()||((st.emCel||'').replace(/\D/g,'')).length<10)return err(4,'Nos falta tu contacto de emergencia.');
+    if(!st.priv||!st.tyc)return err(4,'Para continuar acepta el aviso de privacidad y los términos.');return err(4,'');}
+  return true;}
+document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){if(valid(st.step))show(st.step+1);});});
+document.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){show(Math.max(1,st.step-1));});});
+$('pay').addEventListener('click',function(){if(!valid(4))return;
+  // Aquí el programador conecta Mercado Pago. Por ahora simulamos un pago exitoso.
+  var b=$('pay');b.disabled=true;b.textContent='Conectando con Mercado Pago…';
+  setTimeout(function(){confirmar();},1200);});
+function code(){var c='HILA-';for(var i=0;i<5;i++)c+='ABCDEFGHJKMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*31)];return c;}
+var booking;
+function confirmar(){var c=calc();booking={code:code(),ks:c.ks,pp:c.pp,total:c.total,nombre:(st.nombre||'').trim(),full:((st.nombre||'').trim()+' '+(st.apellido||'').trim()).trim()};
+  $('flow').classList.add('hide');$('done').classList.remove('hide');
+  $('doneTitle').textContent='¡Listo, '+booking.nombre.split(' ')[0]+'! Ya vas a salir a vivirlo';
+  $('doneLead').textContent='Pagaste '+fmt(c.total)+' MXN · '+c.pp+(c.pp>1?' personas':' persona')+' · Código de reserva '+booking.code;
+  $('tickets').innerHTML=c.ks.map(function(k){var x=EXPS[k];return '<article class="ticket"><div class="pic"><img src="'+x.img+'" alt=""></div><div class="body">'+
+    '<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start"><div><div class="tk-k">Tu boleto</div><div style="font-weight:800;font-size:22px;line-height:1.15;margin-top:2px">'+x.n+'</div></div><img src="hila-logo-sin-slogan-color.svg" alt="Hila" style="height:30px"></div>'+
+    '<div class="tk-grid"><div><div class="tk-k">Fecha</div><div class="tk-v">'+x.d+'</div></div><div><div class="tk-k">Salida</div><div class="tk-v">CDMX</div></div><div><div class="tk-k">Personas</div><div class="tk-v">'+c.pp+'</div></div>'+
+    '<div><div class="tk-k">Lugar</div><div class="tk-v">'+x.p+'</div></div><div><div class="tk-k">A nombre de</div><div class="tk-v">'+booking.full+'</div></div><div><div class="tk-k">Código</div><div class="tk-v">'+booking.code+'</div></div></div></div></article>';}).join('');
+  try{localStorage.removeItem(KEY);}catch(e){}
+  window.scrollTo({top:0});confetti();}
+function toast(t){var el=$('toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(function(){el.style.display='none';},4200);}
+$('cal').addEventListener('click',function(){if(!booking)return;
+  var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Hila//Reservas//ES','CALSCALE:GREGORIAN'];
+  booking.ks.forEach(function(k){var x=EXPS[k];L.push('BEGIN:VEVENT','UID:'+booking.code+'-'+k+'@hila','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z','DTSTART;VALUE=DATE:'+x.s,'DTEND;VALUE=DATE:'+x.e,'SUMMARY:Hila · '+x.n,'LOCATION:Salida desde CDMX · '+x.p,'DESCRIPTION:Código '+booking.code+'. Te mandamos hora y punto de encuentro por WhatsApp una semana antes.','END:VEVENT');});
+  L.push('END:VCALENDAR');
+  var blob=new Blob([L.join('\r\n')],{type:'text/calendar'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hila-'+booking.code+'.ics';document.body.appendChild(a);a.click();a.remove();
+  toast('Se descargó tu evento. Ábrelo para agregarlo a tu calendario.');});
+$('wallet').addEventListener('click',function(){toast('Wallet estará disponible cuando conectemos los pagos. Mientras, guarda tu boleto o agrégalo al calendario.');});
+$('pdf').addEventListener('click',function(){window.print();});
+function confetti(){var cv=$('confetti'),ctx=cv.getContext('2d');if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  cv.width=innerWidth;cv.height=innerHeight;var cols=['#2E7D4F','#AF4323','#F4BE95','#153F2C','#E8C547'],P=[];
+  for(var i=0;i<140;i++)P.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.5,w:6+Math.random()*6,h:8+Math.random()*8,c:cols[i%5],vy:2+Math.random()*3,vx:-1+Math.random()*2,r:Math.random()*6,vr:-.1+Math.random()*.2});
+  var t0=performance.now();(function f(t){ctx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});
+  if(t-t0<3500)requestAnimationFrame(f);else ctx.clearRect(0,0,cv.width,cv.height);})(t0);}
+drawExps();summary();show(st.step);
+})();
+</script>
+</body>
+</html>
