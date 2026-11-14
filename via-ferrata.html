@@ -49,6 +49,8 @@ a{color:#222222}a:hover{color:#000000}
 .gal:not(.two) .g0{grid-column:span 2;grid-row:span 2}
 .g-all{position:absolute;right:14px;bottom:14px;background:#FFFFFF;border:1px solid #222222;padding:8px 14px;border-radius:8px;font:inherit;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:#222222}
 .g-all-m{display:none}
+.gal{grid-template-rows:200px 200px}
+.gal .g:nth-child(n+6):not(.g-all){display:none}
 details.fq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
 details.fq summary::-webkit-details-marker{display:none}
 details.fq summary .chev{flex-shrink:0;transition:transform .25s}
@@ -57,7 +59,7 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
 #lb[hidden]{display:none}
 .lb-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;font-size:15px;font-weight:600}
 .lb-btn{width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.lb-stage{flex:1;position:relative;padding:0 80px;overflow:hidden;touch-action:pan-y pinch-zoom;display:flex;align-items:center;justify-content:center}
+.lb-stage{flex:1;position:relative;padding:0 24px;overflow:hidden;touch-action:pan-y pinch-zoom;display:flex;align-items:center;justify-content:center}
 .lb-stage img{max-width:100%;max-height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;transition:transform .25s;cursor:zoom-in}
 .lb-stage.zoom{overflow:auto;display:block;cursor:zoom-out;touch-action:auto}
 .lb-stage.zoom img{max-width:none;max-height:none;width:220%;cursor:zoom-out}
@@ -70,9 +72,9 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
 .bdg-a{display:flex;align-items:center;gap:12px}
 .bdg-b{font-size:16px;line-height:1.45;padding-left:24px;border-left:1px solid #EBEBEB}
 .bdg-c{text-align:center;padding-left:24px;border-left:1px solid #EBEBEB;min-width:80px}
-.hrs{margin-top:10px;border-left:2px solid #EBEBEB;padding-left:16px;display:flex;flex-direction:column;gap:10px;font-size:15px}
-.hr{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline}
-.hr strong{font-variant-numeric:tabular-nums;text-align:right}
+.hrs{margin-top:10px;border-left:2px solid #EBEBEB;padding-left:12px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.hr{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:baseline}
+.hr strong{font-variant-numeric:tabular-nums;text-align:left}
 .c-see{font-size:13px;font-weight:600;color:#1F6B45;text-decoration:underline;white-space:nowrap}
 @media (max-width:760px){
   .gal,.gal.two{grid-template-columns:1fr 1fr!important;grid-template-rows:250px 130px!important;gap:8px;border-radius:0;overflow:visible;margin-left:0;margin-right:0}
@@ -106,7 +108,7 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
   </style>
   <div class="mm-top"><img src="hila-logo-color.svg" alt="Hila" style="height:52px"><button type="button" id="mm-close" aria-label="Cerrar menú" style="width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
   <nav class="mm-links" aria-label="Menú"><a href="index.html#experiencias">Experiencias</a><a href="index.html#arma">Arma tu plan</a><a href="index.html#como">Cómo funciona</a><a href="index.html#contacto">Contacto</a></nav>
-  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a><a href="https://wa.me/525548915205" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"></path></svg>Escríbenos por WhatsApp</a></div>
+  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a></div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('mmenu'),b=document.querySelector('.m-burger');if(!m||!b)return;
@@ -117,7 +119,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
 </script>
   <header style="border-bottom: 1px solid #EBEBEB">
     <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
-      <a href="index.html"><img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height: 58px; width: auto; display: block"></a>
+      <a href="index.html"><img src="hila-logo-verde.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height: 58px; width: auto; display: block"></a>
       <nav class="m-nav" aria-label="Principal" style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; font-size: 15px; font-weight: 600">
         <a href="index.html#experiencias" style="text-decoration: none">Experiencias</a>
         <a href="index.html#arma" style="text-decoration: none">Arma tu plan</a>
@@ -136,7 +138,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       </div>
     </div>
 
-    <div class="gal"><button type="button" class="g g0" data-i="0" aria-label="Ver foto 1 de 5"><img src="vf1.jpg" alt="Grupo con casco avanzando por una vía ferrata" style="object-position:50% 50%"></button><button type="button" class="g g1" data-i="1" aria-label="Ver foto 2 de 5"><img src="vf2.jpg" alt="Persona con casco sujetándose del cable" style="object-position:50% 30%"></button><button type="button" class="g g2" data-i="2" aria-label="Ver foto 3 de 5"><img src="vf3.jpg" alt="Escalera metálica en pared de roca" style="object-position:50% 30%"></button><button type="button" class="g g3" data-i="3" aria-label="Ver foto 4 de 5"><img src="vf5.jpg" alt="Dos personas subiendo escalones de vía ferrata" style="object-position:50% 50%"></button><button type="button" class="g g4" data-i="4" aria-label="Ver foto 5 de 5"><img src="vf6.jpg" alt="Fogata y casas de campaña al anochecer" style="object-position:50% 70%"></button><button type="button" class="g-all" data-i="0"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#222222"><circle cx="5" cy="5" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="12" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle></svg><span class="g-all-d">Ver las 5 fotos</span><span class="g-all-m">1 / 5</span></button></div>
+    <div class="gal"><button type="button" class="g g0" data-i="0" aria-label="Ver foto 1 de 7"><img src="vf1.jpg" alt="Grupo con casco avanzando por una vía ferrata" style="object-position:50% 50%"></button><button type="button" class="g g1" data-i="1" aria-label="Ver foto 2 de 7"><img src="vf2.jpg" alt="Persona con casco sujetándose del cable" style="object-position:50% 30%"></button><button type="button" class="g g2" data-i="2" aria-label="Ver foto 3 de 7"><img src="vf3.jpg" alt="Escalera metálica en pared de roca" style="object-position:50% 30%"></button><button type="button" class="g g3" data-i="3" aria-label="Ver foto 4 de 7"><img src="vf5.jpg" alt="Dos personas subiendo escalones de vía ferrata" style="object-position:50% 50%"></button><button type="button" class="g g4" data-i="4" aria-label="Ver foto 5 de 7"><img src="vf_s60.jpg" alt="Avanzando por la roca con casco y arnés" style="object-position:50% 40%"></button><button type="button" class="g g5" data-i="5" aria-label="Ver foto 6 de 7"><img src="vf_s59.jpg" alt="Subiendo por la pared de roca" style="object-position:50% 50%"></button><button type="button" class="g g6" data-i="6" aria-label="Ver foto 7 de 7"><img src="vf6.jpg" alt="Fogata y casas de campaña al anochecer" style="object-position:50% 70%"></button><button type="button" class="g-all" data-i="0"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#222222"><circle cx="5" cy="5" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="12" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle></svg><span class="g-all-d">Ver las 7 fotos</span><span class="g-all-m">1 / 7</span></button></div>
 
     <div class="m-cols" style="display: flex; flex-wrap: wrap; gap: 72px; margin-top: 36px; align-items: flex-start">
       <div style="flex: 999 1 560px; min-width: 0">
@@ -264,52 +266,33 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
         </div>
 
         <div class="m-combo" style="border: 1px solid #DDDDDD; border-radius: 16px; padding: 20px 22px">
-          <div style="font-weight: 700; font-size: 16px">Combínala y ahorra</div>
-          <div style="font-size: 14px; color: #6A6A6A; margin-top: 2px">Agrega otra salida y el descuento se aplica en tu total.</div>
-          <div id="c-list" style="display:flex;flex-direction:column;gap:12px;margin-top:14px"></div>
-          <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid #EBEBEB">
-            <div id="c-sum"></div>
-          </div>
+          <div style="font-weight: 700; font-size: 16px">También te puede gustar</div>
+          <div id="c-list" style="display:flex;flex-direction:column;gap:10px;margin-top:14px"></div>
+          <a href="index.html#arma" style="display:block;margin-top:14px;padding-top:14px;border-top:1px solid #EBEBEB;font-size:14px;font-weight:600;color:#1F6B45">¿Vas con tu grupo? Arma tu plan →</a>
         </div>
       </aside>
     </div>
   </main>
 <footer class="hf">
   <style>
-    .hf{background:#F4EFE7;color:#3A3A3A;font-family:Figtree,sans-serif;border-top:1px solid #E6DED0}
-    .hf-in{max-width:1240px;margin:0 auto;padding:40px 24px 22px}
-    .hf-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px}
-    .hf-brand{display:flex;flex-direction:column;gap:12px;max-width:280px}
-    .hf-brand p{margin:0;font-size:14px;line-height:1.5;color:#6A6A6A}
-    .hf-cols{display:flex;flex-wrap:wrap;gap:20px 48px}
-    .hf h3{font-size:13px;font-weight:700;margin:0 0 10px;color:#AF4323}
-    .hf-col{display:flex;flex-direction:column;gap:7px;font-size:14px}
-    .hf a{color:#3A3A3A;text-decoration:none}.hf a:hover{color:#153F2C;text-decoration:underline}
+    .hf{background:#F7F7F7;color:#484848;font-family:Figtree,sans-serif;border-top:1px solid #EBEBEB}
+    .hf-in{max-width:1240px;margin:0 auto;padding:22px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;font-size:14px}
+    .hf-l{display:flex;align-items:center;gap:14px;color:#6A6A6A}
+    .hf-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+    .hf a{color:#484848;text-decoration:none}.hf a:hover{color:#153F2C;text-decoration:underline}
     .hf-soc{display:flex;gap:8px}
-    .hf-soc a{width:38px;height:38px;border-radius:999px;border:1px solid #D9CFBF;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#153F2C}
-    .hf-soc a:hover{border-color:#153F2C;text-decoration:none}
-    .hf-bot{border-top:1px solid #E6DED0;margin-top:28px;padding-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12px;color:#8A8A8A}
-    @media (max-width:760px){.hf-cols{gap:20px 32px}.hf-in{padding:32px 22px 20px}}
+    .hf-soc a{width:36px;height:36px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#222222}
+    @media (max-width:760px){.hf-in{flex-direction:column;align-items:flex-start;padding:22px}}
   </style>
   <div class="hf-in">
-    <div class="hf-top">
-      <div class="hf-brand">
-        <img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo." style="height:56px;width:auto;display:block;align-self:flex-start">
-        <p>Experiencias al aire libre saliendo de CDMX.</p>
-        <div class="hf-soc"><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://wa.me/525548915205" target="_blank" rel="noopener" aria-label="WhatsApp de Hila"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"></path></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
-      </div>
-      <div class="hf-cols">
-        <div><h3>Experiencias</h3><div class="hf-col"><a href="via-ferrata.html">Vía ferrata</a><a href="nevado-de-colima.html">Nevado de Colima</a><a href="rapel-corral-de-piedra.html">Rapel</a><a href="kayak-xochimilco.html">Kayak al amanecer</a></div></div>
-        <div><h3>Hila</h3><div class="hf-col"><a href="index.html#como">Cómo funciona</a><a href="index.html#regala">Regala una salida</a><a href="index.html#faq">Preguntas frecuentes</a><a href="index.html#contacto">Contacto</a></div></div>
-        <div><h3>Lo legal</h3><div class="hf-col"><a href="aviso-de-privacidad.html">Aviso de privacidad</a><a href="terminos-y-condiciones.html">Términos y condiciones</a><a href="politicas-de-cancelacion.html">Cancelaciones</a></div></div>
-      </div>
-    </div>
-    <div class="hf-bot"><span>© 2027 Hila · Hecho en CDMX</span><span>Sal a vivirlo.</span></div>
+    <div class="hf-l"><img src="hila-logo-sin-slogan-color.svg" alt="Hila" style="height:26px;width:auto;display:block"><span>© 2027 Hila · Sal a vivirlo.</span></div>
+    <nav class="hf-links" aria-label="Pie de página"><a href="index.html#experiencias">Experiencias</a><a href="index.html#faq">Preguntas</a><a href="index.html#contacto">Contacto</a><a href="aviso-de-privacidad.html" target="_blank" rel="noopener">Privacidad</a><a href="terminos-y-condiciones.html" target="_blank" rel="noopener">Términos</a><a href="politicas-de-cancelacion.html" target="_blank" rel="noopener">Cancelaciones</a></nav>
+    <div class="hf-soc"><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
   </div>
 </footer>
 <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotos de la experiencia">
-  <div class="lb-top"><span id="lb-c">1 de 1</span><button type="button" class="lb-btn" id="lb-x" aria-label="Cerrar fotos"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
-  <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""><button type="button" class="lb-btn lb-nav lb-prev" id="lb-p" aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button><button type="button" class="lb-btn lb-nav lb-next" id="lb-n" aria-label="Foto siguiente"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button></div>
+  <div class="lb-top"><span id="lb-c" style="visibility:hidden">1 de 1</span><button type="button" class="lb-btn" id="lb-x" aria-label="Cerrar fotos"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+  <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""></div>
   <div class="lb-bot"><button type="button" class="lb-arr" id="lb-p2" aria-label="Foto anterior"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button><span id="lb-c2"></span><button type="button" class="lb-arr" id="lb-n2" aria-label="Foto siguiente"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button></div>
 </div>
   <div class="m-bar" style="display:none;position:sticky;bottom:0;background:#FFFFFF;border-top:1px solid #EBEBEB;padding:14px 18px;justify-content:space-between;align-items:center;gap:12px"><div><div style="font-weight:700;font-size:18px">$5,800 MXN</div><div style="font-size:13px">16–17 ene · sale de CDMX</div></div><a href="reservar.html?exp=vf" style="background:#2E7D4F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:16px">Reservar</a></div>
@@ -320,37 +303,37 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
 var ME="vf",base=5800,sel={};
 var O=[{"id": "col", "n": "Nevado de Colima", "d": "23–24 ene", "p": 5100, "img": "col1.jpg", "u": "nevado-de-colima.html"}, {"id": "rap", "n": "Rapel en Corral de Piedra", "d": "6–7 feb", "p": 4300, "img": "rap1.jpg", "u": "rapel-corral-de-piedra.html"}, {"id": "kay", "n": "Kayak al amanecer", "d": "20 feb", "p": 1000, "img": "kay1.jpg", "u": "kayak-xochimilco.html"}];
 var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-MX');};
-var list=document.getElementById('c-list'),sum=document.getElementById('c-sum');
-list.innerHTML=O.map(function(o){return '<label style="display:flex;gap:12px;align-items:center;font-size:15px;cursor:pointer"><input type="checkbox" data-id="'+o.id+'" style="width:18px;height:18px;accent-color:#2E7D4F"><img src="'+o.img+'" alt="" style="width:48px;height:48px;border-radius:8px;object-fit:cover"><span style="flex:1">'+o.n+'<span style="display:block;font-size:13px;color:#6A6A6A">'+o.d+' · '+fmt(o.p)+'</span></span><a class="c-see" href="'+o.u+'">Ver</a></label>';}).join('');
-function render(){
-  var ch=O.filter(function(o){return sel[o.id];}),n=ch.length+1,pct=n>=4?10:n==3?8:n==2?5:0;
-  var st=base+ch.reduce(function(s,o){return s+o.p;},0),sv=st*pct/100;
-  if(!pct){sum.innerHTML='<div style="font-size:14px;color:#6A6A6A">Con 2 te llevas 5% menos, con 3 un 8% y con las 4, 10%.</div>';return;}
-  sum.innerHTML='<div style="display:inline-block;background:#E6F2EA;color:#1F6B45;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px">¡'+pct+'% menos en tu plan!</div>'+
-  '<div style="display:flex;justify-content:space-between;font-size:15px;margin-top:10px;color:#6A6A6A"><span>'+n+' experiencias</span><span style="text-decoration:line-through">'+fmt(st)+'</span></div>'+
-  '<div style="display:flex;justify-content:space-between;font-size:15px;margin-top:4px;color:#1F6B45;font-weight:600"><span>Ahorras</span><span>−'+fmt(sv)+'</span></div>'+
-  '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:6px"><span style="font-weight:700">Total por persona</span><span style="font-weight:800;font-size:22px">'+fmt(st-sv)+' MXN</span></div>'+
-  '<a href="reservar.html?exp='+[ME].concat(ch.map(function(o){return o.id;})).join(',')+'" style="display:block;text-align:center;margin-top:12px;background:#2E7D4F;color:#FFFFFF;text-decoration:none;border-radius:10px;padding:13px;font-weight:700">Reservar las '+n+'</a>';
-}
-list.querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){sel[i.dataset.id]=i.checked;render();});});
-render();
+var list=document.getElementById('c-list');
+list.innerHTML=O.map(function(o){return '<a href="'+o.u+'" style="display:flex;gap:12px;align-items:center;font-size:15px;text-decoration:none;color:#222222"><img src="'+o.img+'" alt="" style="width:52px;height:52px;border-radius:10px;object-fit:cover"><span style="flex:1"><b style="font-weight:600">'+o.n+'</b><span style="display:block;font-size:13px;color:#6A6A6A">'+o.d+' · '+fmt(o.p)+'</span></span><span class="c-see">Ver</span></a>';}).join('');
+
 var SHARE="Checa esta experiencia: hike + vía ferrata en Mineral del Chico, 16–17 de enero, saliendo de CDMX. No necesitas saber escalar. ¿Nos lanzamos?";
 var sh=document.getElementById('share');if(sh)sh.addEventListener('click',function(e){e.preventDefault();var url=location.href.split('#')[0];
   if(navigator.share){navigator.share({title:document.title,text:SHARE,url:url}).catch(function(){});}
   else if(navigator.clipboard){navigator.clipboard.writeText(SHARE+' '+url);sh.lastChild.textContent='Link copiado';setTimeout(function(){sh.lastChild.textContent='Compartir';},2500);}});
-var G=[["vf1.jpg", "Grupo con casco avanzando por una vía ferrata"], ["vf2.jpg", "Persona con casco sujetándose del cable"], ["vf3.jpg", "Escalera metálica en pared de roca"], ["vf5.jpg", "Dos personas subiendo escalones de vía ferrata"], ["vf6.jpg", "Fogata y casas de campaña al anochecer"]],cur=0,lb=document.getElementById('lb'),im=document.getElementById('lb-img'),stg=document.getElementById('lb-stage');
+var G=[["vf1.jpg", "Grupo con casco avanzando por una vía ferrata"], ["vf2.jpg", "Persona con casco sujetándose del cable"], ["vf3.jpg", "Escalera metálica en pared de roca"], ["vf5.jpg", "Dos personas subiendo escalones de vía ferrata"], ["vf_s60.jpg", "Avanzando por la roca con casco y arnés"], ["vf_s59.jpg", "Subiendo por la pared de roca"], ["vf6.jpg", "Fogata y casas de campaña al anochecer"]],cur=0,lb=document.getElementById('lb'),im=document.getElementById('lb-img'),stg=document.getElementById('lb-stage');
 function show(i){cur=(i+G.length)%G.length;stg.classList.remove('zoom');im.src=G[cur][0];im.alt=G[cur][1];document.getElementById('lb-c').textContent=(cur+1)+' de '+G.length;document.getElementById('lb-c2').textContent=(cur+1)+' / '+G.length;}
 function open(i){show(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-x').focus();}
 function close(){lb.hidden=true;document.body.style.overflow='';}
 document.querySelectorAll('.gal [data-i]').forEach(function(b){b.addEventListener('click',function(){open(+b.dataset.i);});});
 document.getElementById('lb-x').addEventListener('click',close);
-document.getElementById('lb-p').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
-document.getElementById('lb-n').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+
+
 document.getElementById('lb-p2').addEventListener('click',function(){show(cur-1);});document.getElementById('lb-n2').addEventListener('click',function(){show(cur+1);});
 im.addEventListener('click',function(e){if(stg.classList.contains('zoom')){stg.classList.remove('zoom');return;}var r=im.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;stg.classList.add('zoom');requestAnimationFrame(function(){stg.scrollLeft=fx*im.offsetWidth-stg.clientWidth/2;stg.scrollTop=fy*im.offsetHeight-stg.clientHeight/2;});});
 document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
 var tx=null,ty=0;stg.addEventListener('touchstart',function(e){if(e.touches.length===1&&!stg.classList.contains('zoom')){tx=e.touches[0].clientX;ty=e.touches[0].clientY;}else tx=null;},{passive:true});
 stg.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))show(cur+(dx<0?1:-1));tx=null;});
+})();
+</script>
+<script>
+(function(){
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+window.hilaScroll=function(y,dur){var s=window.scrollY,d=y-s,t0=null;dur=dur||Math.min(1400,Math.max(700,Math.abs(d)*0.6));
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){window.scrollTo(0,y);return;}
+  function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);window.scrollTo(0,s+d*ease(p));if(p<1)requestAnimationFrame(f);}requestAnimationFrame(f);};
+window.hilaScrollTo=function(el){if(typeof el==='string')el=document.querySelector(el);if(!el)return;hilaScroll(el.getBoundingClientRect().top+window.scrollY-12);};
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="#"]');if(!a)return;var h=a.getAttribute('href');var i=h.indexOf('#');var path=h.slice(0,i);
+  if(path&&path!==location.pathname.split('/').pop())return;var id=h.slice(i+1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();hilaScrollTo(el);history.replaceState(null,'','#'+id);});
 })();
 </script>
 </body>

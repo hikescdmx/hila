@@ -29,12 +29,12 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .plan-tag{position:absolute;top:16px;right:16px;z-index:2;background:#153F2C;color:#FFFFFF;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700}
 .photo-wrap{position:sticky;top:24px;margin-left:auto;width:62%}
 @keyframes phin{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
-.f.bad{background:#FFF5F3}.f.bad{color:#B3261E}
+.f.bad{box-shadow:inset 0 0 0 1.5px #E7A69E}
 .fe{display:block;font-size:13px;font-weight:500;color:#B3261E;margin-top:4px}
 .fe:before,.err:before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B3261E' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v6M12 16.5v.5'/%3E%3C/svg%3E") no-repeat center/contain}
 .fe.out{margin:8px 0 0 2px}
-.chips.bad .chip{border-color:#E3A59C}
-.check.bad{color:#B3261E}
+.chips.bad .chip{border-color:#E7A69E}
+.check.bad input{border-color:#C9655B}
 .check a{font-weight:600}
 .check small{display:block;color:#6A6A6A;font-size:13px;margin-top:2px}
 .opt{font-size:13px;color:#6A6A6A;font-weight:500}
@@ -50,7 +50,8 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 .row .f + .f{border-left:1px solid #B0B0B0}
 .f input,.f select,.f textarea{font:inherit;font-size:16px;font-weight:400;border:0;padding:4px 0;background:transparent;color:#222222;width:100%}
 .f textarea{resize:vertical;min-height:44px}
-.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid #2E7D4F;outline-offset:6px;border-radius:2px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none}
+.f:focus-within{box-shadow:inset 0 0 0 2px #222222;border-radius:12px;position:relative;z-index:1}
 .q{font-weight:700;font-size:17px;margin-top:22px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .chip{font:inherit;font-size:15px;border:1px solid #B0B0B0;background:#FFFFFF;border-radius:999px;padding:10px 16px;cursor:pointer;color:#222222}
@@ -125,7 +126,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 </head>
 <body>
 <header><div class="wrap">
-  <a href="index.html"><img src="hila-logo-color.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height:52px;width:auto;display:block"></a>
+  <a href="index.html"><img src="hila-logo-verde.svg" alt="Hila · Sal a vivirlo. Volver al inicio" style="height:52px;width:auto;display:block"></a>
   <a href="index.html" style="font-weight:600;text-decoration:none">Volver a experiencias</a>
 </div></header>
 
@@ -159,7 +160,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
     <section data-step="2" class="hide">
       <div class="kicker">Paso 2 de 4 · Tu plan</div>
       <h1 id="h2name">Buenísimo. ¿A dónde vamos?</h1>
-      <p class="lead">Elige una o varias. Si marcas más de una, el descuento se aplica solito.</p>
+      <p class="lead">Elige una o varias, y cuántas personas van.</p>
       <div id="exps"></div>
       <div class="group" style="margin-top:14px">
         <label class="f">¿Cuántas personas van?<select id="personas"><option value="1">1 persona (solo yo)</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option></select></label>
@@ -255,7 +256,7 @@ var EXPS={
   rap:{n:'Rapel en Corral de Piedra',p:'Amanalco, Edomex',d:'6–7 feb 2027',s:'20270206',e:'20270208',price:4300,img:'rap1.jpg'},
   kay:{n:'Kayak al amanecer',p:'Xochimilco, CDMX',d:'20 feb 2027',s:'20270220',e:'20270221',price:1000,img:'kay1.jpg'}
 };
-var ORDER=['vf','col','rap','kay'], DISC={2:5,3:8,4:10};
+var ORDER=['vf','col','rap','kay'], DISC={};
 var KEY='hila-reserva';
 var st={step:1,sel:{},chips:{}};var tried={};
 try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved)st=Object.assign(st,saved);}catch(e){}
@@ -278,11 +279,11 @@ document.querySelectorAll('[data-chips]').forEach(function(g){var k=g.dataset.ch
 function drawExps(){$('exps').innerHTML=ORDER.map(function(k){var x=EXPS[k],on=!!st.sel[k];
   return '<label class="exp'+(on?' on':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><img src="'+x.img+'" alt=""><span style="flex:1"><span style="display:block;font-weight:700">'+x.n+'</span><span style="font-size:14px;color:#6A6A6A">'+x.d+' · '+fmt(x.price)+' por persona</span></span></label>';}).join('');
   $('exps').querySelectorAll('input').forEach(function(i){i.addEventListener('change',function(){st.sel[i.dataset.k]=i.checked;save();drawExps();summary();photo();if(tried[2])valid(2);});});}
-function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=n>=4?DISC[4]:DISC[n]||0,pp=+(st.personas||1);
+function calc(){var ks=ORDER.filter(function(k){return st.sel[k];}),n=ks.length,per=ks.reduce(function(s,k){return s+EXPS[k].price;},0),pct=0,pp=+(st.personas||1);
   return {ks:ks,n:n,per:per,pct:pct,pp:pp,sub:per*pp,save:per*pp*pct/100,total:per*pp*(1-pct/100)};}
 function summary(){var c=calc(),h;
-  if(!c.n){h='<div style="font-size:15px;color:#6A6A6A">Todavía no eliges ninguna. Con 2 te llevas 5% menos, con 3 un 8% y con las 4, 10%.</div>';}
-  else{h=(c.pct?'<span class="badge">¡'+c.pct+'% menos en tu plan!</span>':'<div style="font-size:14px;color:#6A6A6A">Agrega otra y te llevas 5% menos.</div>')+
+  if(!c.n){h='<div style="font-size:15px;color:#6A6A6A">Todavía no eliges ninguna experiencia.</div>';}
+  else{h=
     c.ks.map(function(k){return '<div class="l"><span>'+EXPS[k].n+'</span><span>'+fmt(EXPS[k].price)+'</span></div>';}).join('')+
     (c.pp>1?'<div class="l" style="color:#6A6A6A"><span>× '+c.pp+' personas</span><span>'+fmt(c.sub)+'</span></div>':'')+
     (c.pct?'<div class="l" style="color:#1F6B45;font-weight:600"><span>Descuento del plan</span><span>−'+fmt(c.save)+'</span></div>':'')+
@@ -336,7 +337,7 @@ function valid(n){tried[n]=true;
   var bad=(BYSTEP[n]||[]).filter(function(f){var m=RULES[f]();mark(f,m);return m;});
   if(!bad.length)return err(n,'');
   var h=holder(bad[0]);if(h){h.scrollIntoView({behavior:'smooth',block:'center'});var el=$(bad[0]);if(el&&el.focus)setTimeout(function(){el.focus({preventScroll:true});},300);}
-  return err(n,bad.length===1?'Te falta una cosita, la marcamos en rojo.':'Te faltan '+bad.length+' cositas, las marcamos en rojo.');}
+  return err(n,bad.length===1?'Te falta una cosita, abajo te decimos qué.':'Te faltan '+bad.length+' cositas, abajo de cada una te decimos qué.');}
 document.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){if(valid(st.step))show(st.step+1);});});
 document.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){show(Math.max(1,st.step-1));});});
 $('pay').addEventListener('click',function(){if(!valid(4))return;
