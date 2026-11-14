@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:#FFFFFF;font-family:Figtree,sans-serif;color:#222222}
 a{color:#222222}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
@@ -56,10 +57,15 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 .chip[aria-pressed="true"]{border-color:#2E7D4F;background:#E6F2EA;color:#1F6B45;font-weight:700}
 .exp{display:flex;gap:12px;align-items:center;border:1px solid #DDDDDD;border-radius:14px;padding:10px;cursor:pointer;margin-top:10px}
 .exp img{width:56px;height:56px;border-radius:10px;object-fit:cover}
-.exp input{width:20px;height:20px;accent-color:#2E7D4F}
+
 .exp.on{border-color:#2E7D4F;background:#F4FAF6}
-.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15px;line-height:1.4}
-.check input{width:20px;height:20px;accent-color:#2E7D4F;flex-shrink:0;margin-top:1px}
+.check{display:flex;gap:12px;align-items:flex-start;margin-top:14px;font-size:15px;line-height:1.45}
+.check input,.exp input{-webkit-appearance:none;appearance:none;width:22px;height:22px;margin:0;flex-shrink:0;border:1.5px solid #8A8A8A;border-radius:6px;background:#FFFFFF;display:grid;place-content:center;cursor:pointer}
+.check input{margin-top:0}
+.check input:checked,.exp input:checked{background:#2E7D4F;border-color:#2E7D4F}
+.check input:checked:after,.exp input:checked:after{content:'';width:11px;height:6px;border-left:2.5px solid #FFFFFF;border-bottom:2.5px solid #FFFFFF;transform:rotate(-45deg) translate(1px,-1px)}
+.check input:focus-visible,.exp input:focus-visible{outline:2px solid #2E7D4F;outline-offset:2px}
+.check span{padding-top:1px}
 .btn{display:block;width:100%;margin-top:22px;font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;text-align:center;text-decoration:none}
 .btn:hover{background:#256842}
 .btn.ghost{background:#FFFFFF;color:#222222;border:1px solid #222222}
@@ -72,7 +78,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
 .badge{display:inline-block;background:#E6F2EA;color:#1F6B45;font-weight:700;font-size:13px;padding:5px 10px;border-radius:8px}
 .hide{display:none!important}
 /* confirmación */
-.done{max-width:760px;margin:0 auto;padding:48px 24px 96px;text-align:center}
+.done{max-width:760px;margin:0 auto;padding:40px 24px 40px;text-align:center}
 .done h1{font-size:40px}
 .tickets{display:flex;flex-direction:column;gap:18px;margin-top:32px;text-align:left}
 .ticket{display:flex;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#FFFFFF}
@@ -361,7 +367,7 @@ function timeline(ks){var first=EXPS[ks[0]],d0=dt(first.s),wa=new Date(d0),today
   var items=[
     ['now','mail','Hoy','Te llega tu confirmación','En unos minutos la tienes en tu correo. Si no la ves, échale un ojo a spam.'],
     ['','chat',waTxt,'Te sumamos al grupo de WhatsApp','Ahí conoces a quienes van contigo y te pasamos punto de encuentro, hora exacta y qué llevar.'],
-    ['','people','La semana antes','Meet & greet','Una cita relajada para conocerse antes de salir. Si vas solo, aquí rompes el hielo.'],
+    ['','people','La semana antes','Meet & greet','Un rato para conocerse antes de salir. Si vas solo, aquí rompes el hielo.'],
     ['','mtn',dates.join(' · '),ks.length>1?'Salimos juntos desde CDMX, '+ks.length+' veces':'Salimos juntos desde CDMX','Tú solo prepárate para salir a vivirlo.']];
   $('tl').innerHTML=items.map(function(x){return '<li class="'+x[0]+'"><div class="ic">'+ico(x[1])+'</div><div><span class="when">'+x[2]+'</span><h3>'+x[3]+'</h3><p>'+x[4]+'</p></div></li>';}).join('');
   $('nextSub').textContent=ks.length>1?'Así va tu primera salida, y lo mismo pasa con cada una.':'Tú solo prepárate. Del resto nos encargamos.';}
