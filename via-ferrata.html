@@ -62,7 +62,14 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
 .lb-stage.zoom img{max-width:none;max-height:none;width:220%;cursor:zoom-out}
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%)}
 .lb-prev{left:18px}.lb-next{right:18px}
-.lb-cap{text-align:center;font-size:14px;color:rgba(255,255,255,.75);padding:12px 18px 22px}
+.lb-stage{margin-bottom:24px}
+.bdg{margin-top:22px;border:1px solid #DDDDDD;border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.bdg-a{display:flex;align-items:center;gap:12px}
+.bdg-b{font-size:16px;line-height:1.45;padding-left:24px;border-left:1px solid #EBEBEB}
+.bdg-c{text-align:center;padding-left:24px;border-left:1px solid #EBEBEB;min-width:80px}
+.hrs{margin-top:10px;border-left:2px solid #EBEBEB;padding-left:16px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.hr{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline}
+.hr strong{font-variant-numeric:tabular-nums;text-align:right}
 .c-see{font-size:13px;font-weight:600;color:#1F6B45;text-decoration:underline;white-space:nowrap}
 @media (max-width:760px){
   .gal,.gal.two{grid-template-columns:1fr 1fr!important;grid-template-rows:250px 130px!important;gap:8px;border-radius:0;overflow:visible;margin-left:0;margin-right:0}
@@ -75,6 +82,7 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
   .lb-nav{display:none}.lb-stage{padding:0}
   .m-cols{flex-direction:column!important;gap:20px!important;margin-top:24px!important}
   .m-aside{display:contents!important}
+  .bdg{grid-template-columns:1fr auto;gap:14px 16px;padding:18px}.bdg-b{grid-column:1/-1;grid-row:2;padding-left:0;border-left:0}.bdg-c{padding-left:16px}
   .m-price{order:-1}.m-combo{order:2}
 }
 </style>
@@ -95,7 +103,7 @@ details.fq[open] summary .chev{transform:rotate(180deg)}
   </style>
   <div class="mm-top"><img src="hila-logo-color.svg" alt="Hila" style="height:52px"><button type="button" id="mm-close" aria-label="Cerrar menú" style="width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
   <nav class="mm-links" aria-label="Menú"><a href="index.html#experiencias">Experiencias</a><a href="index.html#arma">Arma tu plan</a><a href="index.html#como">Cómo funciona</a><a href="index.html#contacto">Contacto</a></nav>
-  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a></div>
+  <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a><a href="https://wa.me/525548915205" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"></path></svg>Escríbenos por WhatsApp</a></div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('mmenu'),b=document.querySelector('.m-burger');if(!m||!b)return;
@@ -132,13 +140,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
         <div style="font-weight: 600; font-size: 22px">Vía ferrata en Mineral del Chico, Hidalgo</div>
         <div style="font-size: 16px; color: #222222; margin-top: 4px">2 días · Camping · Dificultad media · Sale de CDMX</div>
 
-        <div style="margin-top: 22px; border: 1px solid #DDDDDD; border-radius: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
-          <div style="display: flex; align-items: center; gap: 12px; flex: 1 1 220px">
+        <div class="bdg">
+          <div class="bdg-a">
             <svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 3 5 2-3 6 10z"></path></svg>
             <div style="font-weight: 700; font-size: 17px; line-height: 1.25">Ideal si es<br>tu primera vez</div>
           </div>
-          <div style="flex: 2 1 280px; font-size: 16px; line-height: 1.45">No necesitas saber escalar. Vas asegurado todo el tiempo y con guías a tu lado.</div>
-          <div style="text-align: center; padding-left: 20px; border-left: 1px solid #DDDDDD">
+          <div class="bdg-b">No necesitas saber escalar. Vas asegurado todo el tiempo y con guías a tu lado.</div>
+          <div class="bdg-c">
             <div style="font-weight: 700; font-size: 22px">20</div>
             <div style="font-size: 13px">lugares</div>
           </div>
@@ -185,20 +193,20 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 18px">
             <div>
               <div style="font-weight: 700; font-size: 16px">Sábado 16</div>
-              <div style="margin-top: 10px; border-left: 2px solid #EBEBEB; padding-left: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-                <div><strong>5:00</strong> · Nos vemos en CDMX</div>
-                <div><strong>8:30</strong> · Llegamos a Mineral del Chico</div>
-                <div><strong>9:00</strong> · Hike a Las Monjas</div>
-                <div><strong>14:00</strong> · Comida</div>
-                <div><strong>19:00</strong> · Cena y fogata</div>
+              <div class="hrs">
+                <div class="hr"><strong>5:00</strong><span>Nos vemos en CDMX</span></div>
+                <div class="hr"><strong>8:30</strong><span>Llegamos a Mineral del Chico</span></div>
+                <div class="hr"><strong>9:00</strong><span>Hike a Las Monjas</span></div>
+                <div class="hr"><strong>14:00</strong><span>Comida</span></div>
+                <div class="hr"><strong>19:00</strong><span>Cena y fogata</span></div>
               </div>
             </div>
             <div>
               <div style="font-weight: 700; font-size: 16px">Domingo 17</div>
-              <div style="margin-top: 10px; border-left: 2px solid #EBEBEB; padding-left: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-                <div><strong>6:00</strong> · Desayuno</div>
-                <div><strong>7:00</strong> · Vía ferrata</div>
-                <div><strong>12:00</strong> · Regreso a CDMX (aprox.)</div>
+              <div class="hrs">
+                <div class="hr"><strong>6:00</strong><span>Desayuno</span></div>
+                <div class="hr"><strong>7:00</strong><span>Vía ferrata</span></div>
+                <div class="hr"><strong>12:00</strong><span>Regreso a CDMX (aprox.)</span></div>
               </div>
             </div>
           </div><div style="font-size:13px;color:#6A6A6A;margin-top:12px">Los horarios finales te los confirmamos en el grupo de WhatsApp.</div>
@@ -283,7 +291,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       <div class="hf-brand">
         <img src="hila-logo-crema.svg" alt="Hila · Sal a vivirlo." style="height:76px;width:auto;display:block">
         <p class="hf-tag">Experiencias al aire libre saliendo de la Ciudad de México. Tu próxima historia empieza afuera.</p>
-        <div class="hf-soc"><a href="https://www.instagram.com/HILA_IG/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
+        <div class="hf-soc"><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" aria-label="Instagram de Hila"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://wa.me/525548915205" target="_blank" rel="noopener" aria-label="WhatsApp de Hila"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"></path></svg></a><a href="mailto:hila.sal.a.vivirlo@gmail.com" aria-label="Escríbenos un correo"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a></div>
       </div>
       <div><h3>Experiencias</h3><div class="hf-col"><a href="via-ferrata.html">Vía ferrata</a><a href="nevado-de-colima.html">Nevado de Colima</a><a href="rapel-corral-de-piedra.html">Rapel en Corral de Piedra</a><a href="kayak-xochimilco.html">Kayak al amanecer</a></div></div>
       <div><h3>Hila</h3><div class="hf-col"><a href="index.html#como">Cómo funciona</a><a href="index.html#arma">Arma tu plan</a><a href="reservar.html">Reservar</a><a href="index.html#contacto">Contacto</a></div></div>
@@ -295,7 +303,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
 <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotos de la experiencia">
   <div class="lb-top"><span id="lb-c">1 de 1</span><button type="button" class="lb-btn" id="lb-x" aria-label="Cerrar fotos"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
   <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""><button type="button" class="lb-btn lb-nav lb-prev" id="lb-p" aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button><button type="button" class="lb-btn lb-nav lb-next" id="lb-n" aria-label="Foto siguiente"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button></div>
-  <div class="lb-cap" id="lb-cap"></div>
 </div>
   <div class="m-bar" style="display:none;position:sticky;bottom:0;background:#FFFFFF;border-top:1px solid #EBEBEB;padding:14px 18px;justify-content:space-between;align-items:center;gap:12px"><div><div style="font-weight:700;font-size:18px">$5,800 MXN</div><div style="font-size:13px">16–17 ene · sale de CDMX</div></div><a href="reservar.html?exp=vf" style="background:#2E7D4F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:700;font-size:16px">Reservar</a></div>
 </div>
@@ -324,7 +331,7 @@ var sh=document.getElementById('share');if(sh)sh.addEventListener('click',functi
   if(navigator.share){navigator.share({title:document.title,text:SHARE,url:url}).catch(function(){});}
   else if(navigator.clipboard){navigator.clipboard.writeText(SHARE+' '+url);sh.lastChild.textContent='Link copiado';setTimeout(function(){sh.lastChild.textContent='Compartir';},2500);}});
 var G=[["vf1.jpg", "Grupo con casco avanzando por una vía ferrata"], ["vf2.jpg", "Persona con casco sujetándose del cable"], ["vf3.jpg", "Escalera metálica en pared de roca"], ["vf5.jpg", "Dos personas subiendo escalones de vía ferrata"], ["vf6.jpg", "Fogata y casas de campaña al anochecer"]],cur=0,lb=document.getElementById('lb'),im=document.getElementById('lb-img'),stg=document.getElementById('lb-stage');
-function show(i){cur=(i+G.length)%G.length;stg.classList.remove('zoom');im.src=G[cur][0];im.alt=G[cur][1];document.getElementById('lb-c').textContent=(cur+1)+' de '+G.length;document.getElementById('lb-cap').textContent=G[cur][1];}
+function show(i){cur=(i+G.length)%G.length;stg.classList.remove('zoom');im.src=G[cur][0];im.alt=G[cur][1];document.getElementById('lb-c').textContent=(cur+1)+' de '+G.length;}
 function open(i){show(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-x').focus();}
 function close(){lb.hidden=true;document.body.style.overflow='';}
 document.querySelectorAll('.gal [data-i]').forEach(function(b){b.addEventListener('click',function(){open(+b.dataset.i);});});
