@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <!-- Google Analytics 4 · Hila (con consentimiento) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3S0FPCSXH"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPXXGSSYZE"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 (function(){var c=null;try{c=localStorage.getItem('hila-cookies');}catch(e){}
 gtag('consent','default',{analytics_storage:c==='si'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});})();
 gtag('js',new Date());
-gtag('config','G-D3S0FPCSXH',{anonymize_ip:true});
+gtag('config','G-PPXXGSSYZE',{anonymize_ip:true});
 window.hilaTrack=function(n,p){gtag('event',n,p||{});};
 </script>
 <script defer src="hila-analytics.js"></script>
@@ -40,12 +40,12 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .plan-tag{position:absolute;top:16px;right:16px;z-index:2;background:#153F2C;color:#FFFFFF;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700}
 .photo-wrap{position:sticky;top:24px;margin-left:auto;width:62%}
 @keyframes phin{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
-.f.bad{box-shadow:inset 0 0 0 1.5px #E7A69E}
+.f.bad{box-shadow:none}
 .fe{display:block;font-size:13px;font-weight:500;color:#B3261E;margin-top:4px}
 .fe:before,.err:before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B3261E' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v6M12 16.5v.5'/%3E%3C/svg%3E") no-repeat center/contain}
 .fe.out{margin:8px 0 0 2px}
-.chips.bad .chip{border-color:#E7A69E}
-.check.bad input{border-color:#C9655B}
+.chips.bad .chip{border-color:#DDDDDD}
+.check.bad input{border-color:#8A8A8A}
 .check a{font-weight:600}
 .check small{display:block;color:#6A6A6A;font-size:13px;margin-top:2px}
 .opt{font-size:13px;color:#6A6A6A;font-weight:500}
@@ -214,9 +214,9 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
           <label class="f">Estatura (cm)<input id="altura" inputmode="numeric" maxlength="3" placeholder="165"></label>
           <label class="f">Peso (kg)<input id="peso" inputmode="numeric" maxlength="3" placeholder="60"></label>
         </div>
-        <div class="row">
+        <div>
           <label class="f">Tipo de sangre<select id="sangre"><option value="">Elige</option><option>O+</option><option>O−</option><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>AB+</option><option>AB−</option><option>No sé</option></select></label>
-          <label class="f">Talla de playera<select id="talla"><option value="">Elige</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></label>
+          
         </div>
       </div>
       <label class="check" id="w-saludOk"><input type="checkbox" id="saludOk"><span>Autorizo que Hila use mis datos de salud solo para cuidarme durante la experiencia.<small>Son datos sensibles, por eso te pedimos tu permiso aparte. Más detalle en el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</small></span></label>
@@ -242,7 +242,7 @@ h1{font-weight:700;font-size:30px;line-height:1.15;margin:6px 0 0;letter-spacing
       <label class="check"><input type="checkbox" id="fotos"><span>Pueden compartir fotos donde salgo en las redes de Hila <span class="opt">(opcional)</span></span></label>
       <div class="err" id="err4"></div>
       <button type="button" class="btn" id="pay">Pagar con Mercado Pago</button>
-      <div class="note">Te llevaremos a Mercado Pago para pagar de forma segura. Tarjeta, OXXO o transferencia.</div>
+      <div class="note">Te llevaremos a Mercado Pago para pagar de forma segura.</div>
       <button type="button" class="back" data-prev>Regresar</button>
     </section>
   </form>
@@ -298,7 +298,7 @@ if(qs.get('p'))st.personas=String(Math.max(1,Math.min(6,+qs.get('p')||1)));
 if(qs.get('paso'))st.step=Math.max(1,Math.min(4,+qs.get('paso')||1));
 var $=function(id){return document.getElementById(id);};
 var fmt=function(n){return '$'+Math.round(n).toLocaleString('es-MX');};
-var FIELDS=['nombre','apellido','cel','correo','mayor','personas','salud','alergias','altura','peso','sangre','talla','emNombre','emCel','priv','tyc','saludOk','news','fotos'];
+var FIELDS=['nombre','apellido','cel','correo','mayor','personas','salud','alergias','altura','peso','sangre','emNombre','emCel','priv','tyc','saludOk','news','fotos'];
 FIELDS.forEach(function(f){var el=$(f);if(!el)return;if(st[f]!==undefined){if(el.type==='checkbox')el.checked=!!st[f];else el.value=st[f];}
   function up(){st[f]=el.type==='checkbox'?el.checked:el.value;save();if(f==='personas'){summary();}if(tried[st.step])recheck(f);}
   el.addEventListener('input',up);el.addEventListener('change',up);});

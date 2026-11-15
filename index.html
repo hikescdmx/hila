@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <!-- Google Analytics 4 · Hila (con consentimiento) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3S0FPCSXH"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPXXGSSYZE"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 (function(){var c=null;try{c=localStorage.getItem('hila-cookies');}catch(e){}
 gtag('consent','default',{analytics_storage:c==='si'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});})();
 gtag('js',new Date());
-gtag('config','G-D3S0FPCSXH',{anonymize_ip:true});
+gtag('config','G-PPXXGSSYZE',{anonymize_ip:true});
 window.hilaTrack=function(n,p){gtag('event',n,p||{});};
 </script>
 <script defer src="hila-analytics.js"></script>
@@ -234,33 +234,33 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
   <section id="mapa" aria-labelledby="mapa-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
       .mp{max-width:1240px;margin:0 auto;padding:40px 24px 64px}
-      .mp-card{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center;background:#F6F8F5;border-radius:28px;padding:36px}
+      .mp-card{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center;background:#F7F7F7;border-radius:28px;padding:36px}
       .mp h2{font-size:34px;letter-spacing:-.4px;margin:0;line-height:1.1}
       .mp p.l{color:#6A6A6A;font-size:17px;margin:8px 0 0}
       .mp .map-w{position:relative}
       .mp svg.map{width:100%;height:auto;display:block;overflow:visible}
-      .st{fill:#E3ECE4;stroke:#FFFFFF;stroke-width:1;transition:fill .25s,transform .25s,filter .25s;transform-box:fill-box;transform-origin:center;cursor:pointer}
-      .st:hover{fill:#CFE0D3;transform:scale(1.05) translateY(-3px);filter:drop-shadow(0 6px 10px rgba(21,63,44,.3))}
-      .st.has{fill:#CFE2D4}
-      .st.has:hover{fill:#B4D0BB}
+      .st{fill:rgba(255,255,255,.85);stroke:#D2D2D2;stroke-width:.8;transition:fill .25s,transform .25s,filter .25s;transform-box:fill-box;transform-origin:center;cursor:pointer}
+      .st:hover{fill:#FFFFFF;stroke:#9A9A9A;transform:scale(1.05) translateY(-3px);filter:drop-shadow(0 6px 10px rgba(0,0,0,.14))}
+      .st.has{fill:#EAF1EC;stroke:#B9C9BD}
+      .st.has:hover{fill:#DFEBE2;stroke:#8FAE97}
       svg.map.ready .st{animation:stIn .6s ease both}
       @keyframes stIn{from{opacity:0}to{opacity:1}}
       .mx-tip{position:absolute;pointer-events:none;transform:translate(-50%,-125%);background:#222222;color:#FFFFFF;border-radius:10px;padding:6px 10px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .15s;z-index:3}
-      .mx-tip b{display:block}.mx-tip span{display:block;font-size:12px;color:#F4BE95}
-      .mp .land{fill:#E3ECE4;stroke:#9DBBA3;stroke-width:1.5;stroke-linejoin:round}
+      .mx-tip b{display:block}.mx-tip span{display:block;font-size:12px;color:#CFE2D4}
+      .mp .land{fill:#FFFFFF;stroke:#CFCFCF;stroke-width:1.5;stroke-linejoin:round}
       .pin{cursor:pointer;outline:none}
       .pin .dot{fill:var(--c);stroke:#FFFFFF;stroke-width:3;transition:r .2s}
       .pin .halo{fill:var(--c);opacity:.25;transform-box:fill-box;transform-origin:center;animation:halo 2.4s ease-out infinite}
       .pin.off{opacity:.15}.pin.off .halo{animation:none;opacity:0}
       .pin.hi .dot{r:10}
       @keyframes halo{0%{transform:scale(.4);opacity:.45}100%{transform:scale(1.7);opacity:0}}
-      .cdmx{fill:#153F2C}.cdmx-t{font-size:12px;font-weight:700;fill:#153F2C}
+      .cdmx{fill:#484848}.cdmx-t{font-size:12px;font-weight:700;fill:#484848}
       .pl-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
       .pl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;background:#FFFFFF;border:1px solid #E4E9E3;border-radius:14px;padding:12px 16px;text-decoration:none;color:#222222;transition:border-color .2s,opacity .3s}
-      .pl:hover,.pl.hi{border-color:#AF4323}
+      .pl:hover,.pl.hi{border-color:#BDBDBD}
       .pl.off{opacity:.35}
-      .pl-n{font-weight:700}.pl-p{grid-column:1;font-size:14px;color:#6A6A6A}.pl-c{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:700;color:#FFFFFF;background:var(--c);border-radius:999px;padding:4px 10px}
-      .pl{border-left:4px solid var(--c,#E4E9E3)}
+      .pl-n{font-weight:700}.pl-p{grid-column:1;font-size:14px;color:#6A6A6A}.pl-c{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:600;color:#484848;background:#F3F3F1;border-radius:999px;padding:4px 10px 4px 22px;position:relative}.pl-c:before{content:'';position:absolute;left:9px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--c)}
+      .pl{border-left:3px solid var(--c,#E4E9E3)}
       .zoom{font-size:12px;fill:#6A6A6A}
       @media (max-width:860px){.mp-card{grid-template-columns:1fr;padding:22px 16px}.mp h2{font-size:28px}}
     </style>
@@ -269,113 +269,20 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
         <div class="map-w"><div class="mx-tip" id="mx-tip"></div><svg class="map" viewBox="20 0 750 500" role="img" aria-label="Mapa de México con las experiencias de Hila">
           <path id="mx-land" class="land" d="M21.3,17.4 L72.5,12.5 L79.3,12.5 L167.6,48.6 L236.7,48.6 L236.7,36.9 L277.6,36.9 L314.3,65.5 L327.6,94.4 L355.4,109.7 L370.4,89.7 L401.4,89.2 L412.0,100.1 L427.5,128.2 L446.8,148.2 L457.0,176.0 L478.8,185.6 L504.2,188.5 L497.4,223.6 L489.6,283.4 L503.4,318.8 L521.1,352.3 L529.5,366.6 L556.1,379.1 L570.6,391.3 L602.1,384.3 L633.0,379.6 L652.9,365.3 L663.7,347.1 L667.4,319.8 L685.5,309.4 L725.4,301.6 L748.4,302.9 L753.9,314.6 L738.7,338.0 L736.3,361.4 L718.1,382.2 L704.8,398.3 L697.6,399.9 L653.3,399.9 L653.3,414.7 L642.5,414.7 L666.2,445.4 L635.2,445.4 L623.6,466.4 L623.8,484.9 L594.8,457.6 L568.2,442.0 L551.3,453.7 L518.7,456.3 L481.2,440.7 L437.7,425.1 L399.0,405.6 L382.0,396.5 L351.8,387.4 L330.1,366.6 L307.1,344.5 L298.6,331.5 L308.3,306.8 L297.4,275.6 L280.0,260.0 L256.3,227.5 L220.0,198.9 L206.7,176.8 L183.8,146.9 L170.5,137.8 L140.2,109.2 L125.7,78.0 L117.3,53.3 L77.4,42.9 L76.2,36.4 L81.0,57.2 L89.5,79.3 L116.1,114.4 L136.6,156.0 L154.8,180.7 L176.5,230.1 L207.5,260.5 L192.2,267.3 L186.2,249.6 L153.5,223.6 L141.5,195.0 L122.1,165.1 L94.3,143.0 L90.7,118.3 L56.8,88.4 L32.6,55.9 L21.3,17.4Z"/>
           <g id="mx-states"></g><circle cx="456.3" cy="358" r="4" class="cdmx"/><text x="474" y="390" class="cdmx-t">CDMX</text>
-          <g class="pin" style="--c:#AF4323" data-id="vf" data-cats="montana adrenalina primera" tabindex="0" role="button" aria-label="Vía ferrata, Mineral del Chico, Hgo."><circle cx="465.9" cy="337.7" r="16" class="halo"/><circle cx="465.9" cy="337.7" r="7" class="dot"/></g><g class="pin" style="--c:#C7891F" data-id="col" data-cats="montana" tabindex="0" role="button" aria-label="Nevado de Colima, Jalisco"><circle cx="348.0" cy="354.6" r="16" class="halo"/><circle cx="348.0" cy="354.6" r="7" class="dot"/></g><g class="pin" style="--c:#3E8A5A" data-id="rap" data-cats="adrenalina montana primera" tabindex="0" role="button" aria-label="Rapel, Amanalco, Edomex"><circle cx="435.2" cy="362.7" r="16" class="halo"/><circle cx="435.2" cy="362.7" r="7" class="dot"/></g><g class="pin" style="--c:#2F7E86" data-id="kay" data-cats="agua primera" tabindex="0" role="button" aria-label="Kayak al amanecer, Xochimilco, CDMX"><circle cx="457.0" cy="362.4" r="16" class="halo"/><circle cx="457.0" cy="362.4" r="7" class="dot"/></g>
+          <g class="pin" style="--c:#C8846A" data-id="vf" data-cats="montana adrenalina primera" tabindex="0" role="button" aria-label="Vía ferrata, Mineral del Chico, Hgo."><circle cx="465.9" cy="337.7" r="16" class="halo"/><circle cx="465.9" cy="337.7" r="7" class="dot"/></g><g class="pin" style="--c:#CDB07F" data-id="col" data-cats="montana" tabindex="0" role="button" aria-label="Nevado de Colima, Jalisco"><circle cx="348.0" cy="354.6" r="16" class="halo"/><circle cx="348.0" cy="354.6" r="7" class="dot"/></g><g class="pin" style="--c:#8FAE97" data-id="rap" data-cats="adrenalina montana primera" tabindex="0" role="button" aria-label="Rapel, Amanalco, Edomex"><circle cx="435.2" cy="362.7" r="16" class="halo"/><circle cx="435.2" cy="362.7" r="7" class="dot"/></g><g class="pin" style="--c:#88AEB2" data-id="kay" data-cats="agua primera" tabindex="0" role="button" aria-label="Kayak al amanecer, Xochimilco, CDMX"><circle cx="457.0" cy="362.4" r="16" class="halo"/><circle cx="457.0" cy="362.4" r="7" class="dot"/></g>
           <text x="40" y="480" class="zoom">Todas las salidas parten de la Ciudad de México</text>
         </svg></div>
       </div>
       <div>
         <h2 id="mapa-t">¿A dónde salimos a vivirlo?</h2>
         <p class="l">Montaña, volcán, bosque y agua, a pocas horas de la ciudad.</p>
-        <div class="pl-list"><a class="pl" style="--c:#AF4323" href="via-ferrata.html" data-id="vf" data-cats="montana adrenalina primera"><span class="pl-n">Vía ferrata</span><span class="pl-p">Mineral del Chico, Hgo.</span><span class="pl-c">Montaña · Adrenalina</span></a><a class="pl" style="--c:#C7891F" href="nevado-de-colima.html" data-id="col" data-cats="montana"><span class="pl-n">Nevado de Colima</span><span class="pl-p">Jalisco</span><span class="pl-c">Montaña · Volcán</span></a><a class="pl" style="--c:#3E8A5A" href="rapel-corral-de-piedra.html" data-id="rap" data-cats="adrenalina montana primera"><span class="pl-n">Rapel</span><span class="pl-p">Amanalco, Edomex</span><span class="pl-c">Bosque · Adrenalina</span></a><a class="pl" style="--c:#2F7E86" href="kayak-xochimilco.html" data-id="kay" data-cats="agua primera"><span class="pl-n">Kayak al amanecer</span><span class="pl-p">Xochimilco, CDMX</span><span class="pl-c">Agua</span></a></div>
+        <div class="pl-list"><a class="pl" style="--c:#C8846A" href="via-ferrata.html" data-id="vf" data-cats="montana adrenalina primera"><span class="pl-n">Vía ferrata</span><span class="pl-p">Mineral del Chico, Hgo.</span><span class="pl-c">Montaña · Adrenalina</span></a><a class="pl" style="--c:#CDB07F" href="nevado-de-colima.html" data-id="col" data-cats="montana"><span class="pl-n">Nevado de Colima</span><span class="pl-p">Jalisco</span><span class="pl-c">Montaña · Volcán</span></a><a class="pl" style="--c:#8FAE97" href="rapel-corral-de-piedra.html" data-id="rap" data-cats="adrenalina montana primera"><span class="pl-n">Rapel</span><span class="pl-p">Amanalco, Edomex</span><span class="pl-c">Bosque · Adrenalina</span></a><a class="pl" style="--c:#88AEB2" href="kayak-xochimilco.html" data-id="kay" data-cats="agua primera"><span class="pl-n">Kayak al amanecer</span><span class="pl-p">Xochimilco, CDMX</span><span class="pl-c">Agua</span></a></div>
       </div>
     </div></div>
   </section>
 
 
-  <section id="arma" aria-labelledby="arma-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
-    <style>
-      .q{max-width:1240px;margin:0 auto;padding:24px 24px 80px}
-      .q-card{border:1px solid #DDDDDD;border-radius:28px;box-shadow:0 6px 20px rgba(0,0,0,.06);padding:40px;display:grid;grid-template-columns:.9fr 1.4fr;gap:44px}
-      .q-k{font-size:15px;font-weight:700;color:#2E7D4F}
-      .q h2{font-size:38px;line-height:1.08;letter-spacing:-.5px;margin:6px 0 0}
-      .q p.l{font-size:17px;line-height:1.55;color:#6A6A6A;margin:12px 0 0}
-      .q-why{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px;font-size:15px}
-      .q-why li{display:flex;gap:10px;align-items:flex-start}
-      .q-why svg{flex-shrink:0;margin-top:2px}
-      .q-step{font-size:13px;font-weight:700;color:#6A6A6A;margin:0 0 10px}
-      .q-exps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-      .q-exp{position:relative;border:1.5px solid #DDDDDD;border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s}
-      .q-exp input{position:absolute;opacity:0}
-      .q-exp img{width:100%;height:92px;object-fit:cover;display:block}
-      .q-exp span{display:block;padding:10px 12px}.q-exp b{display:block;font-size:14px}.q-exp small{font-size:12px;color:#6A6A6A}
-      .q-exp:has(input:checked){border-color:#2E7D4F;box-shadow:0 0 0 3px #E6F2EA}
-      .q-exp:has(input:focus-visible){outline:2px solid #2E7D4F;outline-offset:2px}
-      .q-row{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:22px}
-      .cal{border:1px solid #DDDDDD;border-radius:16px;padding:14px}
-      .cal-h{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:8px}
-      .cal-h button{width:32px;height:32px;border-radius:50%;border:1px solid #DDDDDD;background:#FFFFFF;cursor:pointer;font-size:16px}
-      .cal-h button:disabled{opacity:.3;cursor:default}
-      .cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
-      .cal-g .w{font-size:11px;font-weight:700;color:#8A8A8A;padding:4px 0}
-      .cal-g button{font:inherit;font-size:14px;aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;color:#222222}
-      .cal-g button:hover:not(:disabled){background:#F2F2F2}
-      .cal-g button:disabled{color:#CFCFCF;cursor:default}
-      .cal-g button.sel{background:#222222;color:#FFFFFF}
-      .cal-n{font-size:12px;color:#6A6A6A;margin-top:6px}
-      .q-side{display:flex;flex-direction:column;gap:14px}
-      .q-box{border:1px solid #DDDDDD;border-radius:16px;padding:14px 16px}
-      .q-box label{display:block;font-size:12px;font-weight:700}
-      .q-box input,.q-box textarea{font:inherit;font-size:16px;border:0;width:100%;padding:4px 0;background:transparent;color:#222222}
-      .q-box input:focus,.q-box textarea:focus{outline:none}
-      .q-box:focus-within{border-color:#222222}
-      .q-ppl{display:flex;justify-content:space-between;align-items:center}
-      .q-ppl .st{display:flex;align-items:center;gap:12px}
-      .q-ppl button{width:34px;height:34px;border-radius:50%;border:1px solid #B0B0B0;background:#FFFFFF;font-size:18px;cursor:pointer}
-      .q-ppl button:disabled{opacity:.35}
-      .q-ppl output{font-weight:700;font-size:18px;min-width:22px;text-align:center}
-      .q-chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:4px}
-      .q-chk input{width:18px;height:18px;accent-color:#2E7D4F;margin:1px 0 0}
-      .q-send{font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%}
-      .q-send:hover{background:#256842}
-      .q-send,.glow{animation:glow 3.2s ease-in-out infinite}
-      .q-send:hover,.glow:hover{box-shadow:0 0 0 4px rgba(46,125,79,.14),0 6px 24px rgba(46,125,79,.4)}
-      @keyframes glow{0%,100%{box-shadow:0 4px 12px rgba(46,125,79,.18)}50%{box-shadow:0 4px 22px rgba(46,125,79,.4)}}
-      @media (prefers-reduced-motion:reduce){.q-send,.glow{animation:none}}
-      .q-err{font-size:14px;color:#B3261E;display:none}
-      .q-ok{display:none;text-align:center;padding:30px 10px}
-      .q-ok h3{font-size:26px;margin:12px 0 6px}.q-ok p{color:#6A6A6A;margin:0}
-      @media (max-width:900px){.q-card{grid-template-columns:1fr;padding:26px 18px;gap:24px}.q h2{font-size:30px}.q-exps{grid-template-columns:1fr 1fr}.q-row{grid-template-columns:1fr}}
-    </style>
-    <div class="q"><div class="q-card">
-      <div>
-        <div class="q-k">Arma tu plan</div>
-        <h2 id="arma-t">¿Tu propia fecha, con tu grupo?</h2>
-        <p class="l">Para cumpleaños, despedidas, equipos de trabajo o tu grupo de amigos. Elige la experiencia, la fecha y cuántos van, y te mandamos una cotización a la medida.</p>
-        <ul class="q-why">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Salida privada, solo tu grupo</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Guías, transporte y comida, igual que siempre</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Te contestamos en menos de 48 horas</li>
-        </ul>
-      </div>
-      <form id="q-form" novalidate>
-        <div id="q-fields">
-          <p class="q-step">1 · ¿Qué experiencia?</p>
-          <div class="q-exps"><label class="q-exp"><input type="radio" name="q-exp" value="vf"><img src="vf1.jpg" alt=""><span><b>Vía ferrata</b><small>Mineral del Chico</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="col"><img src="col1.jpg" alt=""><span><b>Nevado de Colima</b><small>Jalisco</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="rap"><img src="rap1.jpg" alt=""><span><b>Rapel</b><small>Corral de Piedra</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="kay"><img src="kay2.jpg" alt=""><span><b>Kayak al amanecer</b><small>Xochimilco</small></span></label></div>
-          <div class="q-row">
-            <div>
-              <p class="q-step">2 · ¿Qué fecha?</p>
-              <div class="cal" id="cal"></div>
-            </div>
-            <div class="q-side">
-              <p class="q-step" style="margin:0">3 · ¿Quiénes van?</p>
-              <div class="q-box q-ppl"><div><b>Personas</b><div style="font-size:13px;color:#6A6A6A">Mínimo 10</div></div><div class="st"><button type="button" id="q-m" aria-label="Quitar una persona">−</button><output id="q-n">10</output><button type="button" id="q-p" aria-label="Agregar una persona">+</button></div></div>
-              <div class="q-box"><label for="q-nom">Tu nombre</label><input id="q-nom" autocomplete="name" placeholder="Nombre y apellido"></div>
-              <div class="q-box"><label for="q-mail">Correo</label><input id="q-mail" type="email" autocomplete="email" placeholder="tu@correo.com"></div>
-              <div class="q-box"><label for="q-msg">¿Algo más? <span style="font-weight:400;color:#6A6A6A">(opcional)</span></label><textarea id="q-msg" rows="2" placeholder="Es un cumpleaños, vamos con niños de 16, etc."></textarea></div>
-              <label class="q-chk"><input type="checkbox" id="q-priv"><span>Acepto el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a></span></label>
-              <div class="q-err" id="q-err" role="alert"></div>
-              <button type="submit" class="q-send">Quiero mi cotización</button>
-            </div>
-          </div>
-        </div>
-        <div class="q-ok" id="q-ok" role="status">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>
-          <h3>¡Recibimos tu plan!</h3>
-          <p id="q-ok-t">En menos de 48 horas te escribimos con tu cotización.</p>
-        </div>
-      </form>
-    </div></div>
-  </section>
+
 
   <section id="como" aria-roledescription="carrusel" aria-label="Cómo funciona Hila" style="background:#F7F7F7;font-family:Figtree,sans-serif">
     <style>
@@ -408,7 +315,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
     </style>
     <div class="cr">
       <div class="cr-track" id="cr">
-        <div class="sl" aria-label="1 de 3">
+        <div class="sl" aria-label="1 de 2">
           <div class="sl-ph"><img src="st3.jpg" alt="Grupo caminando por una cresta de montaña"></div>
           <div>
             <div class="cr-k">Cómo funciona</div>
@@ -416,7 +323,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
             <div class="wa"><div class="wa-h"><span><img src="hila-logo-sin-slogan-color.svg" alt="" style="width:28px"></span><div><b style="font-size:15px">Hila</b><div style="font-size:12px;opacity:.8">en línea</div></div></div><div class="wa-b"><div class="b"><em>Hila</em>¿Y si este enero sales a vivirlo? Vía ferrata, volcán, rapel o kayak, todo saliendo de CDMX.<i>9:40</i></div><div class="b me">Me late muchísimo, pero no sé ni por dónde empezar<i>9:41 ✓✓</i></div><div class="b"><em>Hila</em><b>1. Eliges y reservas.</b> Una experiencia para ti y tus amigos. Ves todo lo que incluye antes de pagar.<i>9:42</i></div><div class="b"><em>Hila</em><b>2. Conoces al grupo.</b> Te sumamos al chat y al meet &amp; greet antes de salir.<i>9:42</i></div><div class="b"><em>Hila</em><b>3. Llegas al punto de encuentro.</b> Guías, equipo y comida: listos.<i>9:43</i></div><div class="b"><em>Hila</em><b>4. Te llevas la historia.</b> Fotos, un recuerdo y gente con quien repetir.<i>9:43</i></div><div class="b me">Ok, sí está fácil. ¿Dónde reservo?<i>9:44 ✓✓</i></div></div></div>
           </div>
         </div>
-        <div class="sl" aria-label="2 de 3">
+        <div class="sl" aria-label="2 de 2">
           <div class="sl-ph"><img src="form-cumbre.jpg" alt="Personas viendo el atardecer desde una cumbre"></div>
           <div>
             <div class="cr-k">¿Por qué Hila?</div>
@@ -424,18 +331,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
             <div class="whys"><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><b>Seguridad primero</b><span>Guías certificados, paramédico en montaña, seguro y equipo revisado.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg><b>Todo resuelto</b><span>Transporte desde CDMX, comidas y logística. Tú solo llegas.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c2.8 0 5 2 5 5"/></svg><b>¿Vas solo? Vas en grupo</b><span>Antes de salir ya conoces a tu grupo: chat de la salida y meet &amp; greet. Llegas saludando, no presentándote.</span></div><div class="w"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#153F2C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15.5a4.5 4.5 0 0 0-4.5-4.5 6 6 0 0 0-11.5 2A3.5 3.5 0 0 0 4.5 20H18a2.5 2.5 0 0 0 2-4.5z"/><path d="M9 15l2 2 4-4"/></svg><b>Si llueve, no pierdes</b><span>Si el clima no deja salir con seguridad, tú eliges: otra fecha o tu dinero de regreso.</span></div></div>
           </div>
         </div>
-        <div class="sl story" aria-label="3 de 3">
-          <div class="sl-ph"><img src="historia-hila.jpg" alt="Ilana y Laila sonriendo en la montaña" style="object-position:50% 40%"></div>
-          <div>
-            <div class="cr-k">Así empezó</div>
-            <h2>Dos amigas, una montaña y un mar</h2>
-            <p>Ilana es de montaña: corporativo entre semana, hiking el fin. Laila es de mar: estudió Medicina y no pierde oportunidad de estar al aire libre. Durante años fueron las que armaban los planes del grupo.</p>
-            <p>Hila nació para que salir a vivirlo no dependa de tener a la amiga organizadora: experiencias completas, seguras y con gente nueva, saliendo de CDMX.</p>
-            <p class="sig">Tu próxima historia empieza afuera.</p>
-          </div>
-        </div>
       </div>
-      <div class="cr-dots" role="tablist" aria-label="Elegir diapositiva"><button type="button" class="on" aria-label="Cómo funciona"></button><button type="button" aria-label="Por qué Hila"></button><button type="button" aria-label="Así empezó"></button></div>
+      <div class="cr-dots" role="tablist" aria-label="Elegir diapositiva"><button type="button" class="on" aria-label="Cómo funciona"></button><button type="button" aria-label="Por qué Hila"></button></div>
     </div>
   </section>
 
@@ -443,7 +340,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
     <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; position: relative">
       <div style="position: relative; display: flex; justify-content: flex-end">
         <div class="m-formphoto" style="width: 74%; height: 680px; border-radius: 28px; overflow: hidden">
-          <img src="form-amigos.jpg" alt="Grupo de amigos sonriendo en una caminata por el bosque" style="width: 100%; height: 100%; object-fit: cover; object-position: 40% 40%; transform: scaleX(-1); display: block">
+          <img src="form-sillas.jpg" alt="Dos personas en sillas de campamento frente a la montaña" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block">
         </div>
       </div>
       <form class="m-form" style="position: absolute; left: 24px; top: 140px; width: 440px; max-width: calc(100% - 48px); box-sizing: border-box; background: #FFFFFF; border-radius: 28px; box-shadow: 0 10px 40px rgba(0,0,0,0.14); padding: 36px 32px">
@@ -502,7 +399,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
         <div class="rg-k">Regala una salida</div>
         <h2 id="rg-t">El regalo que sí van a usar</h2>
         <p>Para Navidad, un cumpleaños o porque sí. Regala una experiencia con un certificado digital listo para mandar o imprimir. El kayak al amanecer, desde $1,000, es el favorito.</p>
-        <div class="rg-cta"><a href="https://ig.me/m/hila_sav" target="_blank" rel="noopener" style="background:#8E1B24;color:#FFFFFF"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#FFFFFF" stroke="none"></circle></svg>Pídelo por Instagram</a><a href="mailto:hila.sal.a.vivirlo@gmail.com?subject=Quiero%20regalar%20una%20experiencia%20Hila" style="background:#FAF7F1;color:#3B2A18"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Por correo</a></div>
+        <div class="rg-cta"><a href="https://ig.me/m/hila_sav" target="_blank" rel="noopener" data-copy="Hola, quiero info para regalar una experiencia de Hila 🎁" style="background:#8E1B24;color:#FFFFFF"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#FFFFFF" stroke="none"></circle></svg>Pídelo por Instagram</a><a href="mailto:hila.sal.a.vivirlo@gmail.com?subject=Quiero%20regalar%20una%20experiencia%20Hila" style="background:#FAF7F1;color:#3B2A18"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Por correo</a></div>
       </div>
     </div></div>
   </section>
@@ -545,6 +442,101 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
   </section>
 
 
+
+  <section id="arma" aria-labelledby="arma-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
+    <style>
+      .q{max-width:1240px;margin:0 auto;padding:24px 24px 80px}
+      .q-card{border:1px solid #DDDDDD;border-radius:28px;box-shadow:0 6px 20px rgba(0,0,0,.06);padding:40px;display:grid;grid-template-columns:.9fr 1.4fr;gap:44px}
+      .q-k{font-size:15px;font-weight:700;color:#2E7D4F}
+      .q h2{font-size:38px;line-height:1.08;letter-spacing:-.5px;margin:6px 0 0}
+      .q p.l{font-size:17px;line-height:1.55;color:#6A6A6A;margin:12px 0 0}
+      .q-why{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px;font-size:15px}
+      .q-why li{display:flex;gap:10px;align-items:flex-start}
+      .q-why svg{flex-shrink:0;margin-top:2px}
+      .q-step{font-size:13px;font-weight:700;color:#6A6A6A;margin:0 0 10px}
+      .q-exps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+      .q-exp{position:relative;border:1.5px solid #DDDDDD;border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+      .q-exp input{position:absolute;opacity:0}
+      .q-exp img{width:100%;height:92px;object-fit:cover;display:block}
+      .q-exp span{display:block;padding:10px 12px}.q-exp b{display:block;font-size:14px}.q-exp small{font-size:12px;color:#6A6A6A}
+      .q-exp:has(input:checked){border-color:#2E7D4F;box-shadow:0 0 0 3px #E6F2EA}
+      .q-exp:has(input:focus-visible){outline:2px solid #2E7D4F;outline-offset:2px}
+      .q-row{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:22px}
+      .cal{border:1px solid #DDDDDD;border-radius:16px;padding:14px}
+      .cal-h{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:8px}
+      .cal-h button{width:32px;height:32px;border-radius:50%;border:1px solid #DDDDDD;background:#FFFFFF;cursor:pointer;font-size:16px}
+      .cal-h button:disabled{opacity:.3;cursor:default}
+      .cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+      .cal-g .w{font-size:11px;font-weight:700;color:#8A8A8A;padding:4px 0}
+      .cal-g button{font:inherit;font-size:14px;aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;color:#222222}
+      .cal-g button:hover:not(:disabled){background:#F2F2F2}
+      .cal-g button:disabled{color:#CFCFCF;cursor:default}
+      .cal-g button.sel{background:#222222;color:#FFFFFF}
+      .cal-n{font-size:12px;color:#6A6A6A;margin-top:6px}
+      .q-side{display:flex;flex-direction:column;gap:14px}
+      .q-box{border:1px solid #DDDDDD;border-radius:16px;padding:14px 16px}
+      .q-box label{display:block;font-size:12px;font-weight:700}
+      .q-box input,.q-box textarea{font:inherit;font-size:16px;border:0;width:100%;padding:4px 0;background:transparent;color:#222222}
+      .q-box input:focus,.q-box textarea:focus{outline:none}
+      .q-box:focus-within{border-color:#222222}
+      .q-ppl{display:flex;justify-content:space-between;align-items:center}
+      .q-ppl .st{display:flex;align-items:center;gap:12px}
+      .q-ppl button{width:34px;height:34px;border-radius:50%;border:1px solid #B0B0B0;background:#FFFFFF;font-size:18px;cursor:pointer}
+      .q-ppl button:disabled{opacity:.35}
+      .q-ppl output{font-weight:700;font-size:18px;min-width:22px;text-align:center}
+      .q-chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:4px}
+      .q-chk input{width:18px;height:18px;accent-color:#2E7D4F;margin:1px 0 0}
+      .q-send{font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%}
+      .q-send:hover{background:#256842}
+      .q-send,.glow{animation:glow 3.2s ease-in-out infinite}
+      .q-send:hover,.glow:hover{box-shadow:0 0 0 3px rgba(46,125,79,.08),0 4px 18px rgba(46,125,79,.22)}
+      @keyframes glow{0%,100%{box-shadow:0 2px 8px rgba(46,125,79,.10)}50%{box-shadow:0 2px 16px rgba(46,125,79,.24)}}
+      @media (prefers-reduced-motion:reduce){.q-send,.glow{animation:none}}
+      .q-err{font-size:14px;color:#B3261E;display:none}
+      .q-ok{display:none;text-align:center;padding:30px 10px}
+      .q-ok h3{font-size:26px;margin:12px 0 6px}.q-ok p{color:#6A6A6A;margin:0}
+      @media (max-width:900px){.q-card{grid-template-columns:1fr;padding:26px 18px;gap:24px}.q h2{font-size:30px}.q-exps{grid-template-columns:1fr 1fr}.q-row{grid-template-columns:1fr}}
+    </style>
+    <div class="q"><div class="q-card">
+      <div>
+        <div class="q-k">Arma tu plan</div>
+        <h2 id="arma-t">¿Tu propia fecha, con tu grupo?</h2>
+        <p class="l">Para cumpleaños, despedidas, equipos de trabajo o tu grupo de amigos. Elige la experiencia, la fecha y cuántos van, y te mandamos una cotización a la medida.</p>
+        <ul class="q-why">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Salida privada, solo tu grupo</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Guías, transporte y comida, igual que siempre</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Te contestamos en menos de 48 horas</li>
+        </ul>
+      </div>
+      <form id="q-form" novalidate>
+        <div id="q-fields">
+          <p class="q-step">1 · ¿Qué experiencia?</p>
+          <div class="q-exps"><label class="q-exp"><input type="radio" name="q-exp" value="vf"><img src="vf1.jpg" alt=""><span><b>Vía ferrata</b><small>Mineral del Chico</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="col"><img src="col1.jpg" alt=""><span><b>Nevado de Colima</b><small>Jalisco</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="rap"><img src="rap1.jpg" alt=""><span><b>Rapel</b><small>Corral de Piedra</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="kay"><img src="kay2.jpg" alt=""><span><b>Kayak al amanecer</b><small>Xochimilco</small></span></label></div>
+          <div class="q-row">
+            <div>
+              <p class="q-step">2 · ¿Qué fecha?</p>
+              <div class="cal" id="cal"></div>
+            </div>
+            <div class="q-side">
+              <p class="q-step" style="margin:0">3 · ¿Quiénes van?</p>
+              <div class="q-box q-ppl"><div><b>Personas</b><div style="font-size:13px;color:#6A6A6A">Mínimo 10</div></div><div class="st"><button type="button" id="q-m" aria-label="Quitar una persona">−</button><output id="q-n">10</output><button type="button" id="q-p" aria-label="Agregar una persona">+</button></div></div>
+              <div class="q-box"><label for="q-nom">Tu nombre</label><input id="q-nom" autocomplete="name" placeholder="Nombre y apellido"></div>
+              <div class="q-box"><label for="q-mail">Correo</label><input id="q-mail" type="email" autocomplete="email" placeholder="tu@correo.com"></div>
+              <div class="q-box"><label for="q-msg">¿Algo más? <span style="font-weight:400;color:#6A6A6A">(opcional)</span></label><textarea id="q-msg" rows="2" placeholder="Es un cumpleaños, vamos con niños de 16, etc."></textarea></div>
+              <label class="q-chk"><input type="checkbox" id="q-priv"><span>Acepto el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a></span></label>
+              <div class="q-err" id="q-err" role="alert"></div>
+              <button type="submit" class="q-send">Quiero mi cotización</button>
+            </div>
+          </div>
+        </div>
+        <div class="q-ok" id="q-ok" role="status">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>
+          <h3>¡Recibimos tu plan!</h3>
+          <p id="q-ok-t">En menos de 48 horas te escribimos con tu cotización.</p>
+        </div>
+      </form>
+    </div></div>
+  </section>
 
   <section id="faq" aria-labelledby="faq-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
@@ -625,7 +617,7 @@ if(cr){dots.forEach(function(d,i){d.addEventListener('click',function(){cr.scrol
   cr.addEventListener('scroll',function(){var i=Math.round(cr.scrollLeft/cr.clientWidth);dots.forEach(function(d,k){d.classList.toggle('on',k===i);});},{passive:true});}
 // cotizador
 var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-var today=new Date();today.setHours(0,0,0,0);var minD=new Date(today);minD.setDate(minD.getDate()+14);
+var today=new Date();today.setHours(0,0,0,0);var minD=new Date(today);minD.setDate(minD.getDate()+21);
 var view=new Date(minD.getFullYear(),minD.getMonth(),1),pick=null,ppl=10;
 function drawCal(){var c=$('cal');if(!c)return;var y=view.getFullYear(),m=view.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();
   var prevOk=new Date(y,m,1)>new Date(minD.getFullYear(),minD.getMonth(),1);
@@ -633,7 +625,7 @@ function drawCal(){var c=$('cal');if(!c)return;var y=view.getFullYear(),m=view.g
   ['L','M','M','J','V','S','D'].forEach(function(w){h+='<span class="w">'+w+'</span>';});
   for(var i=0;i<first;i++)h+='<span></span>';
   for(var d=1;d<=days;d++){var dt=new Date(y,m,d),dis=dt<minD,sel=pick&&dt.getTime()===pick.getTime();h+='<button type="button" data-d="'+d+'"'+(dis?' disabled':'')+(sel?' class="sel" aria-pressed="true"':'')+' aria-label="'+d+' de '+MES[m]+'">'+d+'</button>';}
-  h+='</div><div class="cal-n">'+(pick?'Elegiste el '+pick.getDate()+' de '+MES[pick.getMonth()]+' de '+pick.getFullYear()+'.':'Fechas desde 2 semanas a partir de hoy.')+'</div>';
+  h+='</div><div class="cal-n">'+(pick?'Elegiste el '+pick.getDate()+' de '+MES[pick.getMonth()]+' de '+pick.getFullYear()+'.':'Fechas desde 3 semanas a partir de hoy.')+'</div>';
   c.innerHTML=h;
   $('cal-p').onclick=function(){view=new Date(y,m-1,1);drawCal();};$('cal-n').onclick=function(){view=new Date(y,m+1,1);drawCal();};
   c.querySelectorAll('.cal-g button').forEach(function(b){b.onclick=function(){pick=new Date(y,m,+b.dataset.d);drawCal();};});}
@@ -673,5 +665,9 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="#
 })();
 </script>
 <script src="hila-mapa.js" defer></script>
+<div id="cp-toast" role="status" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#222222;color:#FFFFFF;padding:12px 18px;border-radius:12px;font:600 14px Figtree,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;z-index:95;max-width:90vw;text-align:center"></div>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-copy]');if(!a)return;var t=a.getAttribute('data-copy'),ts=document.getElementById('cp-toast');
+function ok(){ts.textContent='Te copiamos el mensaje. Solo pégalo en el chat y envíalo.';ts.style.opacity=1;setTimeout(function(){ts.style.opacity=0;},4000);}
+try{navigator.clipboard.writeText(t).then(ok,function(){});}catch(err){}});</script>
 </body>
 </html>

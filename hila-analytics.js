@@ -1,4 +1,4 @@
-/* Hila · medición con Google Analytics 4 (G-D3S0FPCSXH)
+/* Hila · medición con Google Analytics 4 (G-PPXXGSSYZE)
    - Aviso de cookies: analítica solo se activa si la persona acepta.
    - Eventos del embudo: ver experiencia → reservar → pasos del cuestionario → pago.
    - Nunca se envían datos personales (nombre, correo, celular, salud). */
