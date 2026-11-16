@@ -53,6 +53,12 @@ a{color:#AF4323}a:hover{color:#8a3218}
   .m-bar{display:flex!important}
 }
 </style>
+<style>
+.btn-w{box-shadow:0 2px 18px rgba(255,255,255,.28);transition:box-shadow .25s,transform .25s}
+.btn-w:hover{box-shadow:0 4px 26px rgba(255,255,255,.5);transform:translateY(-1px)}
+.btn-g{transition:background .25s}.btn-g:hover{background:rgba(255,255,255,.26)!important}
+@media (max-width:860px){.hero2{min-height:640px!important}.hero2-ov{background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,.7) 100%)!important}}
+</style>
 </head>
 <body>
 
@@ -68,7 +74,7 @@ a{color:#AF4323}a:hover{color:#8a3218}
     #mmenu .mm-cta a{text-align:center;text-decoration:none;font-weight:700;font-size:17px;border-radius:12px;padding:16px}
   </style>
   <div class="mm-top"><img src="hila-logo-color.svg" alt="Hila" style="height:52px"><button type="button" id="mm-close" aria-label="Cerrar menú" style="width:44px;height:44px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
-  <nav class="mm-links" aria-label="Menú"><a href="#experiencias">Experiencias</a><a href="#arma">Arma tu plan</a><a href="#como">Cómo funciona</a><a href="#contacto">Contacto</a></nav>
+  <nav class="mm-links" aria-label="Menú"><a href="#experiencias">Experiencias</a><a href="#reservar">Arma tu plan</a><a href="#como">Cómo funciona</a><a href="#contacto">Contacto</a></nav>
   <div class="mm-cta"><a href="reservar.html" style="background:#2E7D4F;color:#FFFFFF">Reservar</a><a href="https://www.instagram.com/hila_sav/" target="_blank" rel="noopener" style="border:1px solid #222222;color:#222222;display:flex;align-items:center;justify-content:center;gap:8px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#222222" stroke="none"></circle></svg>Síguenos en Instagram</a></div>
 </div>
 <script>
@@ -85,7 +91,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       <img src="hila-logo-verde.svg" alt="Hila · Sal a vivirlo." style="height: 58px; width: auto; display: block">
       <nav class="m-nav" aria-label="Principal" style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; font-size: 15px; font-weight: 600">
         <a href="#experiencias" style="color: #222222; text-decoration: none">Experiencias</a>
-        <a href="#arma" style="color: #222222; text-decoration: none">Arma tu plan</a>
+        <a href="#reservar" style="color: #222222; text-decoration: none">Arma tu plan</a>
         <a href="#como" style="color: #222222; text-decoration: none">Cómo funciona</a>
         <a href="#contacto" style="color: #222222; text-decoration: none">Contacto</a>
         <a href="reservar.html" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 12px 22px; border-radius: 999px">Reservar</a>
@@ -93,18 +99,17 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
     </div>
   </header>
 
-  <section style="position: relative; overflow: hidden; background: #0F3324; color: #FAF7F1; min-height: 680px">
-    <img src="hero-hila.jpg" alt="" aria-hidden="true" class="m-hero-bg" style="position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; object-position: 50% 30%; filter: blur(28px) saturate(1.1); display: block">
-    <img class="m-hero-img" src="hero-hila.jpg" alt="Laila cargando a Ilana en un prado con montañas detrás" style="position: absolute; right: 0; top: 0; width: 76%; max-width: none; height: 100%; object-fit: cover; object-position: 50% 58%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 28%); mask-image: linear-gradient(90deg, transparent 0%, #000 28%)">
-    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,40,29,0.82) 0%, rgba(14,40,29,0.72) 30%, rgba(14,40,29,0.45) 48%, rgba(14,40,29,0.12) 66%, rgba(14,40,29,0) 80%)" class="m-hero-ov"></div>
-    <div class="m-hero-in" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 104px 24px 150px">
-      <div style="max-width: 640px">
-        
-        <h1 class="m-h1" style="font-family: Figtree, sans-serif; font-weight: 800; font-size: 60px; line-height: 1.04; margin: 0; letter-spacing: -2px">Tú eliges la aventura.<br><span style="color: #F4BE95">Del resto nos encargamos.</span></h1>
-        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 540px; color: rgba(250,247,241,0.92)">Experiencias al aire libre con guías certificados, saliendo desde la Ciudad de México. Eliges la fecha, llegas y compartes el camino con gente que también quiere salir a vivirlo.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px">
-          <a href="#arma" style="color: #FAF7F1; text-decoration: none; padding: 16px 24px; border-radius: 999px; font-weight: 600; font-size: 17px; border: 1px solid rgba(250,247,241,0.55)">Arma tu plan</a>
-          <a href="#experiencias" class="glow" style="background: #2E7D4F; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 17px">Sal a vivirlo</a>
+  <section class="hero2" style="position: relative; overflow: hidden; background: #2A2A2A; color: #FFFFFF; min-height: 700px">
+    <img src="hero-nubes.jpg" alt="Montaña entre nubes rosadas al atardecer" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+    <div class="hero2-ov" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.32) 40%, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0) 100%)"></div>
+    <div class="m-hero-in" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 120px 24px 170px">
+      <div style="max-width: 680px">
+        <div style="display: inline-flex; align-items: center; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600">Salidas desde CDMX · enero y febrero 2027</div>
+        <h1 class="m-h1" style="font-family: Figtree, sans-serif; font-weight: 800; font-size: 64px; line-height: 1.02; margin: 18px 0 0; letter-spacing: -2px">Salidas a la naturaleza,<br>con todo resuelto.</h1>
+        <p style="font-size: 20px; line-height: 1.55; margin: 22px 0 0; max-width: 560px; color: rgba(255,255,255,0.92)">Volcanes, vías ferratas y amaneceres en el agua a unas horas de la ciudad. El transporte, los guías, el equipo y la comida ya están resueltos. Tú solo llegas.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+          <a href="#como" class="btn-w" style="background: #FFFFFF; color: #222222; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 17px">Cómo funciona</a>
+          <a href="#reservar" class="btn-g" style="background: rgba(255,255,255,0.14); color: #FFFFFF; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 17px; border: 1.5px solid rgba(255,255,255,0.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px)">Arma tu plan</a>
         </div>
       </div>
     </div>
@@ -231,55 +236,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       </div>
     </div>
   </section>
-  <section id="mapa" aria-labelledby="mapa-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
-    <style>
-      .mp{max-width:1240px;margin:0 auto;padding:40px 24px 64px}
-      .mp-card{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:center;background:#F7F7F7;border-radius:28px;padding:36px}
-      .mp h2{font-size:34px;letter-spacing:-.4px;margin:0;line-height:1.1}
-      .mp p.l{color:#6A6A6A;font-size:17px;margin:8px 0 0}
-      .mp .map-w{position:relative}
-      .mp svg.map{width:100%;height:auto;display:block;overflow:visible}
-      .st{fill:rgba(255,255,255,.85);stroke:#D2D2D2;stroke-width:.8;transition:fill .25s,transform .25s,filter .25s;transform-box:fill-box;transform-origin:center;cursor:pointer}
-      .st:hover{fill:#FFFFFF;stroke:#9A9A9A;transform:scale(1.05) translateY(-3px);filter:drop-shadow(0 6px 10px rgba(0,0,0,.14))}
-      .st.has{fill:#EAF1EC;stroke:#B9C9BD}
-      .st.has:hover{fill:#DFEBE2;stroke:#8FAE97}
-      svg.map.ready .st{animation:stIn .6s ease both}
-      @keyframes stIn{from{opacity:0}to{opacity:1}}
-      .mx-tip{position:absolute;pointer-events:none;transform:translate(-50%,-125%);background:#222222;color:#FFFFFF;border-radius:10px;padding:6px 10px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .15s;z-index:3}
-      .mx-tip b{display:block}.mx-tip span{display:block;font-size:12px;color:#CFE2D4}
-      .mp .land{fill:#FFFFFF;stroke:#CFCFCF;stroke-width:1.5;stroke-linejoin:round}
-      .pin{cursor:pointer;outline:none}
-      .pin .dot{fill:var(--c);stroke:#FFFFFF;stroke-width:3;transition:r .2s}
-      .pin .halo{fill:var(--c);opacity:.25;transform-box:fill-box;transform-origin:center;animation:halo 2.4s ease-out infinite}
-      .pin.off{opacity:.15}.pin.off .halo{animation:none;opacity:0}
-      .pin.hi .dot{r:10}
-      @keyframes halo{0%{transform:scale(.4);opacity:.45}100%{transform:scale(1.7);opacity:0}}
-      .cdmx{fill:#484848}.cdmx-t{font-size:12px;font-weight:700;fill:#484848}
-      .pl-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
-      .pl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;background:#FFFFFF;border:1px solid #E4E9E3;border-radius:14px;padding:12px 16px;text-decoration:none;color:#222222;transition:border-color .2s,opacity .3s}
-      .pl:hover,.pl.hi{border-color:#BDBDBD}
-      .pl.off{opacity:.35}
-      .pl-n{font-weight:700}.pl-p{grid-column:1;font-size:14px;color:#6A6A6A}.pl-c{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:600;color:#484848;background:#F3F3F1;border-radius:999px;padding:4px 10px 4px 22px;position:relative}.pl-c:before{content:'';position:absolute;left:9px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--c)}
-      .pl{border-left:3px solid var(--c,#E4E9E3)}
-      .zoom{font-size:12px;fill:#6A6A6A}
-      @media (max-width:860px){.mp-card{grid-template-columns:1fr;padding:22px 16px}.mp h2{font-size:28px}}
-    </style>
-    <div class="mp"><div class="mp-card">
-      <div>
-        <div class="map-w"><div class="mx-tip" id="mx-tip"></div><svg class="map" viewBox="20 0 750 500" role="img" aria-label="Mapa de México con las experiencias de Hila">
-          <path id="mx-land" class="land" d="M21.3,17.4 L72.5,12.5 L79.3,12.5 L167.6,48.6 L236.7,48.6 L236.7,36.9 L277.6,36.9 L314.3,65.5 L327.6,94.4 L355.4,109.7 L370.4,89.7 L401.4,89.2 L412.0,100.1 L427.5,128.2 L446.8,148.2 L457.0,176.0 L478.8,185.6 L504.2,188.5 L497.4,223.6 L489.6,283.4 L503.4,318.8 L521.1,352.3 L529.5,366.6 L556.1,379.1 L570.6,391.3 L602.1,384.3 L633.0,379.6 L652.9,365.3 L663.7,347.1 L667.4,319.8 L685.5,309.4 L725.4,301.6 L748.4,302.9 L753.9,314.6 L738.7,338.0 L736.3,361.4 L718.1,382.2 L704.8,398.3 L697.6,399.9 L653.3,399.9 L653.3,414.7 L642.5,414.7 L666.2,445.4 L635.2,445.4 L623.6,466.4 L623.8,484.9 L594.8,457.6 L568.2,442.0 L551.3,453.7 L518.7,456.3 L481.2,440.7 L437.7,425.1 L399.0,405.6 L382.0,396.5 L351.8,387.4 L330.1,366.6 L307.1,344.5 L298.6,331.5 L308.3,306.8 L297.4,275.6 L280.0,260.0 L256.3,227.5 L220.0,198.9 L206.7,176.8 L183.8,146.9 L170.5,137.8 L140.2,109.2 L125.7,78.0 L117.3,53.3 L77.4,42.9 L76.2,36.4 L81.0,57.2 L89.5,79.3 L116.1,114.4 L136.6,156.0 L154.8,180.7 L176.5,230.1 L207.5,260.5 L192.2,267.3 L186.2,249.6 L153.5,223.6 L141.5,195.0 L122.1,165.1 L94.3,143.0 L90.7,118.3 L56.8,88.4 L32.6,55.9 L21.3,17.4Z"/>
-          <g id="mx-states"></g><circle cx="456.3" cy="358" r="4" class="cdmx"/><text x="474" y="390" class="cdmx-t">CDMX</text>
-          <g class="pin" style="--c:#C8846A" data-id="vf" data-cats="montana adrenalina primera" tabindex="0" role="button" aria-label="Vía ferrata, Mineral del Chico, Hgo."><circle cx="465.9" cy="337.7" r="16" class="halo"/><circle cx="465.9" cy="337.7" r="7" class="dot"/></g><g class="pin" style="--c:#CDB07F" data-id="col" data-cats="montana" tabindex="0" role="button" aria-label="Nevado de Colima, Jalisco"><circle cx="348.0" cy="354.6" r="16" class="halo"/><circle cx="348.0" cy="354.6" r="7" class="dot"/></g><g class="pin" style="--c:#8FAE97" data-id="rap" data-cats="adrenalina montana primera" tabindex="0" role="button" aria-label="Rapel, Amanalco, Edomex"><circle cx="435.2" cy="362.7" r="16" class="halo"/><circle cx="435.2" cy="362.7" r="7" class="dot"/></g><g class="pin" style="--c:#88AEB2" data-id="kay" data-cats="agua primera" tabindex="0" role="button" aria-label="Kayak al amanecer, Xochimilco, CDMX"><circle cx="457.0" cy="362.4" r="16" class="halo"/><circle cx="457.0" cy="362.4" r="7" class="dot"/></g>
-          <text x="40" y="480" class="zoom">Todas las salidas parten de la Ciudad de México</text>
-        </svg></div>
-      </div>
-      <div>
-        <h2 id="mapa-t">¿A dónde salimos a vivirlo?</h2>
-        <p class="l">Montaña, volcán, bosque y agua, a pocas horas de la ciudad.</p>
-        <div class="pl-list"><a class="pl" style="--c:#C8846A" href="via-ferrata.html" data-id="vf" data-cats="montana adrenalina primera"><span class="pl-n">Vía ferrata</span><span class="pl-p">Mineral del Chico, Hgo.</span><span class="pl-c">Montaña · Adrenalina</span></a><a class="pl" style="--c:#CDB07F" href="nevado-de-colima.html" data-id="col" data-cats="montana"><span class="pl-n">Nevado de Colima</span><span class="pl-p">Jalisco</span><span class="pl-c">Montaña · Volcán</span></a><a class="pl" style="--c:#8FAE97" href="rapel-corral-de-piedra.html" data-id="rap" data-cats="adrenalina montana primera"><span class="pl-n">Rapel</span><span class="pl-p">Amanalco, Edomex</span><span class="pl-c">Bosque · Adrenalina</span></a><a class="pl" style="--c:#88AEB2" href="kayak-xochimilco.html" data-id="kay" data-cats="agua primera"><span class="pl-n">Kayak al amanecer</span><span class="pl-p">Xochimilco, CDMX</span><span class="pl-c">Agua</span></a></div>
-      </div>
-    </div></div>
-  </section>
+
 
 
 
@@ -337,69 +294,166 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
   </section>
 
   <section id="reservar" style="background: #FFFFFF">
+    <style>
+      .lq-ph{position:relative;width:74%;height:700px;border-radius:28px;overflow:hidden;background:#DDDDDD}
+      .lq-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .7s ease}
+      .lq-ph img.on{opacity:1}
+      .lq-nav{display:flex;align-items:center;gap:4px}
+      .lq-ar{width:36px;height:36px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.85}
+      .lq-ar:hover{opacity:1}.lq-ar:disabled{opacity:.2;cursor:default}
+      .lq-segs{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+      .lq-seg{height:28px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center}
+      .lq-seg span{display:block;width:100%;height:4px;border-radius:4px;background:#EBEBEB;transition:background .3s}
+      .lq-seg.on span{background:#2E7D4F}
+      .lq-step{display:none}.lq-step.on{display:block;animation:lqIn .35s ease}
+      @keyframes lqIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+      .lq-k{font-size:14px;font-weight:700;color:#2E7D4F;margin-top:16px}
+      .lq-exp{display:flex;align-items:center;gap:12px;border:1px solid #DDDDDD;border-radius:14px;padding:8px;margin-top:8px;cursor:pointer;font-size:15px}
+      .lq-exp:has(input:checked){border-color:#2E7D4F;background:#F4FAF6}
+      .lq-exp input{width:20px;height:20px;margin:0 0 0 6px;accent-color:#2E7D4F;flex-shrink:0}
+      .lq-exp img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+      .lq-exp b{display:block}.lq-exp small{display:block;color:#6A6A6A;font-size:13px}
+      .lq-q{font-weight:700;font-size:16px;margin-top:18px}
+      .lq-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .lq-chip{font:inherit;font-size:15px;padding:10px 18px;border-radius:999px;border:1px solid #DDDDDD;background:#FFFFFF;cursor:pointer;color:#222222}
+      .lq-chip[aria-pressed="true"]{border:1.5px solid #222222;font-weight:600;background:#F7F7F7}
+      .lq-err{display:none;color:#C13A2E;font-size:14px;margin-top:12px}
+      @media (max-width:860px){.lq-ph{width:100%!important;height:320px!important}}
+    </style>
     <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; position: relative">
       <div style="position: relative; display: flex; justify-content: flex-end">
-        <div class="m-formphoto" style="width: 74%; height: 680px; border-radius: 28px; overflow: hidden">
-          <img src="form-sillas.jpg" alt="Dos personas en sillas de campamento frente a la montaña" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block">
+        <div class="lq-ph m-formphoto" aria-hidden="true">
+          <img src="q1-cumbre.jpg" alt="" class="on" style="object-position: 50% 70%">
+          <img src="q2-kayak.jpg" alt="" style="object-position: 60% 50%">
+          <img src="q3-amanecer.jpg" alt="" style="object-position: 50% 50%">
         </div>
       </div>
-      <form class="m-form" style="position: absolute; left: 24px; top: 140px; width: 440px; max-width: calc(100% - 48px); box-sizing: border-box; background: #FFFFFF; border-radius: 28px; box-shadow: 0 10px 40px rgba(0,0,0,0.14); padding: 36px 32px">
-        <div style="display: flex; gap: 6px">
-          <span style="flex: 1; height: 4px; border-radius: 4px; background: #2E7D4F"></span><span style="flex: 1; height: 4px; border-radius: 4px; background: #EBEBEB"></span><span style="flex: 1; height: 4px; border-radius: 4px; background: #EBEBEB"></span>
+      <form class="m-form" id="lq" novalidate style="position: absolute; left: 24px; top: 130px; width: 460px; max-width: calc(100% - 48px); box-sizing: border-box; background: #FFFFFF; border-radius: 28px; box-shadow: 0 10px 40px rgba(0,0,0,0.14); padding: 30px 32px 32px">
+        <div class="lq-nav">
+          <button type="button" class="lq-ar" id="lq-prev" aria-label="Paso anterior"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+          <div class="lq-segs"><button type="button" class="lq-seg on" data-i="0" aria-label="Paso 1: tus datos"><span></span></button><button type="button" class="lq-seg" data-i="1" aria-label="Paso 2: tu plan"><span></span></button><button type="button" class="lq-seg" data-i="2" aria-label="Paso 3: tu seguridad"><span></span></button></div>
+          <button type="button" class="lq-ar" id="lq-next" aria-label="Paso siguiente"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
         </div>
-        <h2 style="font-weight: 700; font-size: 32px; line-height: 1.15; margin: 22px 0 0; letter-spacing: -0.3px">¡Hola! Antes de salir, cuéntanos de ti</h2>
-        <p style="font-size: 16px; line-height: 1.5; color: #6A6A6A; margin: 10px 0 0">Son unas preguntas rápidas para cuidar tu experiencia. Empecemos por lo fácil: ¿cómo te llamas?</p>
-        <div style="margin-top: 22px; border: 1px solid #B0B0B0; border-radius: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
-          <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700">Nombre<input type="text" placeholder="Tu nombre" id="f-nombre" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
-          <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700; border-left: 1px solid #B0B0B0">Apellido<input type="text" placeholder="Tu apellido" id="f-apellido" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+        <div class="lq-k" id="lq-k">Paso 1 de 3</div>
+
+        <div class="lq-step on" data-s="0">
+          <h2 style="font-weight: 700; font-size: 32px; line-height: 1.15; margin: 6px 0 0; letter-spacing: -0.3px">¡Hola! Antes de salir, cuéntanos de ti</h2>
+          <p style="font-size: 16px; line-height: 1.5; color: #6A6A6A; margin: 10px 0 0">Son unas preguntas rápidas para cuidar tu experiencia. Empecemos por lo fácil: ¿cómo te llamas?</p>
+          <div style="margin-top: 20px; border: 1px solid #B0B0B0; border-radius: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+            <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700">Nombre<input type="text" placeholder="Tu nombre" id="f-nombre" autocomplete="given-name" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+            <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700; border-left: 1px solid #B0B0B0">Apellido<input type="text" placeholder="Tu apellido" id="f-apellido" autocomplete="family-name" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+          </div>
+          <div style="margin-top: 12px; border: 1px solid #B0B0B0; border-radius: 12px">
+            <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700; border-bottom: 1px solid #B0B0B0">Celular<input type="tel" placeholder="55 1234 5678" id="f-cel" autocomplete="tel" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+            <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700">Correo<input type="email" placeholder="tu@correo.com" id="f-correo" autocomplete="email" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+          </div>
+          <label style="display: flex; align-items: center; gap: 10px; margin-top: 16px; font-size: 15px"><input type="checkbox" id="f-mayor" style="width: 20px; height: 20px; accent-color: #2E7D4F">Confirmo que soy mayor de edad</label>
         </div>
-        <div style="margin-top: 12px; border: 1px solid #B0B0B0; border-radius: 12px">
-          <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700; border-bottom: 1px solid #B0B0B0">Celular<input type="tel" placeholder="55 1234 5678" id="f-cel" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
-          <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700">Correo<input type="email" placeholder="tu@correo.com" id="f-correo" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px"></label>
+
+        <div class="lq-step" data-s="1">
+          <h2 style="font-weight: 700; font-size: 32px; line-height: 1.15; margin: 6px 0 0; letter-spacing: -0.3px">Buenísimo. ¿A dónde vamos?</h2>
+          <p style="font-size: 16px; line-height: 1.5; color: #6A6A6A; margin: 10px 0 6px">Elige una o varias, y cuántas personas van.</p>
+          <label class="lq-exp"><input type="checkbox" value="vf" name="lq-exp"><img src="vf1.jpg" alt=""><span><b>Hike + vía ferrata</b><small>16–17 ene · $5,800</small></span></label>
+          <label class="lq-exp"><input type="checkbox" value="col" name="lq-exp"><img src="col1.jpg" alt=""><span><b>Nevado de Colima</b><small>23–24 ene · $5,100</small></span></label>
+          <label class="lq-exp"><input type="checkbox" value="rap" name="lq-exp"><img src="rap1.jpg" alt=""><span><b>Rapel en Corral de Piedra</b><small>6–7 feb · $4,300</small></span></label>
+          <label class="lq-exp"><input type="checkbox" value="kay" name="lq-exp"><img src="kay1.jpg" alt=""><span><b>Kayak al amanecer</b><small>20 feb · $1,000</small></span></label>
+          <label style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; font-size: 12px; font-weight: 700; margin-top: 12px; border: 1px solid #B0B0B0; border-radius: 12px">¿Cuántas personas van?<select id="f-personas" style="font: inherit; font-size: 16px; font-weight: 400; border: 0; padding: 4px 0; outline-offset: 4px; background: #FFFFFF"><option value="1">1 persona (solo yo)</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option></select></label>
         </div>
-        <label style="display: flex; align-items: center; gap: 10px; margin-top: 16px; font-size: 15px"><input type="checkbox" id="f-mayor" style="width: 20px; height: 20px; accent-color: #2E7D4F">Confirmo que soy mayor de edad</label>
-        <button type="button" id="f-go" style="margin-top: 22px; width: 100%; font: inherit; font-weight: 700; font-size: 17px; background: #2E7D4F; color: #FFFFFF; border: 0; border-radius: 12px; padding: 16px; cursor: pointer">Sigamos</button>
+
+        <div class="lq-step" data-s="2">
+          <h2 style="font-weight: 700; font-size: 32px; line-height: 1.15; margin: 6px 0 0; letter-spacing: -0.3px">Lo importante: que regreses feliz</h2>
+          <p style="font-size: 16px; line-height: 1.5; color: #6A6A6A; margin: 10px 0 0">Esto solo lo ven las guías y el paramédico.</p>
+          <div class="lq-q">¿Tienes seguro de gastos médicos?</div>
+          <div class="lq-chips" data-k="seguro"><button type="button" class="lq-chip" data-v="Sí" aria-pressed="false">Sí</button><button type="button" class="lq-chip" data-v="No" aria-pressed="false">No</button></div>
+          <div class="lq-q">¿Cómo describirías tu condición física?</div>
+          <div class="lq-chips" data-k="cond"><button type="button" class="lq-chip" data-v="Básica" aria-pressed="false">Básica</button><button type="button" class="lq-chip" data-v="Regular" aria-pressed="false">Regular</button><button type="button" class="lq-chip" data-v="Buena" aria-pressed="false">Buena</button><button type="button" class="lq-chip" data-v="Muy buena" aria-pressed="false">Muy buena</button></div>
+        </div>
+
+        <div class="lq-err" id="lq-err" role="alert"></div>
+        <button type="button" id="f-go" class="glow" style="margin-top: 22px; width: 100%; font: inherit; font-weight: 700; font-size: 17px; background: #2E7D4F; color: #FFFFFF; border: 0; border-radius: 12px; padding: 16px; cursor: pointer">Sigamos</button>
         <div style="font-size: 13px; color: #6A6A6A; text-align: center; margin-top: 12px">Aún no te cobramos nada. Tus respuestas se guardan mientras avanzas.</div>
       </form>
     </div>
   </section>
 
+  <section id="distancias" aria-labelledby="ds-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
+    <style>
+      .ds{max-width:1240px;margin:0 auto;padding:40px 24px 72px}
+      .ds h2{font-size:40px;letter-spacing:-.5px;line-height:1.1;margin:0;font-weight:700}
+      .ds p.l{font-size:18px;color:#6A6A6A;margin:10px 0 0}
+      .ds-row{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:44px}
+      .ds-row:before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:#DDDDDD}
+      .ds-s{position:relative;display:flex;flex-direction:column;text-decoration:none;color:#222222}
+      .ds-dot{width:15px;height:15px;border-radius:50%;background:#FFFFFF;border:2px solid #2E7D4F;box-sizing:border-box;position:relative}
+      .ds-s.o .ds-dot{background:#222222;border-color:#222222}
+      .ds-t{margin-top:18px;font-size:13px;font-weight:600;color:#6A6A6A}
+      .ds-n{font-size:22px;font-weight:800;margin-top:2px}
+      .ds-l{font-size:14px;color:#6A6A6A;margin-top:4px}
+      .ds-c{display:flex;align-items:center;gap:12px;margin-top:14px;padding:10px;border:1px solid #EBEBEB;border-radius:16px;font-size:14px;font-weight:600;transition:border-color .2s,box-shadow .2s}
+      .ds-s:hover .ds-c{border-color:#BDBDBD;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+      .ds-c img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex-shrink:0}
+      .ds-c em{display:block;font-style:normal;color:#2E7D4F;font-weight:700;margin-top:2px}
+      @media (max-width:860px){.ds h2{font-size:30px}.ds-row{grid-template-columns:1fr;gap:26px;padding-left:28px}.ds-row:before{left:7px;right:auto;top:6px;bottom:6px;width:1px;height:auto}.ds-dot{position:absolute;left:-28px;top:4px}.ds-t{margin-top:0}}
+    </style>
+    <div class="ds">
+      <h2 id="ds-t">Más cerca de lo que crees</h2>
+      <p class="l">Todas las salidas parten de la Ciudad de México. Tiempos aproximados de camino.</p>
+      <div class="ds-row">
+        <div class="ds-s o"><span class="ds-dot"></span><span class="ds-t">Salida</span><span class="ds-n">CDMX</span></div>
+        <a class="ds-s" href="kayak-xochimilco.html"><span class="ds-dot"></span><span class="ds-t">≈ 1 h</span><span class="ds-n">Xochimilco</span><span class="ds-l">CDMX</span><span class="ds-c"><img src="kay1.jpg" alt=""><span>Kayak al amanecer<em>Ver experiencia</em></span></span></a>
+        <a class="ds-s" href="rapel-corral-de-piedra.html"><span class="ds-dot"></span><span class="ds-t">≈ 2 h</span><span class="ds-n">Amanalco</span><span class="ds-l">Estado de México</span><span class="ds-c"><img src="rap1.jpg" alt=""><span>Rapel en Corral de Piedra<em>Ver experiencia</em></span></span></a>
+        <a class="ds-s" href="via-ferrata.html"><span class="ds-dot"></span><span class="ds-t">≈ 2.5 h</span><span class="ds-n">Mineral del Chico</span><span class="ds-l">Hidalgo</span><span class="ds-c"><img src="vf1.jpg" alt=""><span>Hike + vía ferrata<em>Ver experiencia</em></span></span></a>
+        <a class="ds-s" href="nevado-de-colima.html"><span class="ds-dot"></span><span class="ds-t">≈ 8 h</span><span class="ds-n">Nevado de Colima</span><span class="ds-l">Jalisco</span><span class="ds-c"><img src="col1.jpg" alt=""><span>Nevado de Colima<em>Ver experiencia</em></span></span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="regala" aria-labelledby="rg-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
-      .rg{max-width:1240px;margin:0 auto;padding:0 24px 88px}
-      .rg-card{position:relative;display:grid;grid-template-columns:1fr 1fr;border-radius:28px;overflow:hidden;background:#E4D3B6;background-image:radial-gradient(rgba(120,85,40,.08) 1px,transparent 1.4px),repeating-linear-gradient(115deg,rgba(255,255,255,.08) 0 2px,transparent 2px 7px);background-size:6px 6px,auto;box-shadow:0 18px 40px rgba(80,50,20,.18)}
-      .rg-ph{position:relative;min-height:460px}
-      .rg-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-      .rb{position:absolute;z-index:2;background:linear-gradient(90deg,#6E1019,#A11F2B 30%,#C23441 50%,#A11F2B 70%,#6E1019);box-shadow:0 2px 8px rgba(0,0,0,.25)}
-      .rb-v{top:0;bottom:0;left:calc(50% - 20px);width:40px}
-      .rb-h{left:0;right:0;top:78px;height:40px;background:linear-gradient(180deg,#6E1019,#A11F2B 30%,#C23441 50%,#A11F2B 70%,#6E1019)}
-      .bow{position:absolute;z-index:3;left:50%;top:98px;transform:translate(-50%,-50%);width:190px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.3))}
-      .rg-tx{position:relative;z-index:1;padding:150px 52px 48px 76px;display:flex;flex-direction:column;justify-content:center;color:#3B2A18}
-      .rg-k{font-size:15px;font-weight:700;color:#8E1B24}
-      .rg h2{font-size:40px;line-height:1.08;letter-spacing:-.5px;margin:8px 0 0;color:#2E1F10}
-      .rg p{font-size:17px;line-height:1.55;color:#5A4630;margin:12px 0 0}
-      .gtag{position:absolute;z-index:4;right:34px;top:126px;background:#FAF7F1;border-radius:6px 6px 6px 6px;padding:10px 14px 10px 22px;font-family:Figtree,sans-serif;font-size:13px;color:#3B2A18;transform:rotate(6deg);box-shadow:0 6px 14px rgba(0,0,0,.18);clip-path:polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%)}
-      .gtag:before{content:"";position:absolute;left:9px;top:50%;width:6px;height:6px;border-radius:50%;background:#E4D3B6;transform:translateY(-50%)}
-      .rg-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-      .rg-cta a{text-decoration:none;font-weight:700;font-size:16px;border-radius:999px;padding:14px 22px;display:inline-flex;align-items:center;gap:8px}
-      .spark{position:absolute;z-index:2;color:#FFF6D8;opacity:.9;font-size:14px;pointer-events:none;animation:tw 3s ease-in-out infinite}
-      @keyframes tw{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
-      @media (max-width:860px){.rg-card{grid-template-columns:1fr}.rg-ph{min-height:260px}.rb-v{display:none}.rb-h{top:240px}.bow{top:260px;width:150px}.rg-tx{padding:70px 22px 32px}.rg h2{font-size:30px}.gtag{display:none}}
+      .rg2{max-width:1240px;margin:0 auto;padding:24px 24px 88px}
+      .rg2-c{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:center;background:#FAF7F1;border-radius:32px;padding:56px;overflow:hidden}
+      .rg2-k{font-size:26px;font-weight:800;color:#8E1B24;letter-spacing:-.3px}
+      .rg2 h2{font-size:44px;line-height:1.05;letter-spacing:-1px;font-weight:800;margin:6px 0 0;color:#222222}
+      .rg2 p{font-size:17px;line-height:1.55;color:#484848;margin:14px 0 0;max-width:460px}
+      .rg2-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+      .rg2-cta a{text-decoration:none;font-weight:700;font-size:16px;border-radius:999px;padding:14px 22px;display:inline-flex;align-items:center;gap:8px}
+      .rg2-w{display:flex;justify-content:center;padding:36px 0 16px}
+      .rg2-card{position:relative;width:380px;max-width:100%;background:#FFFFFF;border-radius:22px;box-shadow:0 24px 50px rgba(60,40,20,.16);transform:rotate(-3deg);transition:transform .4s ease}
+      .rg2-card:hover{transform:rotate(-1deg) translateY(-4px)}
+      .rg2-card .ph{height:210px;border-radius:22px 22px 0 0;overflow:hidden}
+      .rg2-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+      .rg2-rb{position:absolute;top:0;bottom:0;right:64px;width:14px;background:#8E1B24}
+      .rg2-bow{position:absolute;right:4px;top:-46px;width:134px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.22))}
+      .rg2-tx{position:relative;padding:22px 96px 26px 26px}
+      .rg2-tx small{font-size:12px;font-weight:700;color:#8E1B24}
+      .rg2-tx b{display:block;font-size:24px;font-weight:800;margin-top:4px}
+      .rg2-tx span{display:block;border-bottom:1px dashed #CCCCCC;padding:10px 0 6px;font-size:14px;color:#6A6A6A}
+      .rg2-tx img{height:34px;width:auto;margin-top:18px;display:block}
+      @media (max-width:860px){.rg2-c{grid-template-columns:1fr;padding:32px 22px}.rg2 h2{font-size:32px}.rg2-k{font-size:22px}.rg2-card{width:310px}}
     </style>
-    <div class="rg"><div class="rg-card">
-      <div class="rg-ph"><img src="kay2.jpg" alt="Kayaks al amanecer en Xochimilco"><span class="spark" style="left:18%;top:22%">✦</span><span class="spark" style="left:70%;top:58%;animation-delay:-1s">✦</span><span class="spark" style="left:36%;top:74%;animation-delay:-2s">✦</span></div>
-      <span class="rb rb-v" aria-hidden="true"></span><span class="rb rb-h" aria-hidden="true"></span>
-      <svg class="bow" viewBox="0 0 200 120" aria-hidden="true"><defs><linearGradient id="vg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C23441"/><stop offset=".6" stop-color="#A11F2B"/><stop offset="1" stop-color="#6E1019"/></linearGradient></defs>
-        <path d="M100 60 C70 20,22 8,18 40 C14 70,62 74,100 60Z" fill="url(#vg)"/><path d="M100 60 C130 20,178 8,182 40 C186 70,138 74,100 60Z" fill="url(#vg)"/>
-        <path d="M96 64 L70 118 L84 110 L92 120 L100 68Z" fill="#8E1B24"/><path d="M104 64 L130 118 L116 110 L108 120 L100 68Z" fill="#8E1B24"/>
-        <path d="M40 38 C55 34,75 44,92 56" stroke="#D9535F" stroke-width="3" fill="none" opacity=".6"/><path d="M160 38 C145 34,125 44,108 56" stroke="#D9535F" stroke-width="3" fill="none" opacity=".6"/>
-        <ellipse cx="100" cy="60" rx="16" ry="14" fill="#8E1B24"/><ellipse cx="96" cy="56" rx="6" ry="4" fill="#C23441" opacity=".7"/></svg>
-      <div class="gtag" aria-hidden="true">Para: alguien que se lo merece</div>
-      <div class="rg-tx">
-        <div class="rg-k">Regala una salida</div>
+    <div class="rg2"><div class="rg2-c">
+      <div>
+        <div class="rg2-k">Regala una salida</div>
         <h2 id="rg-t">El regalo que sí van a usar</h2>
-        <p>Para Navidad, un cumpleaños o porque sí. Regala una experiencia con un certificado digital listo para mandar o imprimir. El kayak al amanecer, desde $1,000, es el favorito.</p>
-        <div class="rg-cta"><a href="https://ig.me/m/hila_sav" target="_blank" rel="noopener" data-copy="Hola, quiero info para regalar una experiencia de Hila 🎁" style="background:#8E1B24;color:#FFFFFF"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#FFFFFF" stroke="none"></circle></svg>Pídelo por Instagram</a><a href="mailto:hila.sal.a.vivirlo@gmail.com?subject=Quiero%20regalar%20una%20experiencia%20Hila" style="background:#FAF7F1;color:#3B2A18"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B2A18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Por correo</a></div>
+        <p>Para Navidad, un cumpleaños o porque sí. Un certificado digital listo para mandar o imprimir. El kayak al amanecer, desde $1,000, es el favorito.</p>
+        <div class="rg2-cta">
+          <a href="https://ig.me/m/hila_sav" target="_blank" rel="noopener" data-copy="Hola, quiero info para regalar una experiencia de Hila 🎁" style="background:#222222;color:#FFFFFF">Pídelo por Instagram</a>
+          <a href="mailto:hila.sal.a.vivirlo@gmail.com?subject=Quiero%20regalar%20una%20experiencia%20Hila" style="background:#FFFFFF;color:#222222;border:1px solid #DDDDDD">Por correo</a>
+        </div>
+      </div>
+      <div class="rg2-w">
+        <div class="rg2-card">
+          <div class="ph"><img src="kay2.jpg" alt="Kayaks al amanecer en Xochimilco"></div>
+          <span class="rg2-rb" aria-hidden="true"></span>
+          <svg class="rg2-bow" viewBox="0 0 200 120" aria-hidden="true"><defs><linearGradient id="vg2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B02E3B"/><stop offset=".6" stop-color="#8E1B24"/><stop offset="1" stop-color="#6E1019"/></linearGradient></defs><path d="M100 60 C70 20,22 8,18 40 C14 70,62 74,100 60Z" fill="url(#vg2)"/><path d="M100 60 C130 20,178 8,182 40 C186 70,138 74,100 60Z" fill="url(#vg2)"/><path d="M96 64 L78 112 L88 106 L94 114 L100 68Z" fill="#7A141D"/><path d="M104 64 L122 112 L112 106 L106 114 L100 68Z" fill="#7A141D"/><path d="M40 38 C55 34,75 44,92 56" stroke="#C9545F" stroke-width="3" fill="none" opacity=".55"/><path d="M160 38 C145 34,125 44,108 56" stroke="#C9545F" stroke-width="3" fill="none" opacity=".55"/><ellipse cx="100" cy="60" rx="15" ry="13" fill="#7A141D"/></svg>
+          <div class="rg2-tx">
+            <small>Vale por una salida</small>
+            <b>Kayak al amanecer</b>
+            <span>Para:</span>
+            <span>De:</span>
+            <img src="hila-logo-verde.svg" alt="Hila">
+          </div>
+        </div>
       </div>
     </div></div>
   </section>
@@ -443,100 +497,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
 
 
 
-  <section id="arma" aria-labelledby="arma-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
-    <style>
-      .q{max-width:1240px;margin:0 auto;padding:24px 24px 80px}
-      .q-card{border:1px solid #DDDDDD;border-radius:28px;box-shadow:0 6px 20px rgba(0,0,0,.06);padding:40px;display:grid;grid-template-columns:.9fr 1.4fr;gap:44px}
-      .q-k{font-size:15px;font-weight:700;color:#2E7D4F}
-      .q h2{font-size:38px;line-height:1.08;letter-spacing:-.5px;margin:6px 0 0}
-      .q p.l{font-size:17px;line-height:1.55;color:#6A6A6A;margin:12px 0 0}
-      .q-why{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px;font-size:15px}
-      .q-why li{display:flex;gap:10px;align-items:flex-start}
-      .q-why svg{flex-shrink:0;margin-top:2px}
-      .q-step{font-size:13px;font-weight:700;color:#6A6A6A;margin:0 0 10px}
-      .q-exps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-      .q-exp{position:relative;border:1.5px solid #DDDDDD;border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s}
-      .q-exp input{position:absolute;opacity:0}
-      .q-exp img{width:100%;height:92px;object-fit:cover;display:block}
-      .q-exp span{display:block;padding:10px 12px}.q-exp b{display:block;font-size:14px}.q-exp small{font-size:12px;color:#6A6A6A}
-      .q-exp:has(input:checked){border-color:#2E7D4F;box-shadow:0 0 0 3px #E6F2EA}
-      .q-exp:has(input:focus-visible){outline:2px solid #2E7D4F;outline-offset:2px}
-      .q-row{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:22px}
-      .cal{border:1px solid #DDDDDD;border-radius:16px;padding:14px}
-      .cal-h{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:8px}
-      .cal-h button{width:32px;height:32px;border-radius:50%;border:1px solid #DDDDDD;background:#FFFFFF;cursor:pointer;font-size:16px}
-      .cal-h button:disabled{opacity:.3;cursor:default}
-      .cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
-      .cal-g .w{font-size:11px;font-weight:700;color:#8A8A8A;padding:4px 0}
-      .cal-g button{font:inherit;font-size:14px;aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;color:#222222}
-      .cal-g button:hover:not(:disabled){background:#F2F2F2}
-      .cal-g button:disabled{color:#CFCFCF;cursor:default}
-      .cal-g button.sel{background:#222222;color:#FFFFFF}
-      .cal-n{font-size:12px;color:#6A6A6A;margin-top:6px}
-      .q-side{display:flex;flex-direction:column;gap:14px}
-      .q-box{border:1px solid #DDDDDD;border-radius:16px;padding:14px 16px}
-      .q-box label{display:block;font-size:12px;font-weight:700}
-      .q-box input,.q-box textarea{font:inherit;font-size:16px;border:0;width:100%;padding:4px 0;background:transparent;color:#222222}
-      .q-box input:focus,.q-box textarea:focus{outline:none}
-      .q-box:focus-within{border-color:#222222}
-      .q-ppl{display:flex;justify-content:space-between;align-items:center}
-      .q-ppl .st{display:flex;align-items:center;gap:12px}
-      .q-ppl button{width:34px;height:34px;border-radius:50%;border:1px solid #B0B0B0;background:#FFFFFF;font-size:18px;cursor:pointer}
-      .q-ppl button:disabled{opacity:.35}
-      .q-ppl output{font-weight:700;font-size:18px;min-width:22px;text-align:center}
-      .q-chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:4px}
-      .q-chk input{width:18px;height:18px;accent-color:#2E7D4F;margin:1px 0 0}
-      .q-send{font:inherit;font-weight:700;font-size:17px;background:#2E7D4F;color:#FFFFFF;border:0;border-radius:12px;padding:16px;cursor:pointer;width:100%}
-      .q-send:hover{background:#256842}
-      .q-send,.glow{animation:glow 3.2s ease-in-out infinite}
-      .q-send:hover,.glow:hover{box-shadow:0 0 0 3px rgba(46,125,79,.08),0 4px 18px rgba(46,125,79,.22)}
-      @keyframes glow{0%,100%{box-shadow:0 2px 8px rgba(46,125,79,.10)}50%{box-shadow:0 2px 16px rgba(46,125,79,.24)}}
-      @media (prefers-reduced-motion:reduce){.q-send,.glow{animation:none}}
-      .q-err{font-size:14px;color:#B3261E;display:none}
-      .q-ok{display:none;text-align:center;padding:30px 10px}
-      .q-ok h3{font-size:26px;margin:12px 0 6px}.q-ok p{color:#6A6A6A;margin:0}
-      @media (max-width:900px){.q-card{grid-template-columns:1fr;padding:26px 18px;gap:24px}.q h2{font-size:30px}.q-exps{grid-template-columns:1fr 1fr}.q-row{grid-template-columns:1fr}}
-    </style>
-    <div class="q"><div class="q-card">
-      <div>
-        <div class="q-k">Arma tu plan</div>
-        <h2 id="arma-t">¿Tu propia fecha, con tu grupo?</h2>
-        <p class="l">Para cumpleaños, despedidas, equipos de trabajo o tu grupo de amigos. Elige la experiencia, la fecha y cuántos van, y te mandamos una cotización a la medida.</p>
-        <ul class="q-why">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Salida privada, solo tu grupo</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Guías, transporte y comida, igual que siempre</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Te contestamos en menos de 48 horas</li>
-        </ul>
-      </div>
-      <form id="q-form" novalidate>
-        <div id="q-fields">
-          <p class="q-step">1 · ¿Qué experiencia?</p>
-          <div class="q-exps"><label class="q-exp"><input type="radio" name="q-exp" value="vf"><img src="vf1.jpg" alt=""><span><b>Vía ferrata</b><small>Mineral del Chico</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="col"><img src="col1.jpg" alt=""><span><b>Nevado de Colima</b><small>Jalisco</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="rap"><img src="rap1.jpg" alt=""><span><b>Rapel</b><small>Corral de Piedra</small></span></label><label class="q-exp"><input type="radio" name="q-exp" value="kay"><img src="kay2.jpg" alt=""><span><b>Kayak al amanecer</b><small>Xochimilco</small></span></label></div>
-          <div class="q-row">
-            <div>
-              <p class="q-step">2 · ¿Qué fecha?</p>
-              <div class="cal" id="cal"></div>
-            </div>
-            <div class="q-side">
-              <p class="q-step" style="margin:0">3 · ¿Quiénes van?</p>
-              <div class="q-box q-ppl"><div><b>Personas</b><div style="font-size:13px;color:#6A6A6A">Mínimo 10</div></div><div class="st"><button type="button" id="q-m" aria-label="Quitar una persona">−</button><output id="q-n">10</output><button type="button" id="q-p" aria-label="Agregar una persona">+</button></div></div>
-              <div class="q-box"><label for="q-nom">Tu nombre</label><input id="q-nom" autocomplete="name" placeholder="Nombre y apellido"></div>
-              <div class="q-box"><label for="q-mail">Correo</label><input id="q-mail" type="email" autocomplete="email" placeholder="tu@correo.com"></div>
-              <div class="q-box"><label for="q-msg">¿Algo más? <span style="font-weight:400;color:#6A6A6A">(opcional)</span></label><textarea id="q-msg" rows="2" placeholder="Es un cumpleaños, vamos con niños de 16, etc."></textarea></div>
-              <label class="q-chk"><input type="checkbox" id="q-priv"><span>Acepto el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a></span></label>
-              <div class="q-err" id="q-err" role="alert"></div>
-              <button type="submit" class="q-send">Quiero mi cotización</button>
-            </div>
-          </div>
-        </div>
-        <div class="q-ok" id="q-ok" role="status">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>
-          <h3>¡Recibimos tu plan!</h3>
-          <p id="q-ok-t">En menos de 48 horas te escribimos con tu cotización.</p>
-        </div>
-      </form>
-    </div></div>
-  </section>
+
 
   <section id="faq" aria-labelledby="faq-t" style="background:#FFFFFF;font-family:Figtree,sans-serif">
     <style>
@@ -555,7 +516,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
     <div class="fq-w">
       <h2 id="faq-t">Preguntas frecuentes</h2>
       <p>Lo que casi todos nos preguntan antes de su primera salida.</p>
-      <div class="fq-cols"><div><details class="fq"><summary>¿Puedo ir solo?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>¡Claro! La mayoría llega sin conocer a nadie. Una semana antes te sumamos al grupo de WhatsApp de tu salida y hacemos un meet &amp; greet para conocerse antes de salir.</p></details><details class="fq"><summary>¿Necesito experiencia?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>No para la vía ferrata, el rapel ni el kayak: las guías te explican todo desde cero. El Nevado de Colima sí pide buena condición física, aunque no experiencia técnica.</p></details><details class="fq"><summary>¿Qué incluye el precio?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Transporte redondo desde CDMX, guías y, según la experiencia, comidas, hospedaje, equipo, paramédico y seguro. En la página de cada experiencia está el detalle.</p></details><details class="fq"><summary>¿Cómo pago?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Con Mercado Pago: tarjeta, OXXO o transferencia. Tu lugar queda confirmado cuando se acredita el pago y te llega el correo de confirmación.</p></details></div><div><details class="fq"><summary>¿Qué pasa si llueve o se cancela?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Si el clima no deja hacerlo con seguridad, tú eliges: otra fecha o tu dinero de regreso. Si tú cancelas, revisa nuestras <a href="politicas-de-cancelacion.html" target="_blank" rel="noopener">políticas de cancelación</a>; también puedes ceder tu lugar.</p></details><details class="fq"><summary>¿Puedo armar una salida privada?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Sí. En <a href="#arma">Arma tu plan</a> eliges experiencia, fecha y cuántos van, y te mandamos una cotización.</p></details><details class="fq"><summary>¿Desde qué edad pueden ir?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Por ahora las experiencias son solo para mayores de edad.</p></details></div></div>
+      <div class="fq-cols"><div><details class="fq"><summary>¿Puedo ir solo?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>¡Claro! La mayoría llega sin conocer a nadie. Una semana antes te sumamos al grupo de WhatsApp de tu salida y hacemos un meet &amp; greet para conocerse antes de salir.</p></details><details class="fq"><summary>¿Necesito experiencia?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>No para la vía ferrata, el rapel ni el kayak: las guías te explican todo desde cero. El Nevado de Colima sí pide buena condición física, aunque no experiencia técnica.</p></details><details class="fq"><summary>¿Qué incluye el precio?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Transporte redondo desde CDMX, guías y, según la experiencia, comidas, hospedaje, equipo, paramédico y seguro. En la página de cada experiencia está el detalle.</p></details><details class="fq"><summary>¿Cómo pago?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Con Mercado Pago: tarjeta, OXXO o transferencia. Tu lugar queda confirmado cuando se acredita el pago y te llega el correo de confirmación.</p></details></div><div><details class="fq"><summary>¿Qué pasa si llueve o se cancela?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Si el clima no deja hacerlo con seguridad, tú eliges: otra fecha o tu dinero de regreso. Si tú cancelas, revisa nuestras <a href="politicas-de-cancelacion.html" target="_blank" rel="noopener">políticas de cancelación</a>; también puedes ceder tu lugar.</p></details><details class="fq"><summary>¿Puedo armar una salida privada?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Sí. En <a href="#reservar">Arma tu plan</a> eliges experiencia, fecha y cuántos van, y te mandamos una cotización.</p></details><details class="fq"><summary>¿Desde qué edad pueden ir?<svg class="chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Por ahora las experiencias son solo para mayores de edad.</p></details></div></div>
     </div>
   </section>
 
@@ -644,13 +605,31 @@ if(qf)qf.addEventListener('submit',function(e){e.preventDefault();var ex=qf.quer
   fetch('https://formsubmit.co/ajax/hila.sal.a.vivirlo@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)}).then(function(r){if(!r.ok)throw 0;done();}).catch(function(){
     var body=Object.keys(data).filter(function(k){return k[0]!=='_';}).map(function(k){return k+': '+data[k];}).join('\n');
     location.href='mailto:hila.sal.a.vivirlo@gmail.com?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);done();});});
-// formulario de la landing
-var fg=$('f-go');if(fg)fg.addEventListener('click',function(){if(window.hilaTrack)hilaTrack('inicio_formulario',{ubicacion:'landing'});
-  var g=function(i){return document.getElementById(i);};
-  var d={step:2,sel:{},chips:{},nombre:g('f-nombre').value,apellido:g('f-apellido').value,cel:g('f-cel').value,correo:g('f-correo').value,mayor:g('f-mayor').checked};
-  if(!d.nombre.trim()||!d.correo.trim()){d.step=1;}
-  try{localStorage.setItem('hila-reserva',JSON.stringify(d));}catch(e){}
-  location.href='reservar.html';});
+// formulario de la landing (3 pasos)
+var lq=$('lq');
+if(lq){var cur=0,segs=lq.querySelectorAll('.lq-seg'),steps=lq.querySelectorAll('.lq-step'),pics=document.querySelectorAll('.lq-ph img'),err=$('lq-err'),chips={};
+  var tr=function(e,p){if(window.hilaTrack)hilaTrack(e,p||{});};
+  function ok(n){var g=function(i){return $(i);};
+    if(n===0){if(!g('f-nombre').value.trim())return 'Nos falta tu nombre.';if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(g('f-correo').value.trim()))return 'Revisa tu correo, ahí te mandamos tu confirmación.';if(!g('f-mayor').checked)return 'Confirma que eres mayor de edad.';}
+    if(n===1&&!lq.querySelector('input[name="lq-exp"]:checked'))return 'Elige al menos una experiencia.';
+    if(n===2&&(!chips.seguro||!chips.cond))return 'Elige una opción en cada pregunta.';
+    return '';}
+  function show(n){cur=n;segs.forEach(function(s,i){s.classList.toggle('on',i<=n);s.setAttribute('aria-current',i===n?'step':'false');});
+    steps.forEach(function(s,i){s.classList.toggle('on',i===n);});pics.forEach(function(p,i){p.classList.toggle('on',i===n);});
+    $('lq-k').textContent='Paso '+(n+1)+' de 3';$('lq-prev').disabled=n===0;$('lq-next').disabled=n===2;$('f-go').textContent=n===2?'Continuar al pago':'Sigamos';err.style.display='none';
+    if(n===1&&!show.a){show.a=1;tr('inicio_formulario',{ubicacion:'landing'});}}
+  function fwd(to){for(var i=cur;i<to;i++){var m=ok(i);if(m){show(i);err.textContent=m;err.style.display='block';tr('error_formulario',{formulario:'landing',paso:i+1});return false;}}show(to);return true;}
+  segs.forEach(function(s,i){s.addEventListener('click',function(){if(i<=cur)show(i);else fwd(i);});});
+  $('lq-prev').addEventListener('click',function(){if(cur>0)show(cur-1);});
+  $('lq-next').addEventListener('click',function(){if(cur<2)fwd(cur+1);});
+  lq.querySelectorAll('.lq-chips').forEach(function(g){g.querySelectorAll('.lq-chip').forEach(function(c){c.addEventListener('click',function(){chips[g.dataset.k]=c.dataset.v;g.querySelectorAll('.lq-chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});err.style.display='none';});});});
+  $('f-go').addEventListener('click',function(){if(cur<2){fwd(cur+1);return;}
+    var m=ok(2);if(m){err.textContent=m;err.style.display='block';tr('error_formulario',{formulario:'landing',paso:3});return;}
+    var g=function(i){return $(i);},sel={};lq.querySelectorAll('input[name="lq-exp"]:checked').forEach(function(c){sel[c.value]=true;});
+    var d={step:3,sel:sel,personas:g('f-personas').value,chips:{seguro:chips.seguro,cond:chips.cond},nombre:g('f-nombre').value,apellido:g('f-apellido').value,cel:g('f-cel').value,correo:g('f-correo').value,mayor:g('f-mayor').checked};
+    try{localStorage.setItem('hila-reserva',JSON.stringify(d));}catch(e){}
+    location.href='reservar.html';});
+  show(0);}
 })();
 </script>
 <script>
@@ -664,7 +643,6 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="#
   if(path&&path!==location.pathname.split('/').pop())return;var id=h.slice(i+1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();hilaScrollTo(el);history.replaceState(null,'','#'+id);});
 })();
 </script>
-<script src="hila-mapa.js" defer></script>
 <div id="cp-toast" role="status" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#222222;color:#FFFFFF;padding:12px 18px;border-radius:12px;font:600 14px Figtree,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s;z-index:95;max-width:90vw;text-align:center"></div>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-copy]');if(!a)return;var t=a.getAttribute('data-copy'),ts=document.getElementById('cp-toast');
 function ok(){ts.textContent='Te copiamos el mensaje. Solo pégalo en el chat y envíalo.';ts.style.opacity=1;setTimeout(function(){ts.style.opacity=0;},4000);}
