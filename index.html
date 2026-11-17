@@ -392,9 +392,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       .ds-row{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:44px}
       .ds-row:before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:#DDDDDD}
       .ds-s{position:relative;display:flex;flex-direction:column;text-decoration:none;color:#222222;transition:transform .25s ease}
-      a.ds-s:hover{color:#1F6B45;transform:translateY(-4px)}
-      a.ds-s:hover .ds-n{color:#1F6B45}
-      a.ds-s:hover .ds-dot{background:#2E7D4F;transform:scale(1.25)}
+      a.ds-s:hover,a.ds-s.act{color:#1F6B45;transform:translateY(-4px)}
+      a.ds-s:hover .ds-n,a.ds-s.act .ds-n{color:#1F6B45}
+      a.ds-s:hover .ds-dot,a.ds-s.act .ds-dot{background:#2E7D4F;transform:scale(1.25);box-shadow:0 0 0 6px rgba(46,125,79,.15)}
       .ds-dot{transition:background .25s,transform .25s}
       .ds-n{transition:color .25s}
       .ds-dot{width:15px;height:15px;border-radius:50%;background:#FFFFFF;border:2px solid #2E7D4F;box-sizing:border-box;position:relative}
@@ -404,8 +404,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       .ds-l{font-size:14px;color:#6A6A6A;margin-top:4px}
       .ds-c{display:flex;align-items:center;gap:12px;margin-top:14px;padding:10px;border:1px solid #EBEBEB;border-radius:16px;font-size:14px;font-weight:600;transition:border-color .25s,box-shadow .25s,transform .25s}
       .ds-c{background:#FFFFFF}
-      a.ds-s:hover .ds-c{border-color:#2E7D4F;box-shadow:0 12px 28px rgba(46,125,79,.18);transform:scale(1.03)}
-      .ds-c img{transition:transform .3s}a.ds-s:hover .ds-c img{transform:scale(1.06)}
+      a.ds-s:hover .ds-c,a.ds-s.act .ds-c{border-color:#2E7D4F;box-shadow:0 12px 28px rgba(46,125,79,.18);transform:scale(1.03)}
+      .ds-c img{transition:transform .3s}a.ds-s:hover .ds-c img,a.ds-s.act .ds-c img{transform:scale(1.06)}
       .ds-c span{color:#222222}
       .ds-c img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex-shrink:0}
       .ds-c em{display:block;font-style:normal;color:#2E7D4F;font-weight:700;margin-top:2px}
@@ -436,6 +436,19 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false);});
       .rg2-w{display:flex;justify-content:center;padding:36px 0 16px}
       .rg2-card{position:relative;width:380px;max-width:100%;background:#FFFFFF;border-radius:22px;box-shadow:0 24px 50px rgba(60,40,20,.16);transform:rotate(-3deg);transition:transform .4s ease}
       .rg2-card:hover{transform:rotate(-1deg) translateY(-4px)}
+      /* entrada animada (todas las pantallas) */
+      .js-rv .ds-s{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease,color .25s}
+      .js-rv .ds-row.in .ds-s{opacity:1;transform:none}
+      .js-rv .ds-row.in .ds-s:nth-child(2){transition-delay:.12s}.js-rv .ds-row.in .ds-s:nth-child(3){transition-delay:.24s}.js-rv .ds-row.in .ds-s:nth-child(4){transition-delay:.36s}.js-rv .ds-row.in .ds-s:nth-child(5){transition-delay:.48s}
+      .js-rv .ds-row.in a.ds-s.act,.js-rv .ds-row.in a.ds-s:hover{transform:translateY(-4px);transition-delay:0s}
+      .js-rv .rg2-card.in:hover{transform:rotate(-1deg) translateY(-4px)}
+      .js-rv .rg2-card{opacity:0;transform:rotate(-14deg) translateY(40px) scale(.9);transition:opacity .7s ease,transform .9s cubic-bezier(.2,1.4,.4,1)}
+      .js-rv .rg2-card.in{opacity:1;transform:rotate(-3deg)}
+      .rg2-card.in .rg2-bow{animation:bow 1s .6s ease both}
+      @keyframes bow{0%{transform:scale(.3) rotate(-25deg);opacity:0}60%{transform:scale(1.15) rotate(6deg);opacity:1}100%{transform:none}}
+      @media (hover:none){.rg2-card.in{animation:flt 4s 1.4s ease-in-out infinite}}
+      @keyframes flt{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-8px)}}
+      @media (prefers-reduced-motion:reduce){.js-rv .ds-s,.js-rv .rg2-card{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}.rg2-card.in .rg2-bow{animation:none}}
       .rg2-card .ph{height:210px;border-radius:22px 22px 0 0;overflow:hidden}
       .rg2-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
       .rg2-rb{position:absolute;top:0;bottom:0;right:64px;width:14px;background:#8E1B24}
@@ -665,5 +678,19 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="#
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-copy]');if(!a)return;var t=a.getAttribute('data-copy'),ts=document.getElementById('cp-toast');
 function ok(){ts.textContent='Te copiamos el mensaje. Solo pégalo en el chat y envíalo.';ts.style.opacity=1;setTimeout(function(){ts.style.opacity=0;},4000);}
 try{navigator.clipboard.writeText(t).then(ok,function(){});}catch(err){}});</script>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  document.documentElement.classList.add('js-rv');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.25});
+  document.querySelectorAll('.ds-row,.rg2-card').forEach(function(el){io.observe(el);});
+  // en celular (sin hover): resalta la parada que está en el centro de la pantalla
+  if(window.matchMedia('(hover: none)').matches){
+    var stops=[].slice.call(document.querySelectorAll('a.ds-s'));
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('act',e.isIntersecting);});},{rootMargin:'-42% 0px -42% 0px'});
+    stops.forEach(function(s){io2.observe(s);});
+  }
+})();
+</script>
 </body>
 </html>
