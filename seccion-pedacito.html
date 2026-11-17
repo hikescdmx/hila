@@ -1,0 +1,162 @@
+<!-- ============================================================
+  HILA · Sección "Un pedacito de lo vivido" (Opción A · Mesa de recuerdos)
+  - Pega el <section> donde va la sección de merch.
+  - Pega el <style> en el CSS de la landing (todo usa el prefijo .pedacito).
+  - Sube la carpeta img/merch/ junto a la página (o cambia las rutas).
+  - Incluye animación: los objetos caen sobre la mesa al hacer scroll (desktop y celular)
+    y saltan al pasar el mouse o tocarlos. Respeta "reducir movimiento" del teléfono.
+  - Fuentes: Poppins (600, 700) e Inter (400, 500, 600) de Google Fonts.
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+
+<section class="pedacito" id="merch" aria-labelledby="pedacito-titulo">
+  <div class="pedacito__panel">
+    <div class="pedacito__texto">
+      <span class="pedacito__eyebrow">Merch Hila</span>
+      <h2 class="pedacito__titulo" id="pedacito-titulo">Un pedacito de lo vivido</h2>
+      <p class="pedacito__lead">Stickers, botellas y llaveros tejidos con las montañas, el agua y el equipo de cada experiencia. Para que el recuerdo se quede contigo.</p>
+      <ul class="pedacito__lista">
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 20 9 8l4 6 2.5-3.5L21 20Z"/></svg>Stickers ilustrados de cada lugar</li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M9 2h6v3H9zM8 5h8l1 3v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8z"/></svg>Botella térmica Hila</li>
+        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M9 3c-3 0-4 2-3.8 4.5L7 17c.3 2 1.5 3 3.5 3h1.5c2.5 0 3.7-1.5 3.8-3.5L16.5 7C16.7 4.5 15.5 3 13 3Z"/><path d="M16 8v6"/></svg>Llavero de mosquetón con etiqueta tejida</li>
+      </ul>
+      <p class="pedacito__nota">Algunas experiencias incluyen su recuerdo. Te decimos cuál al reservar.</p>
+    </div>
+    <div class="pedacito__mesa" aria-label="Stickers, botella y llavero de Hila">
+        <picture>
+          <source srcset="img/merch/sticker-kayak.webp" type="image/webp">
+          <img class="pedacito__item" style="--x:2.5%;--y:4.1%;--w:24.3%;--r:-8deg;--mx:1.7%;--my:2.0%;--mw:37.0%;--mr:-8deg;" src="img/merch/sticker-kayak.png" alt="Sticker de kayak amarillo sobre agua turquesa" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/botella-terracota.webp" type="image/webp">
+          <img class="pedacito__item" style="--x:49.8%;--y:0.9%;--w:13.6%;--r:4deg;--mx:45.6%;--my:2.5%;--mw:17.0%;--mr:4deg;" src="img/merch/botella-terracota.png" alt="Botella térmica terracota con curvas topográficas" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/llavero-tejido.webp" type="image/webp">
+          <img class="pedacito__item" style="--x:73.6%;--y:2.1%;--w:15.5%;--r:-8deg;--mx:74.4%;--my:1.9%;--mw:21.3%;--mr:-7deg;" src="img/merch/llavero-tejido.png" alt="Llavero de mosquetón con etiqueta tejida de montañas al amanecer" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/sticker-montana.webp" type="image/webp">
+          <img class="pedacito__item" style="--x:23.7%;--y:28.8%;--w:27.9%;--r:5deg;--mx:3.1%;--my:49.3%;--mw:43.5%;--mr:5deg;" src="img/merch/sticker-montana.png" alt="Sticker de montaña gris nevada" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/sticker-medusa.webp" type="image/webp">
+          <img class="pedacito__item pedacito__item--desktop" style="--x:4.1%;--y:50.4%;--w:12.7%;--r:7deg;" src="img/merch/sticker-medusa.png" alt="Sticker de medusa azul" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/sticker-fogata.webp" type="image/webp">
+          <img class="pedacito__item pedacito__item--desktop" style="--x:23.9%;--y:66.7%;--w:23.6%;--r:-4deg;" src="img/merch/sticker-fogata.png" alt="Sticker de fogata frente a montañas" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/sticker-go.webp" type="image/webp">
+          <img class="pedacito__item" style="--x:50.4%;--y:73.7%;--w:27.6%;--r:-6deg;--mx:46.9%;--my:67.8%;--mw:46.0%;--mr:-5deg;" src="img/merch/sticker-go.png" alt="Sticker GO con logo Hila" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="img/merch/sticker-sal-a-vivirlo.webp" type="image/webp">
+          <img class="pedacito__item pedacito__item--desktop" style="--x:83.0%;--y:70.7%;--w:14.9%;--r:8deg;" src="img/merch/sticker-sal-a-vivirlo.png" alt="Sticker Sal a vivirlo con logo Hila" loading="lazy">
+        </picture>
+    </div>
+  </div>
+</section>
+
+<style>
+.pedacito {
+  --hila-verde: #2E6B4A;
+  --hila-tinta: #1B2620;
+  --hila-tinta-suave: #4F5A53;
+  --hila-crema: #FAF7F1;
+  background: #FFFFFF;
+  padding: 64px max(16px, 5vw);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+.pedacito__panel {
+  max-width: 1296px;
+  margin: 0 auto;
+  background: var(--hila-crema);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 56px 56px 56px 64px;
+}
+.pedacito__texto { display: flex; flex-direction: column; gap: 20px; }
+.pedacito__eyebrow { font: 600 12px/1 "Inter", sans-serif; letter-spacing: .22em; text-transform: uppercase; color: var(--hila-verde); }
+.pedacito__titulo { margin: 0; font: 700 clamp(30px, 3.2vw, 44px)/1.08 "Poppins", "Helvetica Neue", Arial, sans-serif; letter-spacing: -.01em; color: var(--hila-tinta); text-wrap: balance; }
+.pedacito__lead { margin: 0; font-size: 18px; line-height: 28px; color: var(--hila-tinta-suave); max-width: 46ch; }
+.pedacito__lista { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.pedacito__lista li { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 15px; line-height: 20px; color: var(--hila-tinta); }
+.pedacito__lista svg { flex: none; color: var(--hila-verde); }
+.pedacito__nota { margin: 0; font-size: 13px; line-height: 20px; font-weight: 500; color: var(--hila-tinta-suave); }
+
+/* La "mesa": cada objeto se coloca en % para que escale con el ancho */
+.pedacito__mesa { position: relative; width: 100%; aspect-ratio: 716 / 480; }
+.pedacito__item {
+  position: absolute;
+  left: var(--x); top: var(--y); width: var(--w); height: auto;
+  --rot: var(--r);
+  transform: rotate(var(--rot));
+  filter: drop-shadow(0 6px 10px rgba(27, 38, 32, .14));
+  transition: transform .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Entrada: los objetos "caen" sobre la mesa al aparecer en pantalla (desktop y celular) */
+.pedacito__mesa.is-visible .pedacito__item {
+  animation: pedacito-cae .7s cubic-bezier(.2, .9, .3, 1.25) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+@keyframes pedacito-cae {
+  from { opacity: 0; transform: translateY(-36px) rotate(calc(var(--rot) + 14deg)) scale(.85); }
+  to   { opacity: 1; transform: rotate(var(--rot)); }
+}
+/* Al pasar el mouse (desktop) o tocar (celular) el objeto se endereza y salta */
+.pedacito__item:hover { transform: rotate(0deg) scale(1.05); }
+.pedacito__item.is-tocado { animation: pedacito-salto .5s ease; }
+@keyframes pedacito-salto {
+  0%   { transform: rotate(var(--rot)) scale(1); }
+  40%  { transform: rotate(0deg) scale(1.12) translateY(-8px); }
+  100% { transform: rotate(var(--rot)) scale(1); }
+}
+.pedacito__item:hover { transform: rotate(0deg) scale(1.04); }
+
+@media (max-width: 900px) {
+  .pedacito { padding: 40px 16px; }
+  .pedacito__panel { grid-template-columns: 1fr; gap: 20px; padding: 28px 20px; }
+  .pedacito__lead { font-size: 16px; line-height: 24px; }
+  .pedacito__mesa { aspect-ratio: 322 / 330; order: 0; }
+  .pedacito__item { left: var(--mx); top: var(--my); width: var(--mw); --rot: var(--mr); }
+  .pedacito__item:hover { transform: rotate(var(--rot)); }
+  .pedacito__item--desktop { display: none; }
+  .pedacito__lista { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pedacito__item, .pedacito__item.is-tocado, .pedacito__mesa.is-visible .pedacito__item { transition: none; animation: none; }
+}
+</style>
+
+<script>
+/* Animación de "Un pedacito de lo vivido": entrada al hacer scroll + salto al tocar. */
+(function () {
+  var mesa = document.querySelector('.pedacito__mesa');
+  if (!mesa) return;
+  var items = mesa.querySelectorAll('.pedacito__item');
+  items.forEach(function (el, i) {
+    el.style.setProperty('--i', i);
+    el.addEventListener('click', function () {
+      el.classList.remove('is-tocado'); void el.offsetWidth; el.classList.add('is-tocado');
+    });
+    el.addEventListener('animationend', function (e) {
+      if (e.animationName === 'pedacito-salto') el.classList.remove('is-tocado');
+    });
+  });
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { mesa.classList.add('is-visible'); io.disconnect(); }
+    });
+  }, { threshold: 0.3 });
+  io.observe(mesa);
+})();
+</script>
